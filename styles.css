@@ -20,7 +20,7 @@ body {
 
 button {
     padding: 10px;
-    color: #2b2a2a;
+    color: rgba(42, 179, 0, 0.555);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -30,5 +30,5 @@ button {
 }
 
 button:hover {
-    background-color: #2ab300;
+    background-color: rgb(42, 179, 0)
 }
