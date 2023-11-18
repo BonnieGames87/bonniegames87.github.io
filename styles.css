@@ -6,7 +6,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(to bottom, #f4f4f4, #333);
+    background: linear-gradient(to bottom, #000000, #000000);
 }
 
 .container {
@@ -20,7 +20,7 @@ body {
 
 button {
     padding: 10px;
-    color: #fff;
+    color: #2b2a2a;
     border: none;
     border-radius: 4px;
     cursor: pointer;
