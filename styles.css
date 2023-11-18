@@ -7,7 +7,7 @@ body {
     justify-content: center;
     height: 100vh;
     background-color: #333; /* Set to a dark color, e.g., #333 */
-    color: #f8f8f8; /* Set text color to a light color for contrast */
+    color: #ffffff; /* Set text color to a light color for contrast */
 }
 
 .container {
@@ -32,5 +32,5 @@ button {
 }
 
 button:hover {
-    background-color: #1d8d01;
+    background-color: #1f630e;
 }
