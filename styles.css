@@ -6,7 +6,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(to bottom, #000000, #000000);
+    background-color: #000000;
 }
 
 .container {
