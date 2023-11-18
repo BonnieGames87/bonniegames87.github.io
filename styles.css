@@ -6,11 +6,11 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #222222;
+    background-color: #f4f4f4;
 }
 
 .container {
-    background-color: #fff;
+    background-color: #131313;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
