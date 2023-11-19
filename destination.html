@@ -3,15 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            display: inline-block;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        img {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
     <title>The Internet</title>
 </head>
 <body>
-    <div class="container">
-        <h1>You've Reached the Internet</h1>
-    </div>
-    <!-- Button to go to the page with Vex 5 embedded -->
+    <h1>You've reached The Internet</h1>
+
+    <!-- Button with an image -->
     <a href="https://adfree3kh0.github.io/projects/vex5/index.html" target="_blank">
-        <button>Play Vex 5</button>
+        <button>
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gameflare.com%2Fonline-game%2Fvex-5%2F&psig=AOvVaw13ajrwoFPo-ChwzRGrvG5i&ust=1700446886176000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOils7eAz4IDFQAAAAAdAAAAABAE" alt="Play Vex 5">
+        </button>
+    </a>
 </body>
 </html>
