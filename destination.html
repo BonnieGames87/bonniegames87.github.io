@@ -15,27 +15,33 @@
             background-color: #333;
             flex-direction: column;
             text-align: center;
-            color:#fff;
+            color: #fff;
         }
-        
+
         h1 {
-            background-color: #444; /* You can adjust the container background color */
-            padding: 20px; /* Add some padding to the text */
-            border-radius: 8px; /* Optional: Add rounded corners to the border */
+            background-color: #444;
+            padding: 20px;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 500px;
             text-align: center;
-           
         }
-     
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
         button {
-            display: flex 1 30px;;
-            padding: 10;
+            flex: 1;
+            padding: 15px; /* Adjusted padding */
             background-color: #30db05;
             color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            max-width: 150px; /* Adjusted max-width */
         }
 
         button:hover {
@@ -43,9 +49,8 @@
         }
 
         img {
-            margin-top: 20px;
-            max-width: 20%;
-            height: 20%;
+            max-width: 100%;
+            height: auto;
         }
     </style>
     <title>The Internet</title>
@@ -53,18 +58,21 @@
 <body>
     <h1>You've reached The Internet</h1>
 
-    <!-- Button with an image -->
-    <a href="https://adfree3kh0.github.io/projects/vex5/index.html" target="_blank">
-        <button>
-            <img src="https://adfree3kh0.github.io/projects/vex5/vex.jpeg" alt="Play Vex 5">
-        </button>
-    </a>
+    <!-- Button container -->
+    <div class="button-container">
+        <!-- Button with Vex 5 -->
+        <a href="https://adfree3kh0.github.io/projects/vex5/index.html" target="_blank">
+            <button>
+                <img src="https://adfree3kh0.github.io/projects/vex5/vex.jpeg" alt="Play Vex 5">
+            </button>
+        </a>
 
-    <a href="https://ytiurin.github.io/tetris/" target="_blank">
-        <button>
-           <img src="https://play-lh.googleusercontent.com/za2Nu_qjMw5GzWfbzet4zeiZT1xvJlTRi4NJzGpJWX9grxFAAko5dGBwe7qeqK01THw" alt="Play Tetris">
-        </button>
-    </a>
-
+        <!-- Button with Tetris -->
+        <a href="https://ytiurin.github.io/tetris/" target="_blank">
+            <button>
+                <img src="https://play-lh.googleusercontent.com/za2Nu_qjMw5GzWfbzet4zeiZT1xvJlTRi4NJzGpJWX9grxFAAko5dGBwe7qeqK01THw" alt="Play Tetris">
+            </button>
+        </a>
+    </div>
 </body>
 </html>
