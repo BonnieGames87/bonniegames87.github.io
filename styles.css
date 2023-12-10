@@ -20,6 +20,7 @@ body {
 }
 
 button {
+    display: flex;
     padding: 10px;
     background-color: #30db05;
     color: #000000;
