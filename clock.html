@@ -8,14 +8,23 @@
             height: 100vh;
             margin: 0;
             background-color: #282c34;
-            color: white;
+            color: #30db05;
             font-size: 15em;
+            text-align: center;
+        }
+        h1 {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+            width: 700px;
             text-align: center;
         }
     </style>
 </head>
 <body>
     <div id="clock"></div>
+    <h1>
     <script>
         function updateTime() {
             let date = new Date();
@@ -36,4 +45,5 @@
 
         window.onload = updateTime; // Call updateTime when the page loads
     </script>
+    </h1>
 </body>
