@@ -12,7 +12,7 @@ function updateTime() {
 
     document.getElementById('clock').textContent = time;
 
-    setTimeout(updateTime, 1000); // Update the time every second
+    setTimeout(updateTime, 100); // Update the time every second
 }
 
 window.onload = updateTime; // Call updateTime when the page loads
