@@ -1,0 +1,39 @@
+<head>
+    <title>Simple Clock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #282c34;
+            color: white;
+            font-size: 2em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock"></div>
+    <script>
+        function updateTime() {
+            let date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+
+            // Pad single digit minutes and seconds with a leading zero
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            let time = hours + ':' + minutes + ':' + seconds;
+
+            document.getElementById('clock').textContent = time;
+
+            setTimeout(updateTime, 1000); // Update the time every second
+        }
+
+        window.onload = updateTime; // Call updateTime when the page loads
+    </script>
+</body>
