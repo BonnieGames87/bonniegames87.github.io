@@ -19,9 +19,24 @@
 </style>
 <title>The Boys Clock</title>
 </head>
-<div style="display: flex; justify-content: flex-end; align-items: center; height: 100vh;">
-    <iframe width="645" height="720" src="https://vclock.com/embed/time/#theme=1&color=3&ampm=1&showdate=1" frameborder="0"></iframe>
-</div>
+<head>
+    <style>
+        #digitclock {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            padding: 10px;
+            background-color: #333;
+            border: 1px solid #333;
+            border-radius: 10px 0px 0px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="digitclock">
+        <iframe width="645" height="720" src="https://vclock.com/embed/time/#theme=1&color=3&ampm=1&showdate=1" frameborder="0" ></iframe> 
+    </div>
+</body> 
 <head>
     <style>
         #version {
