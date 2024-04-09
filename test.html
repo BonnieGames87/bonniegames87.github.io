@@ -1,45 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-    import tkinter as tk
-from PIL import Image, ImageTk
-
-# Create the main window
-root = tk.Tk()
-root.title("Google Account Selection")
-
-# Load the Google image
-google_image = Image.open("google_image.jpg")
-google_photo = ImageTk.PhotoImage(google_image)
-
-# Create the Google image label
-google_label = tk.Label(root, image=google_photo)
-google_label.pack()
-
-# Create the "Sign in with Google" button
-sign_in_button = tk.Button(root, text="Sign in with Google")
-sign_in_button.pack()
-
-# Create the "Choose an account" label
-choose_account_label = tk.Label(root, text="Choose an account")
-choose_account_label.pack()
-
-# Create the "to continue to TeacherMade" label
-continue_label = tk.Label(root, text="to continue to TeacherMade")
-continue_label.pack()
-
-# Create the account information label
-account_info_label = tk.Label(root, text="26sNelson Dustin\\n26snelson.dustin@stu.lavegaisd.org")
-account_info_label.pack()
-
-# Create the "Use another account" button
-use_another_account_button = tk.Button(root, text="Use another account")
-use_another_account_button.pack()
-
-# Create the information label
-info_label = tk.Label(root, text="To continue, Google will share your name, email address, language preference, and profile picture with TeacherMade. Before using this app, you can review TeacherMade’s privacy policy and terms of service.")
-info_label.pack()
-
-# Run the main loop
-root.mainloop()
-
+<html>
+<head>
+    <title>Google Account Selection</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 10px;
+        }
+        .google-btn {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .account-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="google-btn">Sign in with Google</button>
+        <div class="account-info">
+            <h2>Choose an account</h2>
+            <p>to continue to TeacherMade</p>
+            <p>26sNelson Dustin</p>
+            <p>26snelson.dustin@stu.lavegaisd.org</p>
+            <button class="google-btn">Use another account</button>
+            <p>To continue, Google will share your name, email address, language preference, and profile picture with TeacherMade. Before using this app, you can review TeacherMade’s privacy policy and terms of service.</p>
+        </div>
+    </div>
+</body>
 </html>
