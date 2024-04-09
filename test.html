@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Sign In</title>
+    <title>Sign in Page Layout</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,25 +17,24 @@
             padding: 20px;
             width: 300px;
         }
-        input[type=text], input[type=password] {
-            width: calc(100% - 20px);
-            padding: 10px;
+        .logo {
+            display: flex;
+            align-items: center;
         }
+        img {
+           width: 50px; 
+           height:auto; 
+           margin-right :10px; 
+         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png" alt="Google Logo">
-    <h2>Sign in</h2>
-    <p>to continue to Google Account</p>
-
-    <form action="/action_page.php" method="post">
-      Email or phone<br><input type="text" name="email"><br><br>
-      Password<br><input type="password" name="password"><br><br>
-      <input type="submit" value="Next">
-      Forgot email? | Create account
-    </form> 
+    <div class="logo">
+      <img src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png' alt='Google Logo'>
+      <h2>Sign in</h2>
+    </div>  
 </div>
 
 </body>
