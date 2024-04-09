@@ -1,41 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in Page Layout</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            background-color: #E0E0E0;
         }
-        .container {
-            border: 1px solid #ccc;
-            padding: 20px;
-            width: 300px;
-        }
-        .logo {
+        .form-container {
             display: flex;
-            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         }
-        img {
-           width: 50px; 
-           height:auto; 
-           margin-right :10px; 
-         }
+        .form-container input[type=text], .form-container input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
+    <div class="form-container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
 
-<div class="container">
-    <div class="logo">
-      <img src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png' alt='Google Logo'>
-      <h2>Sign in</h2>
-    </div>  
-</div>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
 
+        <button type="submit">Login</button>
+    </div>
 </body>
 </html>
