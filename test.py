@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    import tkinter as tk
+import tkinter as tk
 from PIL import Image, ImageTk
 
 # Create the main window
@@ -41,5 +39,3 @@ info_label.pack()
 
 # Run the main loop
 root.mainloop()
-
-</html>
