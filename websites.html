@@ -50,6 +50,21 @@
         button:hover {
             background-color: #1f630e;
         }
+        
+        homebutton {
+            display: inline-block; 
+            padding: 10px; 
+            background-color: #555555;
+            color: #fff;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            max-width: 180%; 
+        }
+
+        homebutton:hover {
+            background-color: #4e4e4e;
+        }
 
         img {
             max-width: 100%;
@@ -122,6 +137,19 @@
         </button>
     </div>
 </body>
+<style>
+    .buttontopright {
+        position: absolute;
+        padding: 3px;
+        border-radius: 50%;
+        top: 14px;
+        right: 10px;
+    }
+</style>
+
+<homebutton class="buttontopright" onclick="window.location.href='index.html'">
+    <img src='https://cdn.icon-icons.com/icons2/1458/PNG/512/homebutton_99695.png' alt='Home' width='50' height='50'/>
+</homebutton>
 <head>
     <style>
         #version {
