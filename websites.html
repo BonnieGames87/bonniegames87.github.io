@@ -109,7 +109,7 @@
         padding: 3px;
         border-radius: 50%;
         top: 14px;
-        right: 40px;
+        right: 80px;
     }
 </style>
 <addbutton class="addbutton"onclick="window.open('https://forms.gle/SzynGRWJkDacgg1K9', '_blank')">
@@ -117,6 +117,11 @@
 </addbutton>
 <head>
     <style>
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
     .button {
       display: inline-block;
       flex-direction: column;
@@ -146,21 +151,23 @@
       margin-top: 10px;
     }
     </style>
-    </head>
-    <body>
-    
-    <button class="button" onclick="window.location.href='drive-mad.html'">
-      <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f8a2160e52333ee0d44ec19e8ca65139.png" alt="Drive Mad">
-      <span>Drive Mad</span>
-    </button>
-    <button class="button" onclick="window.location.href='stickman-hook.html'">
-        <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/99e090d154caf30f3625df7e456d5984.png" alt="Stickman Hook">
-        <span>Stickman Hook</span>
-    </button>
-    <button class="button" onclick="window.location.href='tunnel-rush.html'">
-        <img src="https://images.hellokids.com/_uploads/_tiny_galerie/20180415/vign-tunnel-rush-hk-w8v_u89.jpg" alt="Tunnel Rush">
-        <span>Tunnel Rush</span>
-    </button>  
+</head>
+<body>   
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='drive-mad.html'">
+          <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f8a2160e52333ee0d44ec19e8ca65139.png" alt="Drive Mad">
+          <span>Drive Mad</span>
+        </button>
+        <button class="button" onclick="window.location.href='stickman-hook.html'">
+            <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/99e090d154caf30f3625df7e456d5984.png" alt="Stickman Hook">
+            <span>Stickman Hook</span>
+        </button>
+        <button class="button" onclick="window.location.href='tunnel-rush.html'">
+            <img src="https://images.hellokids.com/_uploads/_tiny_galerie/20180415/vign-tunnel-rush-hk-w8v_u89.jpg" alt="Tunnel Rush">
+            <span>Tunnel Rush</span>
+        </button>
+    </div>
+</body>
 <head>
     <style>
         #version {
