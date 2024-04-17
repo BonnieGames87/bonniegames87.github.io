@@ -183,46 +183,52 @@ homebutton {
 </body>
 </div>
 <body>
-<div class="container3">
-    <h1 id="monthYear"></h1>
-    <div id="calendar" class="calendar"></div>
-</div>
+    <div class="container">
+        <h1 id="monthYear"></h1>
+        <div id="calendar" class="calendar"></div>
+    </div>
 
-<script>
-    var monthNames = ["January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
-    ];
+    <script>
+        var monthNames = ["January", "February", "March", "April", "May", "June",
+          "July", "August", "September", "October", "November", "December"
+        ];
 
-    function updateCalendar() {
-        var date = new Date();
-        var month = date.getMonth();
-        var year = date.getFullYear();
-        var today = date.getDate();
+        function updateCalendar() {
+            var date = new Date();
+            var month = date.getMonth();
+            var year = date.getFullYear();
+            var today = date.getDate();
 
-        var firstDay = new Date(year, month, 1).getDay();
+            // Get the first day of the month
+            var firstDay = new Date(year, month, 1).getDay();
 
-        var daysInMonth = 32 - new Date(year, month, 32).getDate();
+            // Get the number of days in the month
+            var daysInMonth = 32 - new Date(year, month, 32).getDate();
 
-        document.getElementById('monthYear').innerHTML = monthNames[month] + ' ' + year;
+            // Update the month and year
+            document.getElementById('monthYear').innerHTML = monthNames[month] + ' ' + year;
 
-        var calendar = document.getElementById('calendar');
-        calendar.innerHTML = '';
-        for (var i = 0; i < firstDay; i++) {
-            calendar.innerHTML += '<div></div>';
-        }
-        for (var i = 1; i <= daysInMonth; i++) {
-            if (i === today) {
-                calendar.innerHTML += '<div class="today">' + i + '</div>';
-            } else {
-                calendar.innerHTML += '<div>' + i + '</div>';
+            // Create the calendar
+            var calendar = document.getElementById('calendar');
+            calendar.innerHTML = '';
+            for (var i = 0; i < firstDay; i++) {
+                calendar.innerHTML += '<div></div>';
+            }
+            for (var i = 1; i <= daysInMonth; i++) {
+                if (i === today) {
+                    calendar.innerHTML += '<div class="today">' + i + '</div>';
+                } else {
+                    calendar.innerHTML += '<div>' + i + '</div>';
+                }
             }
         }
-    }
 
-    updateCalendar();
+        // Update the calendar when the page loads
+        updateCalendar();
 
-    setInterval(updateCalendar, 1000 * 60 * 60 * 24);
-</script>
+        // Update the calendar every day at midnight
+        setInterval(updateCalendar, 1000 * 60 * 60 * 24);
+    </script>
 </body>
 <head>
      <style>
