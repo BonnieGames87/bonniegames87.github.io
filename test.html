@@ -55,6 +55,41 @@ body {
     top: 10px;
     left: 170px;
 }
+.container3 {
+    position: absolute;
+    top: 38px;
+    left: 100px;
+    width: 380px;
+    height: 242px;
+    padding: 16px;
+    background-color: lime; /** 444 is the normal **/
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.container3 h1 {
+    position: absolute;
+    top: 0px;
+    left: 170px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 4px;
+    position: absolute;
+    top: 30px;
+}
+
+.calendar div {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.today {
+    background-color: #ff0;
+}
 
 .logo-img {
     position: absolute;
@@ -147,20 +182,62 @@ homebutton {
     </div>
 </body>
 </div>
-    <head>
-        <style>
-            #version {
-                position: fixed;
-                bottom: 0;
-                right: 0;
-                padding: 10px;
-                background-color: #444;
-                border: 1px solid #444;
-                border-radius: 10px 0px 0px 0px;
+<body>
+<div class="container3">
+    <h1 id="monthYear"></h1>
+    <div id="calendar" class="calendar"></div>
+</div>
+
+<script>
+    var monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    function updateCalendar() {
+        var date = new Date();
+        var month = date.getMonth();
+        var year = date.getFullYear();
+        var today = date.getDate();
+
+        var firstDay = new Date(year, month, 1).getDay();
+
+        var daysInMonth = 32 - new Date(year, month, 32).getDate();
+
+        document.getElementById('monthYear').innerHTML = monthNames[month] + ' ' + year;
+
+        var calendar = document.getElementById('calendar');
+        calendar.innerHTML = '';
+        for (var i = 0; i < firstDay; i++) {
+            calendar.innerHTML += '<div></div>';
+        }
+        for (var i = 1; i <= daysInMonth; i++) {
+            if (i === today) {
+                calendar.innerHTML += '<div class="today">' + i + '</div>';
+            } else {
+                calendar.innerHTML += '<div>' + i + '</div>';
             }
+        }
+    }
+
+    updateCalendar();
+
+    setInterval(updateCalendar, 1000 * 60 * 60 * 24);
+</script>
+</body>
+<head>
+     <style>
+        #version {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            padding: 10px;
+            background-color: #444;
+            border: 1px solid #444;
+            border-radius: 10px 0px 0px 0px;
+        }
         </style>
-    </head>
-    <body>
+</head>
+<body>
         <div id="version">
             Version: BETA 
         </div>
