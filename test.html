@@ -158,43 +158,56 @@ homebutton {
     </div>
 </body>
 </div>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Calendar</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
 
-        #calendar {
-            width: 300px;
-            margin: 0 auto;
-        }
+    .container3 {
+        position: absolute;
+        top: 38px;
+        left: 550px;
+        width: 650px;
+        height: 534px;
+        padding: 16px;
+        background-color: lime;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    }
 
-        #monthYear {
-            text-align: center;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
+    #calendar {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    #monthYear {
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
 
-        th, td {
-            border: 1px solid #ccc;
-            padding: 5px;
-            text-align: center;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-        .today {
-            background-color: #f0f0f0;
-        }
-    </style>
+    th, td {
+        border: 1px solid #ccc;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .today {
+        background-color: #f0f0f0;
+    }
+</style>
 </head>
 <body>
+<div class="container3">
     <div id="calendar">
         <div id="monthYear"></div>
         <table id="calendarTable">
@@ -214,48 +227,50 @@ homebutton {
             </tbody>
         </table>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const monthYear = document.getElementById('monthYear');
-            const calendarBody = document.getElementById('calendarBody');
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const monthYear = document.getElementById('monthYear');
+        const calendarBody = document.getElementById('calendarBody');
 
-            function updateCalendar() {
-                const now = new Date();
-                const month = now.getMonth();
-                const year = now.getFullYear();
-                const firstDayOfMonth = new Date(year, month, 1).getDay();
-                const daysInMonth = new Date(year, month + 1, 0).getDate();
+        function updateCalendar() {
+            const now = new Date();
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const month = now.getMonth();
+            const year = now.getFullYear();
+            const firstDayOfMonth = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-                monthYear.textContent = `${month + 1}/${year}`;
-                calendarBody.innerHTML = '';
+            monthYear.textContent = `${monthNames[month]} ${year}`;
+            calendarBody.innerHTML = '';
 
-                let day = 1;
-                for (let i = 0; i < 6; i++) {
-                    const row = document.createElement('tr');
-                    for (let j = 0; j < 7; j++) {
-                        const cell = document.createElement('td');
-                        if (i === 0 && j < firstDayOfMonth) {
-                            // Empty cells before the first day of the month
-                            cell.textContent = '';
-                        } else if (day > daysInMonth) {
-                            // Empty cells after the last day of the month
-                            cell.textContent = '';
-                        } else {
-                            cell.textContent = day;
-                            if (day === now.getDate() && month === now.getMonth() && year === now.getFullYear()) {
-                                cell.classList.add('today');
-                            }
-                            day++;
+            let day = 1;
+            for (let i = 0; i < 6; i++) {
+                const row = document.createElement('tr');
+                for (let j = 0; j < 7; j++) {
+                    const cell = document.createElement('td');
+                    if (i === 0 && j < firstDayOfMonth) {
+                        // Empty cells before the first day of the month
+                        cell.textContent = '';
+                    } else if (day > daysInMonth) {
+                        // Empty cells after the last day of the month
+                        cell.textContent = '';
+                    } else {
+                        cell.textContent = day;
+                        if (day === now.getDate() && month === now.getMonth() && year === now.getFullYear()) {
+                            cell.classList.add('today');
                         }
-                        row.appendChild(cell);
+                        day++;
                     }
-                    calendarBody.appendChild(row);
+                    row.appendChild(cell);
                 }
+                calendarBody.appendChild(row);
             }
+        }
 
-            updateCalendar();
-        });
-    </script>
+        updateCalendar();
+    });
+</script>
 </body>
 <head>
      <style>
