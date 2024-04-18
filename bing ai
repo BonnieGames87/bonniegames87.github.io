@@ -1,93 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Calendar</title>
     <style>
-        .container {
-            position: absolute;
-            top: 38px;
-            left: 100px;
-            width: 380px;
-            height: 534px;
-            padding: 16px;
-            background-color: lime; /** 444 is the normal **/
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        body {
+            font-family: Arial, sans-serif;
         }
 
-        .container h1 {
-            position: absolute;
-            top: 0px;
-            left: 170px;
+        #calendar {
+            width: 300px;
+            margin: 0 auto;
         }
 
-        .calendar {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            grid-gap: 4px;
-            position: absolute;
-            top: 30px;
-            bottom: 0;
-            left: 0;
-            right: 0;
+        #monthYear {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 10px;
         }
 
-        .calendar div {
-            padding: 10px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
             border: 1px solid #ccc;
+            padding: 5px;
             text-align: center;
         }
 
         .today {
-            background-color: #ff0;
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 id="monthYear"></h1>
-        <div id="calendar" class="calendar"></div>
+    <div id="calendar">
+        <div id="monthYear"></div>
+        <table id="calendarTable">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="calendarBody">
+                <!-- Calendar days will be inserted here -->
+            </tbody>
+        </table>
     </div>
-
     <script>
-        var monthNames = ["January", "February", "March", "April", "May", "June",
-          "July", "August", "September", "October", "November", "December"
-        ];
+        document.addEventListener('DOMContentLoaded', function() {
+            const monthYear = document.getElementById('monthYear');
+            const calendarBody = document.getElementById('calendarBody');
 
-        function updateCalendar() {
-            var date = new Date();
-            var month = date.getMonth();
-            var year = date.getFullYear();
-            var today = date.getDate();
+            function updateCalendar() {
+                const now = new Date();
+                const month = now.getMonth();
+                const year = now.getFullYear();
+                const firstDayOfMonth = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-            // Get the first day of the month
-            var firstDay = new Date(year, month, 1).getDay();
+                monthYear.textContent = `${month + 1}/${year}`;
+                calendarBody.innerHTML = '';
 
-            // Get the number of days in the month
-            var daysInMonth = 32 - new Date(year, month, 32).getDate();
-
-            // Update the month and year
-            document.getElementById('monthYear').innerHTML = monthNames[month] + ' ' + year;
-
-            // Create the calendar
-            var calendar = document.getElementById('calendar');
-            calendar.innerHTML = '';
-            for (var i = 0; i < firstDay; i++) {
-                calendar.innerHTML += '<div></div>';
-            }
-            for (var i = 1; i <= daysInMonth; i++) {
-                if (i === today) {
-                    calendar.innerHTML += '<div class="today">' + i + '</div>';
-                } else {
-                    calendar.innerHTML += '<div>' + i + '</div>';
+                let day = 1;
+                for (let i = 0; i < 6; i++) {
+                    const row = document.createElement('tr');
+                    for (let j = 0; j < 7; j++) {
+                        const cell = document.createElement('td');
+                        if (i === 0 && j < firstDayOfMonth) {
+                            // Empty cells before the first day of the month
+                            cell.textContent = '';
+                        } else if (day > daysInMonth) {
+                            // Empty cells after the last day of the month
+                            cell.textContent = '';
+                        } else {
+                            cell.textContent = day;
+                            if (day === now.getDate() && month === now.getMonth() && year === now.getFullYear()) {
+                                cell.classList.add('today');
+                            }
+                            day++;
+                        }
+                        row.appendChild(cell);
+                    }
+                    calendarBody.appendChild(row);
                 }
             }
-        }
 
-        // Update the calendar when the page loads
-        updateCalendar();
-
-        // Update the calendar every day at midnight
-        setInterval(updateCalendar, 1000 * 60 * 60 * 24);
+            updateCalendar();
+        });
     </script>
 </body>
 </html>
