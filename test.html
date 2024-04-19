@@ -192,62 +192,39 @@ homebutton {
         });
     </script>
 </body>
+
+<head>
+    <style>
+        #container3 {
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
 <body>
-    <div class="container3">
-        <div id="calendar">
-            <div id="monthYear"></div>
-            <table id="calendarTable">
-                <!-- Your existing table structure -->
-            </table>
-        </div>
-        <div id="countdown"></div>
-    </div>
+    <div id="container2"></div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const monthYear = document.getElementById('monthYear');
-            const calendarBody = document.getElementById('calendarBody');
-            const countdown = document.getElementById('countdown');
+        var events = {
+            "04-19": "Test",
+            "05-23": "Early Release",
+            // Add more events in the format "MM-DD": "Event Name"
+        };
 
-            // Function to check if a day is a holiday or an event
-            function isHolidayOrEvent(date) {
-                const holidays = [
-                    new Date(2023, 0, 1), // New Year's Day
-                    // Add more holidays here
-                ];
-                const events = [
-                    new Date(2023, 4, 23), // May 23rd
-                    // Add more events here
-                ];
-                return holidays.some(holiday => holiday.toDateString() === date.toDateString()) ||
-                       events.some(event => event.toDateString() === date.toDateString());
-            }
+        var date = new Date();
+        var today = ("0" + (date.getMonth() + 1)).slice(-2) + "-" + ("0" + date.getDate()).slice(-2);
+        var event = events[today];
 
-            function updateCalendar() {
-                // Your existing updateCalendar function
-                // Modify the part where you set cell.textContent to also check if the day is a holiday or an event
-                if (isHolidayOrEvent(new Date(year, month, day))) {
-                    cell.classList.add('holiday'); // or 'event' if it's an event
-                }
-            }
-
-            function calculateCountdown() {
-                const now = new Date();
-                const targetDate = new Date(now.getFullYear(), 4, 23); // May 23rd
-                if (now > targetDate) {
-                    targetDate.setFullYear(targetDate.getFullYear() + 1);
-                }
-                let countdownDate = new Date(targetDate);
-                while (isHolidayOrEvent(countdownDate) || countdownDate.getDay() === 0 || countdownDate.getDay() === 6) {
-                    countdownDate.setDate(countdownDate.getDate() + 1);
-                }
-                const diff = countdownDate - now;
-                const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-                countdown.textContent = `Countdown to May 23rd: ${days} days`;
-            }
-
-            updateCalendar();
-            calculateCountdown();
-        });
+        var container2 = document.getElementById('container2');
+        container3.innerHTML = "<h2>Today's Date: " + today + "</h2>";
+        if (event) {
+            container2.innerHTML += "<h2>Today's Event: " + event + "</h2>";
+        } else {
+            container2.innerHTML += "<h2>No events today.</h2>";
+        }
     </script>
 </body>
 
