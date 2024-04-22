@@ -1,18 +1,3 @@
-
-NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
-
-NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
-
-NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
-
-NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
-
-NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
-
-NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
-
-NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
-
 To track visits to a webpage hosted on GitHub Pages, you can use JavaScript along with GitHub's API or a third-party service like Google Analytics. Since GitHub Pages serves static content, you cannot directly track visits using server-side code like Python. However, you can use client-side JavaScript to send a request to a server-side script that increments a counter, or you can use a service like Google Analytics for more detailed tracking.
 
 Here's a basic example using Google Analytics to track visits to your GitHub Pages site. This method does not require any server-side code changes.
