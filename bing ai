@@ -1,1 +1,36 @@
-no code here 🙂
+
+NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
+
+NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
+
+NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
+
+NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
+
+NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
+
+NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
+
+NEED TO DO THIS AT HOME ALSO THIS IS FOR TRACK HOW MANY VISITS THE SITE GETS 
+
+To track visits to a webpage hosted on GitHub Pages, you can use JavaScript along with GitHub's API or a third-party service like Google Analytics. Since GitHub Pages serves static content, you cannot directly track visits using server-side code like Python. However, you can use client-side JavaScript to send a request to a server-side script that increments a counter, or you can use a service like Google Analytics for more detailed tracking.
+
+Here's a basic example using Google Analytics to track visits to your GitHub Pages site. This method does not require any server-side code changes.
+
+Sign up for Google Analytics: If you haven't already, sign up for a Google Analytics account and set up a new property for your GitHub Pages site.
+Get your Tracking ID: Once you've set up your property, Google Analytics will provide you with a Tracking ID. It looks something like UA-XXXXXXXXX-X.
+Add Google Analytics to your HTML: In your GitHub Pages repository, find the HTML file you want to track visits for. Add the following code snippet to the <head> section of your HTML file. Replace UA-XXXXXXXXX-X with your actual Tracking ID.
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+Commit and push your changes: After adding the Google Analytics code to your HTML file, commit the changes and push them to your GitHub repository.
+Verify the setup: Visit your GitHub Pages site and check Google Analytics to see if the visits are being tracked. It may take a few minutes for the data to appear.
+This method allows you to track visits to your GitHub Pages site without needing to modify your server-side code. Google Analytics provides a wealth of information about your visitors, including the number of visits, the pages they visited, their location, and more.
+
+Remember, this approach uses client-side JavaScript to send data to Google Analytics, so it relies on the visitor's browser to execute the tracking code. This means that if a user has JavaScript disabled in their browser, the visit will not be tracked.
