@@ -24,6 +24,9 @@
         }
 
         h1 {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px; /* Gap between the two rows */
             background-color: #44444400;
             padding: 20px;
             border-radius: 8px;
@@ -47,17 +50,11 @@
             background-position: center; 
         }
 
-        .row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px; /* Gap between the two rows */
-        }
-
-        .row button {
+        .h1 button {
             margin-right: 10px; /* Gap between the links within each row */
         }
 
-        .row button:last-child {
+        .h1 button:last-child {
             margin-right: 0; /* Remove margin from the last link in each row */
         }
 
