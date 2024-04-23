@@ -22,7 +22,7 @@ body {
 button {
     display: flex;
     padding: 10px;
-    background-color: #30db05;
+    background-color: #1d21fa;
     color: #000000;
     border: none;
     border-radius: 4px;
@@ -33,5 +33,5 @@ button {
 }
 
 button:hover {
-    background-color: #1f630e;
+    background-color: #1517a1;
 }
