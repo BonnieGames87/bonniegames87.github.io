@@ -1,62 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/a/ACg8ocKuUTcuQjdUS9tc3lsJeP420ttiAVj6Yv9yi8A2_-yCYekXSosP-UrlI9PttR79nnCNbDB1Fl1VLogP2b76a1v6CA=s288-c-no"/>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/a/ACg8ocKuUTcuQjdUS9tc3lsJeP420ttiAVj6Yv9yi8A2_-yCYekXSosP-UrlI9PttR79nnCNbDB1Fl1VLogP2b76a1v6CA=s288-c-no"/>
-    <link rel="stylesheet" href="styles.css">
-    <title>Beta Testing</title>
-</head>
-<head>
     <style>
-body {
-    display: flex;
-    background-color: #333; 
-    color: #FFFFFF; 
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-image: url('https://c4.wallpaperflare.com/wallpaper/656/28/1001/simple-background-blue-background-vector-graphics-abstract-wallpaper-preview.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #333;
+            flex-direction: column;
+            text-align: center;
+            color: #fff;
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/656/28/1001/simple-background-blue-background-vector-graphics-abstract-wallpaper-preview.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
 
-.container {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 1px;
-    height: 1px;
-    padding: 16px;
-    background-color: #44444400; /** 444 is the normal **/
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-}
+        }
 
-.container h1 {
-    position: absolute;
-    top: 10px;
-    left: 170px;
-}
+        h1 {
+            background-color: #44444400;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+            text-align: center;
+            width: 600px;
+            height: 400px; 
+            background-image: url('https://i.ibb.co/yfsM3c0/Stream-Deck-Png-1.png');
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    
 
+        .container {
+            text-align: center;
+            width: 600px;
+            height: 400px; 
+            background-image: url('https://i.ibb.co/t2hGTnR/Stream-Deck-Png.png');
+            background-size: cover; 
+            background-position: center; 
+        }
 
-button {
-    display: inline-block; 
-    padding: 15px;
-    background-color: #1d21fa;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    max-width: 180%; 
-}
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px; /* Gap between the two rows */
+        }
 
-button:hover {
-    background-color: #1517a1;
-}
+        .row button {
+            margin-right: 10px; /* Gap between the links within each row */
+        }
 
-homebutton {
+        .row button:last-child {
+            margin-right: 0; /* Remove margin from the last link in each row */
+        }
+        
+        .button-container {
+            display: inline-block;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            display: inline-block; 
+            padding: 15px;
+            background-color: #1d21fa00;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            max-width: 180%; 
+        }
+
+        button:hover {
+            background-color: #1517a100;
+        }
+
+        homebutton {
             display: inline-block; 
             padding: 10px; 
             background-color: #555555;
@@ -66,19 +92,34 @@ homebutton {
             cursor: pointer;
             max-width: 180%; 
         }
-    
+
         homebutton:hover {
             background-color: #4e4e4e;
         }
+
+        img {
+            max-width: 100%;
+            height: 100%;
+        }
     </style>
+    <title>The Boys Socials</title>
 </head>
 
+<head>
 <body>
-<div id="container"></div>
-        The new clock layout is in clock.html 
-</div>
+    <h1>
+        <div class="row">
+            <button onclick="window.open('https://www.instagram.com/the.lv.boys', '_blank')"><img src='https://th.bing.com/th/id/R.7884e57fa238e885e03fbd285509f835?rik=zkWbr%2bjYEBYUnw&pid=ImgRaw&r=0' alt='Instagram' width='50' height='50'/></button>
+            <button onclick="window.open('https://discord.gg/7dBDFYxUKV', '_blank')"><img src='https://th.bing.com/th/id/R.11991d9b6e676d00ecfcf8c537c8667b?rik=CIiipjJChLiomw&pid=ImgRaw&r=0' alt='Discord' width='50' height='50'/></button>
+            <button onclick="window.open('https://www.youtube.com/@TheLavegaBoys-tlvb', '_blank')"><img src='https://www.bta3062.com/images/c/c0/YouTube_Icon.png' width='50' height='50'/></button>
+        </div>
+        <div class="row">
+            <button onclick="window.open('https://thelavegaboys1.odoo.com/web?reload=true#action=114&cids=1&menu_id=74&active_id=discuss.channel_1', '_blank')"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABlUlEQVR4AdXXA0xGURgG4KyZuTGbsxlmN2a7ebn+ixnZmBeHODU1L3MIYxwybm/mwVW42zOe+33HsPpXX0li1oMwSAULtDyzQDqEgSmJvcACe6Aw7IEMPkYkdgILnIGi0gXI4KI1uR8sgaLTCgSpTR4HB6AY5ATi+FuuPTmrEkE8Y77EOdEGoBaqoQPWOIfDhVYBCyPAEiSBDWXoZhgxZFJyN8Zs7wIHzr2inLE6fNS2vgfUTuRi7l54rvUOofAWOGlcymOUOfShYBiltsk6NrIgStyI9wVTKUvHQeduOkeInc4z/lMGbOciIbblfaEWQqE2AyqQTYjd8r5Qk4kVyCTEbuIZggntqZmxLT81CWcZk9DUZehHiRv2viAQbzsbOjaiIdZGxF4u2rfiXEo88bsffOCC8lMHOHAmL4QbVYfR848yKBQLkEA5jqNgQtNx/BzABVZAYdiBPqiFSmiDJd0XkudKBMCRSVeyADWX0iPzL6Xsnlj5kWs5Y06IcGH+w4T9NBPVP83Mf5w2fXqcRoDVv/ruAbWQGaszYrmhAAAAAElFTkSuQmCC' alt='Odoo'width='50' height='50'/></button>
+            <button onclick="window.open('https://classroom.google.com/c/NTk1NDMzNzcxNDk0?cjc=fukwqtc', '_blank')"><img src='https://seeklogo.com/images/G/google-classroom-logo-AD2BE4B278-seeklogo.com.png' alt='Google Classroom' width='50' height='50'/></button>
+            <button onclick="window.open('https://docs.google.com/document/d/1Sl_gFnhUH7o2Mloflf6DfXHYOAnpCrjt06LZfpKbw5M/edit?usp=sharing', '_blank')"><img src='https://th.bing.com/th/id/R.39b07453bb5a485f9ed60f055c9b73bc?rik=JvjNPxG8sMeA9g&pid=ImgRaw&r=0' alt='Google Doc' width='50' height='50'/></button>
+        </div>
+    </h1>
 </body>
-
 <style>
     .buttontopright {
         position: absolute;
@@ -92,9 +133,8 @@ homebutton {
 <homebutton class="buttontopright" onclick="window.location.href='index.html'">
     <img src='https://cdn.icon-icons.com/icons2/1458/PNG/512/homebutton_99695.png' alt='Home' width='50' height='50'/>
 </homebutton>
-<div class="container">
 <head>
-     <style>
+    <style>
         #version {
             position: fixed;
             bottom: 0;
@@ -104,14 +144,13 @@ homebutton {
             border: 1px solid #444;
             border-radius: 10px 0px 0px 0px;
         }
-        </style>
+    </style>
 </head>
 <body>
-        <div id="version">
-            Version: 0.1.8 
-        </div>
-    </body> 
-</body>
+    <div id="version">
+        Version: BETA
+    </div>
+</body> 
 <head>
     <style>
         #github-link {
@@ -137,7 +176,6 @@ homebutton {
         <a href="https://github.com/BonnieGames87" target="_blank">Visit my GitHub</a>
     </div>
 </body>
+<head>
 </html>
-    </div>
-</body>
-</html>
+
