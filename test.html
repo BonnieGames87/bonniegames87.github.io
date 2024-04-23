@@ -47,20 +47,21 @@
             background-position: center; 
         }
 
-        .row {
-            display: inline-block;
-            justify-content: space-between;
-            margin-bottom: 20px; /* Gap between the two rows */
-        }
-
-        .row button {
-            margin-right: 10px; /* Gap between the links within each row */
-        }
-
         .button-container {
             display: inline-block;
             gap: 10px;
             margin-top: 20px;
+        }
+
+        .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto; /* Creates three columns */
+        gap: 10px; /* Defines the gap between grid cells */
+        }
+
+        .grid-item {
+        width: 50px;
+        height: 50px;
         }
 
         button {
@@ -104,8 +105,48 @@
 <head>
 <body>
     <h1>
-        <div class="row">
-            <button onclick="window.open('https://www.instagram.com/the.lv.boys', '_blank')"><img src='https://th.bing.com/th/id/R.7884e57fa238e885e03fbd285509f835?rik=zkWbr%2bjYEBYUnw&pid=ImgRaw&r=0' alt='Instagram' width='50' height='50'/></button>
+        <div class="grid-container">
+            <div class="grid-item">
+                <button onclick="window.open('https://www.instagram.com/the.lv.boys', '_blank')">
+                    <img src='https://th.bing.com/th/id/R.7884e57fa238e885e03fbd285509f835?rik=zkWbr%2bjYEBYUnw&pid=ImgRaw&r=0' alt='Instagram' width='50' height='50'/>
+                </button>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <button onclick="window.open('https://discord.gg/7dBDFYxUKV', '_blank')">
+                   <img src='https://th.bing.com/th/id/R.11991d9b6e676d00ecfcf8c537c8667b?rik=CIiipjJChLiomw&pid=ImgRaw&r=0' alt='Discord' width='50' height='50'/>
+                </button>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <button onclick="window.open('https://www.instagram.com/the.lv.boys', '_blank')">
+                    <img src='https://th.bing.com/th/id/R.7884e57fa238e885e03fbd285509f835?rik=zkWbr%2bjYEBYUnw&pid=ImgRaw&r=0' alt='Instagram' width='50' height='50'/>
+                </button>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <button onclick="window.open('https://www.instagram.com/the.lv.boys', '_blank')">
+                    <img src='https://th.bing.com/th/id/R.7884e57fa238e885e03fbd285509f835?rik=zkWbr%2bjYEBYUnw&pid=ImgRaw&r=0' alt='Instagram' width='50' height='50'/>
+                </button>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <button onclick="window.open('https://www.instagram.com/the.lv.boys', '_blank')">
+                    <img src='https://th.bing.com/th/id/R.7884e57fa238e885e03fbd285509f835?rik=zkWbr%2bjYEBYUnw&pid=ImgRaw&r=0' alt='Instagram' width='50' height='50'/>
+                </button>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <button onclick="window.open('https://www.instagram.com/the.lv.boys', '_blank')">
+                    <img src='https://th.bing.com/th/id/R.7884e57fa238e885e03fbd285509f835?rik=zkWbr%2bjYEBYUnw&pid=ImgRaw&r=0' alt='Instagram' width='50' height='50'/>
+                </button>
+            </div>
+        </div>
             <button onclick="window.open('https://discord.gg/7dBDFYxUKV', '_blank')"><img src='https://th.bing.com/th/id/R.11991d9b6e676d00ecfcf8c537c8667b?rik=CIiipjJChLiomw&pid=ImgRaw&r=0' alt='Discord' width='50' height='50'/></button>
             <button onclick="window.open('https://www.youtube.com/@TheLavegaBoys-tlvb', '_blank')"><img src='https://www.bta3062.com/images/c/c0/YouTube_Icon.png' width='50' height='50'/></button>
         </div>
