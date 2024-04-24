@@ -54,14 +54,18 @@
         }
 
         .grid-container {
-        display: grid;
-        grid-template-columns: auto auto auto; /* Creates three columns */
-        gap: 10px; /* Defines the gap between grid cells */
+            display: grid;
+            grid-template-columns: auto auto auto; /* Creates three columns */
+            gap: 10px; /* Defines the gap between grid cells */
+            justify-content: center; /* Centers grid items horizontally */
+            align-items: center; /* Centers grid items vertically */
+            width: 80%; /* Adjust the width as needed */
+            margin: auto; /* Centers the container itself */
         }
 
         .grid-item {
-        width: 50;
-        height: 50;
+            width: 50px; /* Corrected from '50' to '50px' */
+            height: 50px; /* Corrected from '50' to '50px' */
         }
 
         button {
