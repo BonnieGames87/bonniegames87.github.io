@@ -54,17 +54,18 @@
         }
 
         .grid-container {
-        display: grid;
-        grid-template-columns: auto auto auto; 
-        gap: 60px; /* Defines the gap between grid cells */
-        position: relative;
-        top: 100px;     
-        left: 118px;                                                                                                                                                   
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Adjusted to use repeat for more flexibility */
+            gap: 10px; /* Defines the gap between grid cells */
+            position: relative;
+            top: 100px;
+            left: 118px;
         }
 
         .grid-item {
-        width: 50;
-        height: 50;
+            width: 50px; /* Ensure the width is in pixels */
+            height: 50px; /* Ensure the height is in pixels */
+            padding: 10px; /* Added padding to create space around the icon */
         }
 
         button {
