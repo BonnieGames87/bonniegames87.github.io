@@ -53,6 +53,17 @@
             margin-top: 20px;
         }
 
+        .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto; /* Creates three columns */
+        gap: 10px; /* Defines the gap between grid cells */
+        }
+
+        .grid-item {
+        width: 50;
+        height: 50;
+        }
+
         button {
             display: inline-block; 
             padding: 15px;
@@ -90,26 +101,6 @@
     </style>
     <title>The Boys Socials</title>
 <head>
-    <style>
-        body {
-            display: inline-block;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh; /* Full height of the viewport */
-            margin: 0; /* Remove default margin */
-        }
-
-        .grid-container {
-            display: inline-grid;
-            grid-template-columns: auto auto auto; /* Creates three columns */
-            gap: 10px; /* Defines the gap between grid cells */
-        }
-
-        .grid-item {
-            width: 50px; /* Added px to make it valid */
-            height: 50px; /* Added px to make it valid */
-        }
-    </style>
 <body>
     <h1>
         <div class="grid-container">
@@ -141,6 +132,8 @@
     </h1>
 </body>
 </head>
+
+<head>
 <style>
     .buttontopright {
         position: absolute;
@@ -150,10 +143,11 @@
         right: 10px;
     }
 </style>
-
 <homebutton class="buttontopright" onclick="window.location.href='index.html'">
     <img src='https://cdn.icon-icons.com/icons2/1458/PNG/512/homebutton_99695.png' alt='Home' width='50' height='50'/>
 </homebutton>
+</head>
+
 <head>
     <style>
         #version {
