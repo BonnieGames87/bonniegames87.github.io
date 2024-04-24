@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/a/ACg8ocKuUTcuQjdUS9tc3lsJeP420ttiAVj6Yv9yi8A2_-yCYekXSosP-UrlI9PttR79nnCNbDB1Fl1VLogP2b76a1v6CA=s288-c-no"/>
+<head>
+<div class="stickman">
+    <div class="head"></div>
+    <div class="body"></div>
+    <div class="arm left-arm"></div>
+    <div class="arm right-arm"></div>
+    <div class="leg left-leg"></div>
+    <div class="leg right-leg"></div>
+  </div>
+</head>
+<style>
+  @keyframes dance {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(5deg);
+    }
+    50% {
+      transform: rotate(-5deg);
+    }
+    75% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  .stickman {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    animation: dance 1s ease-in-infinite;
+  }
+  
+  .head {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    left: 90px;
+  }
+  
+  .body {
+    width: 20px;
+    height: 150px;
+    background-color: black;
+    position: absolute;
+    top: 100px;
+    left: 95px;
+  }
+  
+  .arm {
+    width: 20px;
+    height: 50px;
+    background-color: black;
+    position: absolute;
+    top: 100px;
+  }
+  
+  .left-arm {
+    left: 80px;
+    transform-origin: top;
+    animation: left-arm 1s ease-in-infinite;
+  }
+  
+  .right-arm {
+    left: 110px;
+    transform-origin: top;
+    animation: right-arm 1s ease-in-infinite;
+  }
+  
+  .leg {
+    width: 20px;
+    height: 50px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .left-leg {
+    left: 80px;
+    transform-origin: bottom;
+    animation: left-leg 1s ease-in-infinite;
+  }
+  
+  .right-leg {
+    left: 110px;
+    transform-origin: bottom;
+    animation: right-leg 1s ease-in-infinite;
+  }
+  
+  @keyframes left-arm {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(-10deg);
+    }
+    75% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes right-arm {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    75% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes left-leg {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(-10deg);
+    }
+    75% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes right-leg {
+    0% {
+      transform: rotate(0deg);
+    }
+    25%
+  }
+</style>
