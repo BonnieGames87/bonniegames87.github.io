@@ -37,6 +37,6 @@ button:hover {
 } 
 
 @font-face {
-    font-family: "Flamante-Sans";
-    src: url("Flamante-Sans-Medium-FFP.ttf") format("ttf");
+    font-family: "FlamanteSans";
+    src: url("Flamante-Sans-Medium-FFP.ttf") format("truetype");
   }
