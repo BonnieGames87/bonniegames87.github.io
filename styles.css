@@ -35,8 +35,3 @@ button {
 button:hover {
     background-color: #1517a1;
 } 
-
-@font-face {
-    font-family: "FlamanteSans";
-    src: url("Flamante-Sans-Medium-FFP.ttf") format("truetype");
-  }
