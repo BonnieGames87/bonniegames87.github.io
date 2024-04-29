@@ -29,13 +29,23 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0);
             text-align: center;
-            width: 800.0px;
+            width: 800px;
             height: 800px; 
             background-image: url('https://i.ibb.co/y8n5Xwm/image-10.png'); 
             background-size: cover; 
             background-position: center;
             background-repeat: no-repeat;
         }
+
+        .text-effect {
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75),
+              -10px -10px 5px 0px rgba(255,255,255,0.75);
+    }
 
         .button-container {
             display: inline-block;
@@ -140,11 +150,12 @@
          top: -9.5px;
          left: -49.5px;
          width: 75%; /* set width to 100% to stretch the element */
-         background-color: greenyellow;
+         background-color: #00000000;
      }
  </style>
 
  <div class="home-container">
+     Home
      <button class="buttontopright" onclick="window.location.href='index.html'"></button>
  </div>
 <head>
