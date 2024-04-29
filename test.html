@@ -95,23 +95,37 @@
         }
     </style>
     <title>The Boys Socials</title>
-<head>
-<style>
-        .screen {
-            animation:colorPulse 5s infinite ease-in-out;
-            font-size:20px;
-            overflow:hidden;
-            padding:10px;
-            top: 99px;
-            left: 99px;
-            height:10px;
-            width:10px;
+
+    <style>
+    body {
+     margin:0;
+     overflow:hidden;
+     padding:0;
+    }
+    .screen {
+        box-sizing:border-box;
+        font-family:'Fira Mono', monospace;
+        font-size:20px;
+        height:100vh;
+        overflow:hidden;
+        padding:10vmin;
+        width:100vw;
+     }
+      
+     p:last-child:after {
+        animation:blink 1s infinite;
+        content:"_";
+     }
+      
+     @keyframes blink {
+        50% {
+          opacity:0;
         }
-</style>
+     }
+    </style>
     <div class="screen">
         <p>Socials</p>
-      </div>
-</head>          
+     </div>             
 <head>
 <body>
     <h1>
