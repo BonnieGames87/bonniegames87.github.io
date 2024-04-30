@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family:'Fira Mono', monospace;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,7 +17,7 @@
             flex-direction: column;
             text-align: center;
             color: #fff;
-            background-image: url('https://c4.wallpaperflare.com/wallpaper/656/28/1001/simple-background-blue-background-vector-graphics-abstract-wallpaper-preview.jpg');
+            background-image: url('https://pbs.twimg.com/media/GCyEIS2XUAAGHpB.jpg:large');
             background-repeat: no-repeat;
             background-size: cover;
 
@@ -29,21 +29,12 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0);
             text-align: center;
-            width: 600px;
-            height: 600px; 
-            background-image: url('https://i.ibb.co/vwtLPX3/image.png');
+            width: 800px;
+            height: 800px; 
+            background-image: url('https://i.ibb.co/y8n5Xwm/image-10.png'); 
             background-size: cover; 
             background-position: center;
             background-repeat: no-repeat;
-        }
-
-        .container {
-            text-align: center;
-            width: 600px;
-            height: 600px; 
-            background-image: url('https://i.ibb.co/t2hGTnR/Stream-Deck-Png.png');
-            background-size: cover; 
-            background-position: center; 
         }
 
         .button-container {
@@ -58,8 +49,8 @@
             grid-template-rows: auto, auto, auto; 
             grid-gap: 10px 10px; /* Defines the gap between grid cells, with a horizontal gap of 20px and a vertical gap of 10px */
             position: relative;
-            top: 150px;
-            left: 1px;
+            top: 100px;
+            left: -143px;
         }   
 
         .grid-item {
@@ -86,12 +77,12 @@
         homebutton {
             display: inline-block; 
             padding: 10px; 
-            background-color: #555555;
+            background-color: #555;
             color: #fff;
             border: none;
             border-radius: 2px;
             cursor: pointer;
-            max-width: 180%; 
+            max-width: 180%;
         }
 
         homebutton:hover {
@@ -104,31 +95,119 @@
         }
     </style>
     <title>The Boys Socials</title>
+    <body>
+    <style>
+        body {
+         background-color: transparent;
+         margin:0;
+         overflow:hidden;
+         padding:0;
+        }
+        .screen {
+            animation:colorPulse 5s infinite ease-in-out;
+            box-sizing:border-box;
+            font-family:'Fira Mono', monospace;
+            font-size:30px;
+            height: 10px; /* set the height to 100vh to take up the full screen */
+            width: 10px; /* set the width to 100vw to take up the full screen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* add this to make the text positionable */
+            top: 140px;
+            right: 130px; 
+        }
+        .screen:before {
+            content:"";
+            height:20vh;
+            left:0;
+            opacity:.5;
+            position:absolute;
+            right:0;
+            z-index:1;
+        }
+        
+        .screen:after {
+            bottom:0;
+            content:"";
+            left:0;
+            pointer-events:none;
+            position:absolute;
+            right:0;
+            top:0;
+            z-index:2;
+        }
+        
+        p:last-child:after {
+            animation:blink 1s infinite;
+            content:"_";
+        }
+        
+        @keyframes colorPulse {
+            0%, 100% {
+              color:#0c0;
+            }
+            48%, 52% {
+              color:#090;
+            }
+            50% {
+              color:#060;
+            }
+        }
+        
+        @keyframes wave {
+            0% {
+              box-shadow:0 -10vh 20vh #0c0;
+              top:-100vh;
+            }
+            48%, 52% {
+              box-shadow:0 -10vh 20vh #090;
+            }
+            50% {
+              box-shadow:0 -10vh 20vh #060;
+            }
+            100% {
+              box-shadow:0 -10vh 20vh #0c0;
+              top:200vh;
+            }
+        }
+        
+        @keyframes blink {
+            50% {
+              opacity:0;
+            }
+        }
+        </style>
+    <div class="screen">
+        <p>Socials</p>
+    </div>
+</body>
 <head>
 <body>
     <h1>
         <div class="grid-container">
             <div class="grid-item">
                 <button onclick="window.open('https://www.instagram.com/the.lv.boys', '_blank')">
-                    <img src='https://th.bing.com/th/id/R.7884e57fa238e885e03fbd285509f835?rik=zkWbr%2bjYEBYUnw&pid=ImgRaw&r=0' alt='Instagram' width='90' height='90'/>
+                    <img src='https://i.ibb.co/fkDyhLK/pipboyinstagram.png' alt='Instagram' width='65' height='65'/>
                 </button>
                 <button onclick="window.open('https://discord.gg/7dBDFYxUKV', '_blank')">
-                    <img src='https://th.bing.com/th/id/R.11991d9b6e676d00ecfcf8c537c8667b?rik=CIiipjJChLiomw&pid=ImgRaw&r=0' alt='Discord' width='86' height='86'/>
+                    <img src='https://i.ibb.co/nDjtdRr/pipboydiscord.png' alt='Discord' width='66' height='66'/>
                 </button>
                 <button onclick="window.open('https://www.youtube.com/@TheLavegaBoys-tlvb', '_blank')">
-                    <img src='https://www.bta3062.com/images/c/c0/YouTube_Icon.png' width='90' height='90'/>
+                    <img src='https://i.ibb.co/SwM17yD/pipboyyoutube.png ' alt='Youtube' width='68' height='68'/>
             </div>
         </div>
         <div class="grid-container">
             <div class="grid-item"></button>
                 <button onclick="window.open('https://thelavegaboys1.odoo.com/web?reload=true#action=114&cids=1&menu_id=74&active_id=discuss.channel_1', '_blank')">
-                    <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABlUlEQVR4AdXXA0xGURgG4KyZuTGbsxlmN2a7ebn+ixnZmBeHODU1L3MIYxwybm/mwVW42zOe+33HsPpXX0li1oMwSAULtDyzQDqEgSmJvcACe6Aw7IEMPkYkdgILnIGi0gXI4KI1uR8sgaLTCgSpTR4HB6AY5ATi+FuuPTmrEkE8Y77EOdEGoBaqoQPWOIfDhVYBCyPAEiSBDWXoZhgxZFJyN8Zs7wIHzr2inLE6fNS2vgfUTuRi7l54rvUOofAWOGlcymOUOfShYBiltsk6NrIgStyI9wVTKUvHQeduOkeInc4z/lMGbOciIbblfaEWQqE2AyqQTYjd8r5Qk4kVyCTEbuIZggntqZmxLT81CWcZk9DUZehHiRv2viAQbzsbOjaiIdZGxF4u2rfiXEo88bsffOCC8lMHOHAmL4QbVYfR848yKBQLkEA5jqNgQtNx/BzABVZAYdiBPqiFSmiDJd0XkudKBMCRSVeyADWX0iPzL6Xsnlj5kWs5Y06IcGH+w4T9NBPVP83Mf5w2fXqcRoDVv/ruAbWQGaszYrmhAAAAAElFTkSuQmCC' alt='Odoo'width='90' height='90'/>
+                    <img src='
+                    https://i.ibb.co/kGQzrrw/pipboyodoo.png' alt='Odoo'width='70' height='70'/>
                 </button>
                 <button onclick="window.open('https://classroom.google.com/c/NTk1NDMzNzcxNDk0?cjc=fukwqtc', '_blank')">
-                    <img src='https://seeklogo.com/images/G/google-classroom-logo-AD2BE4B278-seeklogo.com.png' alt='Google Classroom' width='86' height='86'/>
+                    <img src='https://i.ibb.co/y6DrZq6/pipboygoogleclassroom.png' alt='Google Classroom' width='66' height='66'/>
                 </button>
                 <button onclick="window.open('https://docs.google.com/document/d/1Sl_gFnhUH7o2Mloflf6DfXHYOAnpCrjt06LZfpKbw5M/edit?usp=sharing', '_blank')">
-                    <img src='https://th.bing.com/th/id/R.39b07453bb5a485f9ed60f055c9b73bc?rik=JvjNPxG8sMeA9g&pid=ImgRaw&r=0' alt='Google Doc' width='90' height='90'/>
+                    <img src='https://i.ibb.co/NNLTNJR/pipboygoogledoc-1.png' alt='Google Doc' width='70' height='70'/>
                 </button>
             </div>
         </div>
@@ -136,27 +215,38 @@
 </body>
 </head>
 <style>
-    .buttontopright {
-        position: absolute;
-        padding: 3px;
-        border-radius: 50%;
-        top: 14px;
-        right: 10px;
-    }
-</style>
-
-<homebutton class="buttontopright" onclick="window.location.href='index.html'">
-    <img src='https://cdn.icon-icons.com/icons2/1458/PNG/512/homebutton_99695.png' alt='Home' width='50' height='50'/>
-</homebutton>
+    .home-container {
+          position: relative;
+          bottom: 183.2px; 
+          right: 274px;
+      }
+     .buttontopright {
+          position: absolute;
+          padding: 10px;
+          border-radius: 50%;
+          top: -9.5px;
+          left: -49.5px;
+          width: 75%; /* set width to 100% to stretch the element */
+          background-color: rgba(255, 0, 0, 0);
+      }
+     .text-color {
+          color: #2c2c2a; /* change the text color to hot pink */
+      }
+  </style>
+ 
+  <div class="home-container">
+      <span class="text-color">home</span>
+      <button class="buttontopright" onclick="window.location.href='index.html'"></button>
+  </div>
 <head>
     <style>
         #version {
             position: fixed;
-            bottom: 0;
-            right: 0;
+            bottom: 172px;
+            right: 600px;
             padding: 10px;
-            background-color: #444;
-            border: 1px solid #444;
+            background-color: #44444400;
+            border: 1px solid #44444400;
             border-radius: 10px 0px 0px 0px;
         }
     </style>
@@ -166,31 +256,4 @@
         Version: 0.2.5
     </div>
 </body> 
-<head>
-    <style>
-        #github-link {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            padding: 10px;
-            background-color: #444;
-            border: 1px solid #444;
-            border-radius: 0px 10px 0px 0px;
-        }
-        #github-link a {
-            color: #1d21fa;
-            text-decoration: none;
-        }
-        #github-link a:hover {
-            color: #1517a1;
-        }
-    </style>
-</head>
-<body>
-    <div id="github-link">
-        <a href="https://github.com/BonnieGames87" target="_blank">Visit my GitHub</a>
-    </div>
-</body>
-<head>
 </html>
-
