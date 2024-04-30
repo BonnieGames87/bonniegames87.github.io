@@ -1,50 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/a/ACg8ocKuUTcuQjdUS9tc3lsJeP420ttiAVj6Yv9yi8A2_-yCYekXSosP-UrlI9PttR79nnCNbDB1Fl1VLogP2b76a1v6CA=s288-c-no"/>
     <link rel="stylesheet" href="styles.css">
     <title>BonnieGames87's Website</title>
-    <style>
-        body {
-            background-image: url('https://c4.wallpaperflare.com/wallpaper/656/28/1001/simple-background-blue-background-vector-graphics-abstract-wallpaper-preview.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+<head>
+<style>
+    body {
+      background-color:#000;
+      margin:0;
+      overflow:hidden;
+      padding:0;
+    }
     
-        .container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 600px;
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: left; /* changed from center to left */
+      width: 600px;
+    }
+    
+    .container a {
+      display: block; /* make links block elements */
+      margin-bottom: 10px; /* add a gap of 10px between links */
+      font-size: 30px; /* increased font size */
+      text-align: left; /* added to align text to the left */
+    }
+    
+    .screen {
+        animation:colorPulse 5s infinite ease-in-out;
+        background-image:radial-gradient(#444, #111);
+        box-shadow:0 0 5vmin 1vmin #000 inset;
+        box-sizing:border-box;
+        font-family:'Fira Mono', monospace;
+        font-size:20px;
+        height:100vh;
+        overflow:hidden;
+        padding:10vmin;
+        width:100vw;
+      }
+      
+    .screen:before {
+        animation:wave 10s infinite ease-in-out;
+        content:"";
+        height:20vh;
+        left:0;
+        opacity:.5;
+        position:absolute;
+        right:0;
+        z-index:1;
+      }
+      
+    .screen:after {
+        background-image:linear-gradient(transparent, transparent 3px, #222);
+        background-size:4px 4px;
+        bottom:0;
+        content:"";
+        left:0;
+        pointer-events:none;
+        position:absolute;
+        right:0;
+        top:0;
+        z-index:2;
+      }
+      
+      p:last-child:after {
+        animation:blink 1s infinite;
+        content:"_";
+      }
+      
+      @keyframes colorPulse {
+        0%, 100% {
+          color:#0c0;
         }
-
-        .container a {
-          margin-bottom: 10px; /* adjust this value to change the gap size */
+        48%, 52% {
+          color:#090;
         }
-
-        .logo-img {
-            width: 150px; 
-            margin-bottom: 20px; 
+        50% {
+          color:#060;
         }
-
-        button {
-            display: inline-block; 
-            padding: 15px;
-            background-color: #1d21fa;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            max-width: 180%; 
+      }
+      
+      @keyframes wave {
+        0% {
+          box-shadow:0 -10vh 20vh #0c0;
+          top:-100vh;
         }
-
-        button:hover {
-            background-color: #1517a1;
+        48%, 52% {
+          box-shadow:0 -10vh 20vh #090;
         }
-
-    </style>
+        50% {
+          box-shadow:0 -10vh 20vh #060;
+        }
+        100% {
+          box-shadow:0 -10vh 20vh #0c0;
+          top:200vh;
+        }
+      }
+      
+      @keyframes blink {
+        50% {
+          opacity:0;
+        }
+      }
+    
+    .screen a {
+        color: lime;
+      }
+</style>
+    <div class="screen">
+        <div class="container">
+            <h1>Welcome to BonnieGames87's Website</h1>
+            <br>
+            <div>
+                <a href="socials.html">
+                    <span>Socials</span>
+                </a>
+                <a href="websites.html">
+                    <span>Websites</span>
+                </a>
+                <a href="clock.html">
+                    <span>Clock</span>
+                </a>
+                <a href="test.html">
+                    <span>BTest</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-46Y2F0ST2P"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -53,31 +138,6 @@
 
   gtag('config', 'G-46Y2F0ST2P');
 </script>
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome to BonnieGames87's Website</h1>
-        <img class="logo-img" src="https://lh3.googleusercontent.com/a/ACg8ocKuUTcuQjdUS9tc3lsJeP420ttiAVj6Yv9yi8A2_-yCYekXSosP-UrlI9PttR79nnCNbDB1Fl1VLogP2b76a1v6CA=s288-c-no" alt="The Boys">
-        <br>
-        <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-            <a href="socials.html">
-                <span>Socials</span>
-            </a>
-            <a href="websites.html">
-                <span>Websites</span>
-            </a>
-            <a href="clock.html">
-                <span>Clock</span>
-            </a>
-            <a href="test.html">
-                <span>BTest</span>
-            </a>
-        </div>
-    </div> 
-</body>
-</div> 
-<body>
-</body>
 <body>
     <head>
         <style>
