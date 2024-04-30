@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/a/ACg8ocKuUTcuQjdUS9tc3lsJeP420ttiAVj6Yv9yi8A2_-yCYekXSosP-UrlI9PttR79nnCNbDB1Fl1VLogP2b76a1v6CA=s288-c-no"/>
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <head>
     <style>
         body {
             font-family:'Fira Mono', monospace;
@@ -43,22 +43,6 @@
             margin-top: 20px;
         }
 
-        .grid-container {
-            display: grid;  /* Change the actual image size*/
-            grid-template-columns: auto, auto, auto; 
-            grid-template-rows: auto, auto, auto; 
-            grid-gap: 10px 10px; /* Defines the gap between grid cells, with a horizontal gap of 20px and a vertical gap of 10px */
-            position: relative;
-            top: 100px;
-            left: -143px;
-        }   
-
-        .grid-item {
-            width: 100;
-            height: 100;
-            padding: 10px;
-        }
-
         button {
             display: inline-block; 
             padding: 15px;
@@ -95,125 +79,8 @@
         }
     </style>
     <title>The Boys Socials</title>
+    NEXT IS CLOCK
     <body>
-    <style>
-        body {
-         background-color: transparent;
-         margin:0;
-         overflow:hidden;
-         padding:0;
-        }
-        .screen {
-            animation:colorPulse 5s infinite ease-in-out;
-            box-sizing:border-box;
-            font-family:'Fira Mono', monospace;
-            font-size:30px;
-            height: 10px; /* set the height to 100vh to take up the full screen */
-            width: 10px; /* set the width to 100vw to take up the full screen */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative; /* add this to make the text positionable */
-            top: 140px;
-            right: 130px; 
-        }
-        .screen:before {
-            content:"";
-            height:20vh;
-            left:0;
-            opacity:.5;
-            position:absolute;
-            right:0;
-            z-index:1;
-        }
-        
-        .screen:after {
-            bottom:0;
-            content:"";
-            left:0;
-            pointer-events:none;
-            position:absolute;
-            right:0;
-            top:0;
-            z-index:2;
-        }
-        
-        p:last-child:after {
-            animation:blink 1s infinite;
-            content:"_";
-        }
-        
-        @keyframes colorPulse {
-            0%, 100% {
-              color:#0c0;
-            }
-            48%, 52% {
-              color:#090;
-            }
-            50% {
-              color:#060;
-            }
-        }
-        
-        @keyframes wave {
-            0% {
-              box-shadow:0 -10vh 20vh #0c0;
-              top:-100vh;
-            }
-            48%, 52% {
-              box-shadow:0 -10vh 20vh #090;
-            }
-            50% {
-              box-shadow:0 -10vh 20vh #060;
-            }
-            100% {
-              box-shadow:0 -10vh 20vh #0c0;
-              top:200vh;
-            }
-        }
-        
-        @keyframes blink {
-            50% {
-              opacity:0;
-            }
-        }
-        </style>
-    <div class="screen">
-        <p>Socials</p>
-    </div>
-</body>
-<head>
-<body>
-    <h1>
-        <div class="grid-container">
-            <div class="grid-item">
-                <button onclick="window.open('https://www.instagram.com/the.lv.boys', '_blank')">
-                    <img src='https://i.ibb.co/fkDyhLK/pipboyinstagram.png' alt='Instagram' width='65' height='65'/>
-                </button>
-                <button onclick="window.open('https://discord.gg/7dBDFYxUKV', '_blank')">
-                    <img src='https://i.ibb.co/nDjtdRr/pipboydiscord.png' alt='Discord' width='66' height='66'/>
-                </button>
-                <button onclick="window.open('https://www.youtube.com/@TheLavegaBoys-tlvb', '_blank')">
-                    <img src='https://i.ibb.co/SwM17yD/pipboyyoutube.png ' alt='Youtube' width='68' height='68'/>
-            </div>
-        </div>
-        <div class="grid-container">
-            <div class="grid-item"></button>
-                <button onclick="window.open('https://thelavegaboys1.odoo.com/web?reload=true#action=114&cids=1&menu_id=74&active_id=discuss.channel_1', '_blank')">
-                    <img src='
-                    https://i.ibb.co/kGQzrrw/pipboyodoo.png' alt='Odoo'width='70' height='70'/>
-                </button>
-                <button onclick="window.open('https://classroom.google.com/c/NTk1NDMzNzcxNDk0?cjc=fukwqtc', '_blank')">
-                    <img src='https://i.ibb.co/y6DrZq6/pipboygoogleclassroom.png' alt='Google Classroom' width='66' height='66'/>
-                </button>
-                <button onclick="window.open('https://docs.google.com/document/d/1Sl_gFnhUH7o2Mloflf6DfXHYOAnpCrjt06LZfpKbw5M/edit?usp=sharing', '_blank')">
-                    <img src='https://i.ibb.co/NNLTNJR/pipboygoogledoc-1.png' alt='Google Doc' width='70' height='70'/>
-                </button>
-            </div>
-        </div>
-    </h1>
-</body>
-</head>
 <style>
     .home-container {
           position: relative;
