@@ -95,94 +95,93 @@
         }
     </style>
     <title>The Boys Socials</title>
+    <body>
     <style>
-    body {
-     background-color:#000;
-     margin:0;
-     overflow:hidden;
-     padding:0;
-    }
-    .screen {
-        animation:colorPulse 5s infinite ease-in-out;
-        background-image:radial-gradient(#44444400, #11111100);
-        box-shadow:0 0 5vmin 1vmin #00000000 inset;
-        box-sizing:border-box;
-        font-family:'Fira Mono', monospace;
-        font-size:20px;
-        height:100vh;
-        overflow:hidden;
-        padding:10vmin;
-        width:100vw;
-    }
-    
-    .screen:before {
-        animation:wave 10s infinite ease-in-out;
-        content:"";
-        height:20vh;
-        left:0;
-        opacity:.5;
-        position:absolute;
-        right:0;
-        z-index:1;
-    }
-    
-    .screen:after {
-        background-image:linear-gradient(transparent, transparent 3px, #222);
-        background-size:4px 4px;
-        bottom:0;
-        content:"";
-        left:0;
-        pointer-events:none;
-        position:absolute;
-        right:0;
-        top:0;
-        z-index:2;
-    }
-    
-    p:last-child:after {
-        animation:blink 1s infinite;
-        content:"_";
-    }
-    
-    @keyframes colorPulse {
-        0%, 100% {
-          color:#0c0;
+        body {
+         background-color: transparent;
+         margin:0;
+         overflow:hidden;
+         padding:0;
         }
-        48%, 52% {
-          color:#090;
+        .screen {
+            animation:colorPulse 5s infinite ease-in-out;
+            box-sizing:border-box;
+            font-family:'Fira Mono', monospace;
+            font-size:30px;
+            height: 100vh; /* set the height to 100vh to take up the full screen */
+            width: 100vw; /* set the width to 100vw to take up the full screen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* add this to make the text positionable */
+            top: 10px;
         }
-        50% {
-          color:#060;
+        .screen:before {
+            content:"";
+            height:20vh;
+            left:0;
+            opacity:.5;
+            position:absolute;
+            right:0;
+            z-index:1;
         }
-    }
-    
-    @keyframes wave {
-        0% {
-          box-shadow:0 -10vh 20vh #0c0;
-          top:-100vh;
+        
+        .screen:after {
+            bottom:0;
+            content:"";
+            left:0;
+            pointer-events:none;
+            position:absolute;
+            right:0;
+            top:0;
+            z-index:2;
         }
-        48%, 52% {
-          box-shadow:0 -10vh 20vh #090;
+        
+        p:last-child:after {
+            animation:blink 1s infinite;
+            content:"_";
         }
-        50% {
-          box-shadow:0 -10vh 20vh #060;
+        
+        @keyframes colorPulse {
+            0%, 100% {
+              color:#0c0;
+            }
+            48%, 52% {
+              color:#090;
+            }
+            50% {
+              color:#060;
+            }
         }
-        100% {
-          box-shadow:0 -10vh 20vh #0c0;
-          top:200vh;
+        
+        @keyframes wave {
+            0% {
+              box-shadow:0 -10vh 20vh #0c0;
+              top:-100vh;
+            }
+            48%, 52% {
+              box-shadow:0 -10vh 20vh #090;
+            }
+            50% {
+              box-shadow:0 -10vh 20vh #060;
+            }
+            100% {
+              box-shadow:0 -10vh 20vh #0c0;
+              top:200vh;
+            }
         }
-    }
-    
-    @keyframes blink {
-        50% {
-          opacity:0;
+        
+        @keyframes blink {
+            50% {
+              opacity:0;
+            }
         }
-    }
-    </style>
+        </style>
     <div class="screen">
         <p>Socials</p>
     </div>
-             
+</body>
+            
 <head>
 <body>
     <h1>
