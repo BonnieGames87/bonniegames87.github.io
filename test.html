@@ -13,7 +13,7 @@
             background-repeat: no-repeat;
         }
 
-        .container3 {
+       .container3 {
             animation:colorPulse 5s infinite ease-in-out;
             position: absolute;
             top: 38px;
@@ -45,6 +45,7 @@
             text-align: center;
             font-size: 2.7em;
             margin-bottom: 10px;
+            color: #00FF00; /* green color font */
         }
 
         table {
@@ -59,9 +60,10 @@
             border: 1px solid #ccc;
             padding: 5px;
             text-align: center;
+            color: #00FF00; /* green color font */
         }
 
-        .today {
+       .today {
             animation:colorPulse 5s infinite ease-in-out;
             background-color: #2bc405;
         }
@@ -106,6 +108,11 @@
                 calendarBody.innerHTML = '';
 
                 let day = 1;
+                for (let i = 0; i < 6; i++) {
+                    const row = document.createElement('tr');
+                    for (let j = 0; j < 7; j++) {
+                        const cell = document.createElement('td');
+                        if (i === 0 && j <;
                 for (let i = 0; i < 6; i++) {
                     const row = document.createElement('tr');
                     for (let j = 0; j < 7; j++) {
