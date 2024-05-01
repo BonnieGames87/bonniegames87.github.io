@@ -31,6 +31,7 @@
         }
 
         #calendar {
+            animation: colorPulse 5s infinite ease-in-out;
             width: 100%;
             color: lime; /* add this line to set the font color */
             display: flex;
@@ -53,14 +54,65 @@
         }
 
         th, td {
+            animation: colorPulse 5s infinite ease-in-out;
             border: 1px solid #ccc;
             padding: 5px;
             text-align: center;
         }
 
         .today {
+            animation: colorPulse 5s infinite ease-in-out;
             background-color: #2bc405;
         }
+        @keyframes colorPulse {
+            0%, 100% {
+              color:#0c0;
+            }
+            48%, 52% {
+              color:#090;
+            }
+            50% {
+              color:#060;
+            }
+          }
+          
+          @keyframes wave {
+            0% {
+              box-shadow:0 -10vh 20vh #0c0;
+              top:-100vh;
+            }
+            48%, 52% {
+              box-shadow:0 -10vh 20vh #090;
+            }
+            50% {
+              box-shadow:0 -10vh 20vh #060;
+            }
+            100% {
+              box-shadow:0 -10vh 20vh #0c0;
+              top:200vh;
+            }
+          }
+          
+          @keyframes blink {
+            50% {
+              opacity:0;
+            }
+          }
+        
+       .screen a {
+            color: lime;
+            animation:colorPulse 5s infinite ease-in-out;
+          }
+          
+          /* added to move the welcome message to the top center */
+        .screen h1 {
+            position: absolute;
+            font-size: 60px;
+            bottom: 455px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+          }
     </style>
     <title>The Boys Socials</title>
 <body>
