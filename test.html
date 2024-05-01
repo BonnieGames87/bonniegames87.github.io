@@ -1,184 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/a/ACg8ocKuUTcuQjdUS9tc3lsJeP420ttiAVj6Yv9yi8A2_-yCYekXSosP-UrlI9PttR79nnCNbDB1Fl1VLogP2b76a1v6CA=s288-c-no"/>
-    <link rel="stylesheet" href="styles.css">
-    <title>BonnieGames87's Website</title>
-    <style>
-        body {
-          background-color:#000;
-          margin:0;
-          overflow:hidden;
-          padding:0;
-        }
-        
-       .screen {
-            animation:colorPulse 5s infinite ease-in-out;
-            background-image:radial-gradient(#444, #111);
-            box-shadow:0 0 5vmin 1vmin #000 inset;
-            box-sizing:border-box;
-            font-family:'Fira Mono', monospace;
-            font-size:20px;
-            height:100vh;
-            overflow:hidden;
-            padding:10vmin;
-            width:100vw;
-          }
-          
-       .screen:before {
-            animation:wave 10s infinite ease-in-out;
-            content:"";
-            height:20vh;
-            left:0;
-            opacity:.5;
-            position:absolute;
-            right:0;
-            z-index:1;
-          }
-          
-       .screen:after {
-            background-image:linear-gradient(transparent, transparent 3px, #222);
-            background-size:4px 4px;
-            bottom:0;
-            content:"";
-            left:0;
-            pointer-events:none;
-            position:absolute;
-            right:0;
-            top:0;
-            z-index:2;
-          }
-          
-          p:last-child:after {
-            animation:blink 1s infinite;
-            content:"_";
-          }
-          
-          @keyframes colorPulse {
-            0%, 100% {
-              color:#0c0;
-            }
-            48%, 52% {
-              color:#090;
-            }
-            50% {
-              color:#060;
-            }
-          }
-          
-          @keyframes wave {
-            0% {
-              box-shadow:0 -10vh 20vh #0c0;
-              top:-100vh;
-            }
-            48%, 52% {
-              box-shadow:0 -10vh 20vh #090;
-            }
-            50% {
-              box-shadow:0 -10vh 20vh #060;
-            }
-            100% {
-              box-shadow:0 -10vh 20vh #0c0;
-              top:200vh;
-            }
-          }
-          
-          @keyframes blink {
-            50% {
-              opacity:0;
-            }
-          }
-        
-       .screen a {
-            color: lime;
-            animation:colorPulse 5s infinite ease-in-out;
-          }
-          
-          /* added to move the welcome message to the top center */
-        .screen h1 {
-            position: absolute;
-            font-size: 60px;
-            bottom: 455px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-          }
-          
-          /* added to style the links */
-         .links {
-            position: absolute;
-            left: 40px;
-            top: 110px;
-          }
-          
-         .links a {
-            display: block;
-            margin-bottom: 60px;
-            font-size: 60px;
-            text-align: left;
-          }
-        </style>
-    </head>
-    <body>
-        <div class="screen">
-            <h1>BonnieGames87's Website</h1>
-            <div class="links">
-                <a href="socials.html">
-                    <span>Socials</span>
-                </a>
-                <a href="websites.html">
-                    <span>Websites</span>
-                </a>
-                <a href="clock.html">
-                    <span>Clock</span>
-                </a>
-                <a href="test.html">
-                    <span>BTest</span>
-                </a>
-            </div>
-          </div>
-<head>
-    <style>
-       body {
-           margin: 0;
-           padding: 0;
-           overflow: hidden;
-       }
-
-    </style>
+	<title>Pipboy Overlay</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		
+		.pipboyscreen {
+			background-image: url('https://i.ibb.co/KjLLHmy/pipboyoverlayv1.png');
+			background-size: 100 100; /* or cover */
+			background-position: top left; /* or any other valid value */
+			width: 100%; /* set width and height to desired values */
+			height: 100vh;
+		}
+	</style>
 </head>
-     <body>
-         <div class="overlay"></div>
-     </body>
-<head>
-    <style>
-        #version {
-            color: lime;
-            animation:colorPulse 5s infinite ease-in-out;
-            font-size: 20px;
-            position: fixed;
-            bottom: 10px;
-            right: 20px;
-            padding: 10px;
-            background-color: #44444400;
-            border: 1px solid #44444400;
-            border-radius: 10px 0px 0px 0px;
-        }
-    </style>
-</head>
-<div id="version">
-    Version: BETA 
-</div>
 <body>
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-46Y2F0ST2P"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-
-       gtag('config', 'G-46Y2F0ST2P');
-     </script>
+	<div class="pipboyscreen"></div>
 </body>
-</html>
