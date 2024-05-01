@@ -1,31 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/a/ACg8ocKuUTcuQjdUS9tc3lsJeP420ttiAVj6Yv9yi8A2_-yCYekXSosP-UrlI9PttR79nnCNbDB1Fl1VLogP2b76a1v6CA=s288-c-no"/>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/a/ACg8ocKuUTcuQjdUS9tc3lsJeP420ttiAVj6Yv9yi8A2_-yCYekXSosP-UrlI9PttR79nnCNbDB1Fl1VLogP2b76a1v6CA=s288-c-no"/>
-    <link rel="stylesheet" href="styles.css">
-    <title>BonnieGames87's Testing Grounds</title>
     <style>
         body {
-          background-color:#000;
-          margin:0;
-          overflow:hidden;
-          padding:0;
+            font-family: 'Fira Mono', monospace;
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/656/28/1001/simple-background-blue-background-vector-graphics-abstract-wallpaper-preview.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .container3 {
+            position: absolute;
+            top: 38px;
+            left: 550px;
+            width: 650px;
+            height: 534px;
+            padding: 16px;
+            background-color: #444;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #calendar {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #monthYear {
+            text-align: center;
+            font-size: 2.7em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            height: 400px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .today {
+            background-color: #1d21fa;
         }
     </style>
-    <Body>
-        "Clock is next :)"
-    </Body>
+    <title>The Boys Socials</title>
+    <body>
+    <style>
+        body {
+         background-color: transparent;
+         margin:0;
+         overflow:hidden;
+         padding:0;
+        }
+        .screen {
+            animation:colorPulse 5s infinite ease-in-out;
+            box-sizing:border-box;
+            font-family:'Fira Mono', monospace;
+            font-size:30px;
+            height: 10px; /* set the height to 100vh to take up the full screen */
+            width: 10px; /* set the width to 100vw to take up the full screen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* add this to make the text positionable */
+            top: 140px;
+            right: 130px; 
+        }
+        .screen:before {
+            content:"";
+            height:20vh;
+            left:0;
+            opacity:.5;
+            position:absolute;
+            right:0;
+            z-index:1;
+        }
+        
+        .screen:after {
+            bottom:0;
+            content:"";
+            left:0;
+            pointer-events:none;
+            position:absolute;
+            right:0;
+            top:0;
+            z-index:2;
+        }
+        
+        p:last-child:after {
+            animation:blink 1s infinite;
+            content:"_";
+        }
+        
+        @keyframes colorPulse {
+            0%, 100% {
+              color:#0c0;
+            }
+            48%, 52% {
+              color:#090;
+            }
+            50% {
+              color:#060;
+            }
+        }
+        
+        @keyframes wave {
+            0% {
+              box-shadow:0 -10vh 20vh #0c0;
+              top:-100vh;
+            }
+            48%, 52% {
+              box-shadow:0 -10vh 20vh #090;
+            }
+            50% {
+              box-shadow:0 -10vh 20vh #060;
+            }
+            100% {
+              box-shadow:0 -10vh 20vh #0c0;
+              top:200vh;
+            }
+        }
+        
+        @keyframes blink {
+            50% {
+              opacity:0;
+            }
+        }
+        </style>
+</body>
+<body>
+    <div class="container3">
+        <div id="calendar">
+            <div id="monthYear"></div>
+            <table id="calendarTable">
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody id="calendarBody">
+                    <!-- Calendar days will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const monthYear = document.getElementById('monthYear');
+            const calendarBody = document.getElementById('calendarBody');
+
+            function updateCalendar() {
+                const now = new Date();
+                const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                const month = now.getMonth();
+                const year = now.getFullYear();
+                const firstDayOfMonth = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+                monthYear.textContent = `${monthNames[month]} ${year}`;
+                calendarBody.innerHTML = '';
+
+                let day = 1;
+                for (let i = 0; i < 6; i++) {
+                    const row = document.createElement('tr');
+                    for (let j = 0; j < 7; j++) {
+                        const cell = document.createElement('td');
+                        if (i === 0 && j < firstDayOfMonth) {
+                            // Empty cells before the first day of the month
+                            cell.textContent = '';
+                        } else if (day > daysInMonth) {
+                            // Empty cells after the last day of the month
+                            cell.textContent = '';
+                        } else {
+                            cell.textContent = day;
+                            if (day === now.getDate() && month === now.getMonth() && year === now.getFullYear()) {
+                                cell.classList.add('today');
+                            }
+                            day++;
+                        }
+                        row.appendChild(cell);
+                    }
+                    calendarBody.appendChild(row);
+                }
+            }
+
+            updateCalendar();
+        });
+    </script>
+</body>
+
+<style>
+    .home-container {
+          position: relative;
+          bottom: 182.2px; 
+          right: 274px;
+      }
+     .buttontopright {
+          position: absolute;
+          padding: 10px;
+          border-radius: 50%;
+          top: -9.5px;
+          left: -49.5px;
+          width: 75%; /* set width to 100% to stretch the element */
+          background-color: rgba(255, 0, 0, 0);
+      }
+     .text-color {
+          color: #2c2c2a; /* change the text color to hot pink */
+      }
+  </style>
+ 
+  <div class="home-container">
+      <span class="text-color">home</span>
+      <button class="buttontopright" onclick="window.location.href='index.html'"></button>
+  </div>
 <head>
     <style>
         #version {
-            color: lime;
-            animation:colorPulse 5s infinite ease-in-out;
-            font-size: 20px;
             position: fixed;
-            bottom: 10px;
-            right: 20px;
+            bottom: 171px;
+            right: 600px;
             padding: 10px;
             background-color: #44444400;
             border: 1px solid #44444400;
@@ -33,7 +245,9 @@
         }
     </style>
 </head>
-<div id="version">
-    Version: BETA 
-</div>
+<body>
+    <div id="version">
+        Version: BETA
+    </div>
+</body> 
 </html>
