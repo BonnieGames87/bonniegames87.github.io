@@ -91,6 +91,40 @@
           animation: colorPulse 5s infinite ease-in-out;
           background-color: #0c0;
         }
+        @keyframes colorPulse {
+            0%, 100% {
+              color:#0c0;
+            }
+            48%, 52% {
+              color:#090;
+            }
+            50% {
+              color:#060;
+            }
+          }
+          
+          @keyframes wave {
+            0% {
+              box-shadow:0 -10vh 20vh #0c0;
+              top:-100vh;
+            }
+            48%, 52% {
+              box-shadow:0 -10vh 20vh #090;
+            }
+            50% {
+              box-shadow:0 -10vh 20vh #060;
+            }
+            100% {
+              box-shadow:0 -10vh 20vh #0c0;
+              top:200vh;
+            }
+          }
+          
+          @keyframes blink {
+            50% {
+              opacity:0;
+            }
+          }
     </style>
     <title>The Boys Socials</title>
 <body>
