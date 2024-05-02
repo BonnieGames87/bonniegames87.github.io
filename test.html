@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/a/ACg8ocKuUTcuQjdUS9tc3lsJeP420ttiAVj6Yv9yi8A2_-yCYekXSosP-UrlI9PttR79nnCNbDB1Fl1VLogP2b76a1v6CA=s288-c-no"/>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallout Calendar</title>
+    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/a/ACg8ocKuUTcuQjdUS9tc3lsJeP420ttiAVj6Yv9yi8A2_-yCYekXSosP-UrlI9PttR79nnCNbDB1Fl1VLogP2b76a1v6CA=s288-c-no"/>
     <style>
         body {
             font-family: 'Fira Mono', monospace;
@@ -13,7 +14,7 @@
             background-repeat: no-repeat;
         }
 
-        .container3 {
+       .container3 {
             position: absolute;
             top: 38px;
             left: 300px;
@@ -73,7 +74,7 @@
           font-size: 1.5em; 
         }
 
-        .today {
+       .today {
           animation: colorPulse 5s infinite ease-in-out;
           background-color: #0c0;
         }
@@ -111,8 +112,36 @@
               opacity:0;
             }
           }
+        
+       .home-container {
+            position: relative;
+            bottom: 182.2px; 
+            right: 274px;
+        }
+       .buttontopright {
+            position: absolute;
+            padding: 10px;
+            border-radius: 50%;
+            top: -9.5px;
+            left: -49.5px;
+            width: 75%; 
+            color: #ffff00; /* #2c2c2a orginal color */
+        }
+       .text-color {
+            color: #ffff00; 
+        }
+        
+        #version {
+            position: fixed;
+            bottom: 171px;
+            right: 600px;
+            padding: 10px;
+            background-color: #44444400;
+            border: 1px solid #44444400;
+            border-radius: 10px 0px 0px 0px;
+        }
     </style>
-    <title>Fallout Calendar</title>
+</head>
 <body>
     <div class="container3">
         <div id="calendar">
@@ -134,6 +163,13 @@
                 </tbody>
             </table>
         </div>
+    </div>
+    <div class="home-container">
+        <span class="text-color">home</span>
+        <button class="buttontopright" onclick="window.location.href='index.html'"></button>
+    </div>
+    <div id="version">
+        Version: BETA
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -179,49 +215,4 @@
         });
     </script>
 </body>
-<head>
-    <style>
-      .home-container {
-        position: relative;
-        bottom: 182.2px; 
-        right: 274px;
-      }
-      .buttontopright {
-        position: absolute;
-        padding: 10px;
-        border-radius: 50%;
-        top: -9.5px;
-        left: -49.5px;
-        width: 75%; 
-        color: #ffff00; /* #2c2c2a orginal color */
-      }
-      .text-color {
-        color: #ffff00; 
-      }
-    </style>
-  </head>
-  <body>
-    <div class="home-container">
-      <span class="text-color">home</span>
-      <button class="buttontopright" onclick="window.location.href='index.html'"></button>
-    </div>
-  </body>  
-<head>
-    <style>
-        #version {
-            position: fixed;
-            bottom: 171px;
-            right: 600px;
-            padding: 10px;
-            background-color: #44444400;
-            border: 1px solid #44444400;
-            border-radius: 10px 0px 0px 0px;
-        }
-    </style>
-</head>
-<body>
-    <div id="version">
-        Version: BETA
-    </div>
-</body> 
 </html>
