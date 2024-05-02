@@ -31,74 +31,42 @@
         }
 
         #calendar {
-            animation: colorPulse 5s infinite ease-in-out;
-            width: 100%;
-            color: lime; /* add this line to set the font color */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+          animation: colorPulse 5s infinite ease-in-out;
+          width: 80%; /* reduced width */
+          color: lime;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          font-size: 0.8em; /* reduced font size */
         }
-
+        
         #monthYear {
           animation: colorPulse 5s infinite ease-in-out;
           text-align: center;
-          font-size: 2.7em;
-          margin-bottom: 10px;
-          color: 0c0; /* add this line to set the font color */
+          font-size: 1.5em; /* reduced font size */
+          margin-bottom: 5px; /* reduced margin */
+          color: #0c0;
         }
-
+        
         table {
-            animation: colorPulse 5s infinite ease-in-out;
-            width: 50%;
-            height: 200px;
-            border-collapse: collapse;
+          animation: colorPulse 5s infinite ease-in-out;
+          width: 80%; /* reduced width */
+          height: 150px; /* reduced height */
+          border-collapse: collapse;
         }
-
+        
         th, td {
-            animation: colorPulse 5s infinite ease-in-out;
-            border: 1px solid #0c0;
-            padding: 5px;
-            text-align: center;
+          animation: colorPulse 5s infinite ease-in-out;
+          border: 1px solid #0c0;
+          padding: 3px; /* reduced padding */
+          text-align: center;
+          font-size: 0.8em; /* reduced font size */
         }
-
+        
         .today {
-            animation: colorPulse 5s infinite ease-in-out;
-            background-color: #0c0;
+          animation: colorPulse 5s infinite ease-in-out;
+          background-color: #0c0;
         }
-        @keyframes colorPulse {
-            0%, 100% {
-              color:#0c0;
-            }
-            48%, 52% {
-              color:#090;
-            }
-            50% {
-              color:#060;
-            }
-          }
-          
-          @keyframes wave {
-            0% {
-              box-shadow:0 -10vh 20vh #0c0;
-              top:-100vh;
-            }
-            48%, 52% {
-              box-shadow:0 -10vh 20vh #090;
-            }
-            50% {
-              box-shadow:0 -10vh 20vh #060;
-            }
-            100% {
-              box-shadow:0 -10vh 20vh #0c0;
-              top:200vh;
-            }
-          }
-          
-          @keyframes blink {
-            50% {
-              opacity:0;
-            }
-          }
     </style>
     <title>The Boys Socials</title>
 <body>
