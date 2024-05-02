@@ -196,28 +196,36 @@
 
 <style>
     .home-container {
-          position: relative;
-          bottom: 182.2px; 
-          right: 274px;
-      }
-     .buttontopright {
-          position: absolute;
-          padding: 10px;
-          border-radius: 50%;
-          top: -9.5px;
-          left: -49.5px;
-          width: 75%; 
-          background-color: rgba(255, 0, 0, 0);
-      }
-     .text-color {
-          color: #2c2c2a; 
-      }
-  </style>
- 
-  <div class="home-container">
-      <span class="text-color">home</span>
-      <button class="buttontopright" onclick="window.location.href='index.html'"></button>
-  </div>
+       position: relative;
+     }
+    .buttontopright {
+       position: absolute;
+       top: 0;
+       right: 0;
+       padding: 10px;
+       border-radius: 50%;
+       background-color: #00ff00; /* changed to green */
+       border: none; /* remove border */
+       outline: none; /* remove outline */
+       width: 75%; /* added width */
+       cursor: pointer; /* added cursor */
+     }
+    .buttontopright::-moz-focus-inner { /* remove outline in Firefox */
+       border: 0;
+       padding: 0;
+     }
+    .buttontopright:hover,.buttontopright:focus { /* remove outline on hover and focus */
+       outline: none;
+     }
+    .text-color {
+       color: #2c2c2a; 
+     }
+   </style>
+   
+   <div class="home-container">
+     <span class="text-color">home</span>
+     <button class="buttontopright" onclick="window.location.href='index.html'"></button>
+   </div>
 <head>
     <style>
         #version {
