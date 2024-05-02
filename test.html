@@ -30,21 +30,6 @@
             background-position: center; 
         }
 
-        homebutton {
-            display: inline-block; 
-            padding: 10px; 
-            background-color: #555555;
-            color: #fff;
-            border: none;
-            border-radius: 2px;
-            cursor: pointer;
-            max-width: 180%; 
-        }
-
-        homebutton:hover {
-            background-color: #4e4e4e;
-        }
-
         #calendar {
             animation: colorPulse 5s infinite ease-in-out;
             width: 80%; 
@@ -193,39 +178,33 @@
         });
     </script>
 </body>
-
-<style>
-    .home-container {
-       position: relative;
-     }
-    .buttontopright {
-       position: absolute;
-       top: 0;
-       right: 0;
-       padding: 10px;
-       border-radius: 50%;
-       background-color: #00ff00; /* changed to green */
-       border: none; /* remove border */
-       outline: none; /* remove outline */
-       width: 75%; /* added width */
-       cursor: pointer; /* added cursor */
-     }
-    .buttontopright::-moz-focus-inner { /* remove outline in Firefox */
-       border: 0;
-       padding: 0;
-     }
-    .buttontopright:hover,.buttontopright:focus { /* remove outline on hover and focus */
-       outline: none;
-     }
-    .text-color {
-       color: #2c2c2a; 
-     }
-   </style>
-   
-   <div class="home-container">
-     <span class="text-color">home</span>
-     <button class="buttontopright" onclick="window.location.href='index.html'"></button>
-   </div>
+<head>
+    <style>
+      .home-container {
+        position: relative;
+        bottom: 182.2px; 
+        right: 274px;
+      }
+      .buttontopright {
+        position: absolute;
+        padding: 10px;
+        border-radius: 50%;
+        top: -9.5px;
+        left: -49.5px;
+        width: 75%; 
+        opacity: 0; /* Hiding the button */
+      }
+      .text-color {
+        color: #2c2c2a; 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="home-container">
+      <span class="text-color">home</span>
+      <button class="buttontopright" onclick="window.location.href='index.html'"></button>
+    </div>
+  </body>  
 <head>
     <style>
         #version {
