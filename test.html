@@ -32,22 +32,6 @@
             background-position: center; 
         }
 
-        button {
-            animation: colorPulse 5s infinite ease-in-out;
-            display: inline-block; 
-            padding: 15px;
-            background-color: #1d21fa00;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            max-width: 180%; 
-        }
-
-        button:hover {
-            background-color: #1517a100;
-        }
-
         #calendar {
             animation: colorPulse 5s infinite ease-in-out;
             width: 80%; 
@@ -129,15 +113,50 @@
             }
           }
         
+        button {
+            animation: colorPulse 5s infinite ease-in-out;
+            display: inline-block; 
+            padding: 15px;
+            background-color: #1d21fa00;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            max-width: 180%; 
+        }
+
+        button:hover {
+            background-color: #1517a100;
+        }  
         #version {
             position: fixed;
             bottom: 171px;
-            right: 575px;
+            right: 580px;
             padding: 10px;
             background-color: #44444400;
             border: 1px solid #44444400;
             border-radius: 10px 0px 0px 0px;
         }
+
+        .home-container {
+          position: relative;
+          bottom: 182.2px; 
+          right: 274px;
+        }
+
+        .buttontopright {
+             position: absolute;
+             padding: 10px;
+             border-radius: 50%;
+             top: -9.5px;
+             left: -49.5px;
+             width: 75%; /* set width to 100% to stretch the element */
+             background-color: rgba(255, 0, 0, 0);
+         }
+
+        .text-color {
+             color: #2c2c2a; /* change the text color to hot pink */
+         }
     </style>
 </head>
 <body>
@@ -162,34 +181,10 @@
             </table>
         </div>
     </div>
-    <style>
-        .home-container {
-              position: relative;
-              top: 500px; 
-              right: 500px;
-          }
-         .buttontopright {
-              position: absolute;
-              padding: 10px;
-              border-radius: 50%;
-              top: -9.5px;
-              left: -49.5px;
-              width: 75%; /* set width to 100% to stretch the element */
-              background-color: rgba(255, 0, 0, 0);
-          }
-         .text-color {
-              color: #2c2c2a; /* change the text color to hot pink */
-          }
-      </style>
-     
-      <div class="home-container">
-          <span class="text-color">home</span>
-          <button class="buttontopright" onclick="window.location.href='index.html'"></button>
-      </div>
     <div class="home-container">
-        <span class="text-color">home</span>
-        <button class="buttontopright" onclick="window.location.href='index.html'"></button>
-    </div>
+      <span class="text-color">home</span>
+      <button class="buttontopright" onclick="window.location.href='index.html'"></button>
+  </div>
     <div id="version">
         Version: BETA
     </div>
