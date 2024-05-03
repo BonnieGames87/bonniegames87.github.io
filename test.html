@@ -32,6 +32,22 @@
             background-position: center; 
         }
 
+        button {
+            animation: colorPulse 5s infinite ease-in-out;
+            display: inline-block; 
+            padding: 15px;
+            background-color: #1d21fa00;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            max-width: 180%; 
+        }
+
+        button:hover {
+            background-color: #1517a100;
+        }
+
         #calendar {
             animation: colorPulse 5s infinite ease-in-out;
             width: 80%; 
@@ -113,25 +129,10 @@
             }
           }
         
-        button {
-            animation: colorPulse 5s infinite ease-in-out;
-            display: inline-block; 
-            padding: 15px;
-            background-color: #1d21fa00;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            max-width: 180%; 
-        }
-
-        button:hover {
-            background-color: #1517a100;
-        }  
         #version {
             position: fixed;
             bottom: 171px;
-            right: 580px;
+            right: 575px;
             padding: 10px;
             background-color: #44444400;
             border: 1px solid #44444400;
