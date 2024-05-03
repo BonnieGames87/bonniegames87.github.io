@@ -137,26 +137,6 @@
             border: 1px solid #44444400;
             border-radius: 10px 0px 0px 0px;
         }
-
-        .home-container {
-          position: relative;
-          bottom: 182.2px; 
-          right: 274px;
-        }
-
-        .buttontopright {
-             position: absolute;
-             padding: 10px;
-             border-radius: 50%;
-             top: -9.5px;
-             left: -49.5px;
-             width: 75%; /* set width to 100% to stretch the element */
-             background-color: rgba(255, 0, 0, 0);
-         }
-
-        .text-color {
-             color: #2c2c2a; /* change the text color to hot pink */
-         }
     </style>
 </head>
 <body>
@@ -181,6 +161,30 @@
             </table>
         </div>
     </div>
+    <style>
+        .home-container {
+              position: relative;
+              bottom: 182.2px; 
+              right: 274px;
+          }
+         .buttontopright {
+              position: absolute;
+              padding: 10px;
+              border-radius: 50%;
+              top: -9.5px;
+              left: -49.5px;
+              width: 75%; /* set width to 100% to stretch the element */
+              background-color: rgba(255, 0, 0, 0);
+          }
+         .text-color {
+              color: #2c2c2a; /* change the text color to hot pink */
+          }
+      </style>
+     
+      <div class="home-container">
+          <span class="text-color">home</span>
+          <button class="buttontopright" onclick="window.location.href='index.html'"></button>
+      </div>
     <div class="home-container">
         <span class="text-color">home</span>
         <button class="buttontopright" onclick="window.location.href='index.html'"></button>
