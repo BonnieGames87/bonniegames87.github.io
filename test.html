@@ -56,6 +56,11 @@
           bottom: 1px; /* initial top position */
           left: 450px; /* initial right position */
         }
+        
+        p:last-child:after {
+            animation:blink 1s infinite;
+            content:"_";
+        }
 
         table {
           animation: colorPulse 5s infinite ease-in-out;
