@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Custom MP3 Player</title>
+<title>Custom HTML Audio Player</title>
 <style>
     body {
         margin: 0;
@@ -21,19 +21,102 @@
         border-radius: 10px;
     }
 
-    .mp3-player {
-        width: 400px; /* Set the width of the player */
-        height: 300px; /* Set the height of the player */
-        /* Style your MP3 player here */
+    #audio-player {
+        width: 400px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    audio {
+        display: none;
+    }
+
+    #song-name {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    #progress-bar {
+        width: 100%;
+        background-color: #ccc;
+        height: 5px;
+        position: relative;
+    }
+
+    #progress {
+        width: 0%;
+        height: 100%;
+        background-color: #4caf50;
+    }
+
+    button {
+        margin: 5px;
     }
 </style>
 </head>
 <body>
 <div class="container">
-    <div class="mp3-player">
-        <!-- Your MP3 player content here -->
-        <!-- For example, buttons, progress bar, etc. -->
+    <div id="audio-player">
+        <div id="song-name"></div>
+        <div id="progress-bar">
+            <div id="progress"></div>
+        </div>
+        <button onclick="previousSong()">Previous</button>
+        <button onclick="togglePlayPause()">Play/Pause</button>
+        <button onclick="nextSong()">Next</button>
     </div>
 </div>
+
+<script>
+    var audioPlayer = new Audio();
+    var songNameDisplay = document.getElementById('song-name');
+    var progressBar = document.getElementById('progress');
+    var currentSongIndex = 0;
+    var songs = [
+        { name: "Song 1", src: "song1.mp3", duration: "3:24" },
+        { name: "Song 2", src: "song2.mp3", duration: "4:10" },
+        { name: "Song 3", src: "song3.mp3", duration: "2:56" }
+    ];
+
+    function loadSong(index) {
+        var song = songs[index];
+        audioPlayer.src = song.src;
+        songNameDisplay.textContent = song.name;
+        progressBar.style.width = '0%';
+    }
+
+    function togglePlayPause() {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+        } else {
+            audioPlayer.pause();
+        }
+    }
+
+    function previousSong() {
+        currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+        loadSong(currentSongIndex);
+        audioPlayer.play();
+    }
+
+    function nextSong() {
+        currentSongIndex = (currentSongIndex + 1) % songs.length;
+        loadSong(currentSongIndex);
+        audioPlayer.play();
+    }
+
+    audioPlayer.addEventListener('timeupdate', function() {
+        var currentTime = audioPlayer.currentTime;
+        var duration = audioPlayer.duration;
+        var progress = (currentTime / duration) * 100;
+        progressBar.style.width = progress + '%';
+    });
+
+    audioPlayer.addEventListener('ended', function() {
+        nextSong();
+    });
+
+    loadSong(currentSongIndex);
+</script>
 </body>
 </html>
