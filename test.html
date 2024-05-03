@@ -56,6 +56,11 @@
           left: 450px; /* initial right position */
         }
 
+        #calendar:after {
+            animation: blink 1s infinite;
+            content: "_";
+        }
+
         table {
           animation: colorPulse 5s infinite ease-in-out;
           width: 270px; /* Change width here */
@@ -78,6 +83,7 @@
           animation: colorPulse 5s infinite ease-in-out;
           background-color: #0c0;
         }
+    
         @keyframes colorPulse {
             0%, 100% {
               color:#0c0;
