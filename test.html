@@ -113,7 +113,7 @@
             }
           }
         
-          button {
+        button {
             animation: colorPulse 5s infinite ease-in-out;
             display: inline-block; 
             padding: 15px;
@@ -127,41 +127,26 @@
 
         button:hover {
             background-color: #1517a100;
-        }
+        }  
 
-        homebutton {
-            display: inline-block; 
-            padding: 10px; 
-            background-color: #555;
-            color: #fff;
-            border: none;
-            border-radius: 2px;
+       .home-container {
+            position: center;
+            top: 0px; /* 182.2px */
+            right: 500px; /* 274px */
+        }
+       .buttontopright {
+            position: center;
+            padding: 10px;
+            border-radius: 10%;
+            top: -9.5px; /* -9.5px */
+            left: -49.5px; /* -49.5px */
+            width: 75%; 
             cursor: pointer;
-            max-width: 180%;
+            color: #ffff00; /* #2c2c2a orginal color */
         }
-
-        homebutton:hover {
-            background-color: #4e4e4e;
+       .text-color {
+            color: #ffff00; 
         }
-
-
-        .home-container {
-          position: relative;
-          bottom: 182.2px; 
-          right: 274px;
-      }
-     .buttontopright {
-          position: absolute;
-          padding: 10px;
-          border-radius: 50%;
-          top: -9.5px;
-          left: -49.5px;
-          width: 75%; /* set width to 100% to stretch the element */
-          background-color: rgba(255, 0, 0, 0);
-      }
-     .text-color {
-          color: #2c2c2a; /* change the text color to hot pink */
-      }
         
         #version {
             position: fixed;
