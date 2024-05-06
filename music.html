@@ -1,129 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fallout Music Player</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(to bottom, #444, #000); /* Black to Dark Grey Gradient */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    .container {
-        background-color: rgba(255, 0, 0, 0.5); /* Transparent Red Background */
-        padding: 20px;
-        border-radius: 10px;
-    }
-
-    #audio-player {
-        width: 400px;
-        margin: 0 auto;
-        text-align: center;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MP3 Player</title>
+  <style>
+    #audio-controls {
+      display: flex;
+      align-items: center;
     }
 
     audio {
-        display: none;
+      margin: 10px;
     }
-
-    #song-name {
-        font-size: 24px; /* Increased font size */
-        margin-bottom: 20px; /* Increased margin */
-        color: #fff; /* White text color */
-    }
-
-    #progress-bar {
-        width: 100%;
-        background-color: #ccc;
-        height: 5px;
-        position: relative;
-    }
-
-    #progress {
-        width: 0%;
-        height: 100%;
-        background-color: #4caf50;
-    }
-
-    button {
-        margin: 5px;
-        background-color: #333; /* Grey background color */
-        color: #fff; /* White text color */
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-</style>
+  </style>
 </head>
 <body>
-<div class="container">
-    <div id="audio-player">
-        <div id="song-name"></div>
-        <div id="progress-bar">
-            <div id="progress"></div>
-        </div>
-        <button onclick="previousSong()">Previous</button>
-        <button onclick="togglePlayPause()">Play/Pause</button>
-        <button onclick="nextSong()">Next</button>
-    </div>
-</div>
+  <div id="audio-controls">
+    <button id="prevButton">Previous</button>
+    <button id="playPauseButton">Play</button>
+    <button id="nextButton">Next</button>
+    <span id="fileName"></span>
+  </div>
+  <audio id="audioPlayer" controls>
+    <source src="Stay-Oliver-Tray-_-_RFM_NCM.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-<script>
-    var audioPlayer = new Audio();
-    var songNameDisplay = document.getElementById('song-name');
-    var progressBar = document.getElementById('progress');
-    var currentSongIndex = 0;
-    var songs = [
-        { name: "Stay-Oliver Tray", src: "Stay-Oliver-Tray-_-_RFM_NCM.mp3", duration: "3:39" },
-        { name: "Song 2", src: "song2.mp3", duration: "4:10" },
-        { name: "Song 3", src: "song3.mp3", duration: "2:56" }
-    ];
+  <script>
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playPauseButton = document.getElementById('playPauseButton');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    const fileNameSpan = document.getElementById('fileName');
 
-    function loadSong(index) {
-        var song = songs[index];
-        audioPlayer.src = song.src;
-        songNameDisplay.textContent = song.name;
-        progressBar.style.width = '0%';
-    }
+    let currentTrackIndex = 0;
+    const tracks = ['audio1.mp3', 'audio2.mp3', 'audio3.mp3']; // Add your mp3 files here
+    audioPlayer.src = tracks[currentTrackIndex];
+    fileNameSpan.textContent = tracks[currentTrackIndex];
 
-    function togglePlayPause() {
-        if (audioPlayer.paused) {
-            audioPlayer.play();
-        } else {
-            audioPlayer.pause();
-        }
-    }
-
-    function previousSong() {
-        currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-        loadSong(currentSongIndex);
+    playPauseButton.addEventListener('click', function() {
+      if (audioPlayer.paused) {
         audioPlayer.play();
-    }
-
-    function nextSong() {
-        currentSongIndex = (currentSongIndex + 1) % songs.length;
-        loadSong(currentSongIndex);
-        audioPlayer.play();
-    }
-
-    audioPlayer.addEventListener('timeupdate', function() {
-        var currentTime = audioPlayer.currentTime;
-        var duration = audioPlayer.duration;
-        var progress = (currentTime / duration) * 100;
-        progressBar.style.width = progress + '%';
+        playPauseButton.textContent = 'Pause';
+      } else {
+        audioPlayer.pause();
+        playPauseButton.textContent = 'Play';
+      }
     });
 
-    audioPlayer.addEventListener('ended', function() {
-        nextSong();
+    prevButton.addEventListener('click', function() {
+      currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+      audioPlayer.src = tracks[currentTrackIndex];
+      fileNameSpan.textContent = tracks[currentTrackIndex];
+      audioPlayer.play();
     });
 
-    loadSong(currentSongIndex);
-</script>
+    nextButton.addEventListener('click', function() {
+      currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+      audioPlayer.src = tracks[currentTrackIndex];
+      fileNameSpan.textContent = tracks[currentTrackIndex];
+      audioPlayer.play();
+    });
+  </script>
 </body>
 </html>
