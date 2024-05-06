@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MP3 Player</title>
+  <title>Fallout Mp3 Player</title>
   <style>
     body, html {
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      background-image: url('https://png.pngtree.com/background/20230611/original/pngtree-deserted-city-in-the-video-game-fallout-picture-image_3146042.jpg');
+      background-size: cover;
+      background-position: center;
     }
 
     .mp3-player-container {
@@ -17,6 +20,7 @@
       padding: 20px;
       background-color: #ccc;
       text-align: center;
+      font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
     }
 
     .controls button {
@@ -26,6 +30,7 @@
       border: none;
       background-color: #f0f0f0;
       cursor: pointer;
+      animation: colorPulse 5s infinite ease-in-out; /* Added colorPulse animation */
     }
 
     .progress-bar {
@@ -46,6 +51,18 @@
     /* Hide default audio controls */
     #audio-player {
       display: none;
+    }
+
+    @keyframes colorPulse {
+      0%, 100% {
+        color:#0c0;
+      }
+      48%, 52% {
+        color:#090;
+      }
+      50% {
+        color:#060;
+      }
     }
   </style>
 </head>
