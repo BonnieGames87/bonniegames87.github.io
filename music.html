@@ -166,12 +166,10 @@
       loadSong(currentSongIndex);
     }
 
-    // Function to load the selected song
     function loadSong(index) {
-      const song = songs[index];
-      audioPlayer.src = song.source;
-      document.getElementById('audio-title').textContent = song.title;
-      audioPlayer.play();
+      audioPlayers.forEach(player => player.pause());
+      audioTitle.textContent = songs[index].title;
+      audioPlayers[index].play();
       playPauseBtn.textContent = 'Pause';
       isPlaying = true;
     }
@@ -183,53 +181,54 @@
   </script>
 </body>
 <style> 
-button {
-            animation: colorPulse 5s infinite ease-in-out;
-            display: inline-block; 
-            padding: 15px;
-            background-color: #1d21fa00;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            max-width: 180%; 
+        button {
+          animation: colorPulse 5s infinite ease-in-out;
+          display: inline-block; 
+          padding: 15px;
+          background-color: #1d21fa00;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          max-width: 180%; 
         }
 
         button:hover {
-            background-color: #1517a100;
+          background-color: #1517a100;
         }  
-#version {
-  font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
-  position: fixed;
-  bottom: 171px;
-  right: 580px;
-  padding: 10px;
-  background-color: #44444400;
-  border: 1px solid #44444400;
-  border-radius: 10px 0px 0px 0px;
-}
 
-.home-container {
-  font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
-  position: absolute; /* Change from relative to absolute */
-  bottom: 182px; /* Adjust to your desired top position */
-  right: 867px; /* Adjust to your desired right position */
-  }
+        #version {
+          font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
+          position: fixed;
+          bottom: 171px;
+          right: 580px;
+          padding: 10px;
+          background-color: #44444400;
+          border: 1px solid #44444400;
+          border-radius: 10px 0px 0px 0px;
+        }
 
-.buttontopright {
-   font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
-   position: absolute;
-   padding: 10px;
-   border-radius: 50%;
-   top: -9.5px;
-   left: -49.5px;
-   width: 75%; /* set width to 100% to stretch the element */
-   background-color: rgba(255, 0, 0, 0);
-}
+        .home-container {
+          font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
+          position: absolute; /* Change from relative to absolute */
+          bottom: 182px; /* Adjust to your desired top position */
+          right: 867px; /* Adjust to your desired right position */
+          }
+        
+        .buttontopright {
+          font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
+          position: absolute;
+          padding: 10px;
+          border-radius: 50%;
+          top: -9.5px;
+          left: -49.5px;
+          width: 75%; /* set width to 100% to stretch the element */
+          background-color: rgba(255, 0, 0, 0);
+        }
 
-.text-color {
-   color: #2c2c2a; /* change the text color to hot pink */
-}
+        .text-color {
+          color: #2c2c2a; /* change the text color to hot pink */
+        }
 </style>
 <div class="home-container">
   <span class="text-color">home</span>
