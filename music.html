@@ -105,9 +105,14 @@
 <body>
 <div class="container">
   <div class="mp3-player-container">
-    <h2 id="audio-title">Now Playing: Luke Combs - Where the Wild Things Are</h2>
+    <h2 id="audio-title">Luke Combs - Where the Wild Things Are</h2>
     <audio id="audio-player" preload="auto">
       <source src="Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <h2 id="audio-title">Luke Combs - Growin' Up and Gettin' Old</h2>
+    <audio id="audio-player" preload="auto">
+      <source src="Luke Combs - Growin' Up and Gettin' Old.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
     <div class="controls">
@@ -144,15 +149,34 @@
       }
       isPlaying = !isPlaying;
     }
+    const songs = [
+      { title: "Luke Combs - Where the Wild Things Are", source: "Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" },
+      { title: "Second Song Title", source: "path_to_your_second_song.mp3" },
+      // Add more songs following the same pattern
+    ];
+
+    let currentSongIndex = 0; // Initialize the current song index
 
     function playPrevious() {
-      // You can implement the logic to play the previous track here
+      currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+      loadSong(currentSongIndex);
     }
 
     function playNext() {
-      // You can implement the logic to play the next track here
+      currentSongIndex = (currentSongIndex + 1) % songs.length;
+      loadSong(currentSongIndex);
     }
 
+    // Function to load the selected song
+    function loadSong(index) {
+      const song = songs[index];
+      audioPlayer.src = song.source;
+      document.getElementById('audio-title').textContent = song.title;
+      audioPlayer.play();
+      playPauseBtn.textContent = 'Pause';
+      isPlaying = true;
+    }
+    
     function updateProgress() {
       const percentPlayed = (audioPlayer.currentTime / audioPlayer.duration) * 100;
       progress.style.width = percentPlayed + '%';
