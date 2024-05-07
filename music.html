@@ -84,10 +84,11 @@
 
     #progress-time {
       position: absolute;
-      top: 0;
+      top: 50%;
+      transform: translateY(-50%);
       color: #fff;
       font-size: 12px;
-      left: 0;
+      left: 50%;
       transform: translateX(-50%);
     }
 
@@ -205,9 +206,6 @@
       progress.style.width = percentPlayed + '%';
       const currentTime = formatTime(audioPlayer.currentTime);
       progressTime.textContent = currentTime;
-      const progressBarWidth = progressBar.offsetWidth;
-      const timeLeft = progressBarWidth * (audioPlayer.currentTime / audioPlayer.duration);
-      progressTime.style.left = `${timeLeft}px`;
     }
   
     function toggleShuffle() {
