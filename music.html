@@ -18,47 +18,51 @@
     }
 
     .mp3-player-container {
-            position: absolute;
-            top: 38px;
-            left: 300px;
-            width: 750px;
-            height: 534px;
-            padding: 16px;
-            background-color: #44444400;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-            display: flex;
-            text-align: center;
-            font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
-            flex-direction: column;
-            justify-content: space-between;
-            background-image: url('https://i.ibb.co/y8n5Xwm/image-10.png');
-            background-size: cover; 
-            background-position: center; 
-        }
+      animation: colorPulse 5s infinite ease-in-out;
+      position: absolute;
+      top: 38px;
+      left: 300px;
+      width: 750px;
+      height: 534px;
+      padding: 16px;
+      background-color: #44444400;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+      display: flex;
+      text-align: center;
+      font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
+      flex-direction: column;
+      justify-content: space-between;
+      background-image: url('https://i.ibb.co/y8n5Xwm/image-10.png');
+      background-size: cover; 
+      background-position: center; 
+    }
 
     .controls button {
       margin: 5px;
       padding: 10px 20px;
       font-size: 16px;
       border: none;
-      background-color: #f0f0f0;
+      background-color: #202020;
       cursor: pointer;
       animation: colorPulse 5s infinite ease-in-out; /* Added colorPulse animation */
     }
 
     .progress-bar {
+      animation: colorPulse 5s infinite ease-in-out;
       background-color: #fff;
       height: 10px;
       margin-top: 10px;
     }
 
     #progress {
+      animation: colorPulse 5s infinite ease-in-out;
       height: 100%;
-      background-color: #007bff;
+      background-color: #0c0;
     }
 
     #audio-title {
+      animation: colorPulse 5s infinite ease-in-out;
       margin-bottom: 10px;
     }
 
