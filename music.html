@@ -50,6 +50,7 @@
     }
 
     .controls button {
+      font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
       margin: 5px;
       padding: 10px 20px;
       font-size: 16px;
@@ -58,6 +59,10 @@
       cursor: pointer;
       animation: colorPulse 5s infinite ease-in-out; /* Added colorPulse animation */
     }
+
+    .controls button:hover {
+  background-color: #414040;
+} 
 
     .progress-bar {
       animation: colorPulse 5s infinite ease-in-out;
@@ -73,6 +78,7 @@
     }
 
     #audio-title {
+      font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
       animation: colorPulse 5s infinite ease-in-out;
       margin-bottom: 10px;
     }
@@ -152,23 +158,9 @@
     }
   </script>
 </body>
-<style>
-button {
-  animation: colorPulse 5s infinite ease-in-out;
-  display: inline-block; 
-  padding: 15px;
-  background-color: #1d21fa00;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  max-width: 180%; 
-}
-
-button:hover {
-  background-color: #1517a100;
-}  
+<style> 
 #version {
+  font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
   position: fixed;
   bottom: 171px;
   right: 580px;
