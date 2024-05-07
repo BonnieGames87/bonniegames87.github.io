@@ -29,6 +29,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0);
       display: flex;
       text-align: center;
+      font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
       flex-direction: column;
       justify-content: space-between;
       background-image: url('https://i.ibb.co/y8n5Xwm/image-10.png');
@@ -37,13 +38,6 @@
     }
 
     .mp3-player-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 300px;
-      padding: 20px;
-      background-color: #ccc;
       text-align: center;
       font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
     }
@@ -91,8 +85,9 @@
     }
   </style>
 </head>
+
 <body>
-<div class="container">
+<div class="container3">
   <div class="mp3-player-container">
     <h2 id="audio-title">Now Playing: Luke Combs - Where the Wild Things Are</h2>
     <audio id="audio-player" preload="auto">
