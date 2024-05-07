@@ -67,28 +67,28 @@
 
     .progress-bar {
       background-color: #545454;
-      height: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
+      height: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
       overflow: hidden;
+      position: relative;
+      cursor: pointer;
     }
 
     #progress {
       background-color: #0c0;
       height: 100%;
-      border-radius: 5px;
-      cursor: pointer;
+      border-radius: 10px;
       position: relative;
     }
 
     #progress-time {
       position: absolute;
-      top: -20px;
+      top: 0;
       color: #fff;
       font-size: 12px;
       left: 0;
-      right: 0;
-      text-align: center;
+      transform: translateX(-50%);
     }
 
     #audio-title {
@@ -205,6 +205,9 @@
       progress.style.width = percentPlayed + '%';
       const currentTime = formatTime(audioPlayer.currentTime);
       progressTime.textContent = currentTime;
+      const progressBarWidth = progressBar.offsetWidth;
+      const timeLeft = progressBarWidth * (audioPlayer.currentTime / audioPlayer.duration);
+      progressTime.style.left = `${timeLeft}px`;
     }
   
     function toggleShuffle() {
@@ -241,11 +244,11 @@
     progressBar.addEventListener('click', seek);
   
     function seek(e) {
-      const width = this.clientWidth;
-      const clickX = e.offsetX;
+      const progressBarWidth = progressBar.offsetWidth;
+      const clickX = e.clientX - progressBar.getBoundingClientRect().left;
       const duration = audioPlayer.duration;
   
-      audioPlayer.currentTime = (clickX / width) * duration;
+      audioPlayer.currentTime = (clickX / progressBarWidth) * duration;
     }
   </script>
 </body>
