@@ -103,82 +103,103 @@
   </style>
 </head>
 <body>
-<div class="container">
-  <div class="mp3-player-container">
-    <h2 id="audio-title">Songs:</h2>
-    <audio id="audio-player" preload="auto">
-      <source src="Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-    <audio id="audio-player" preload="auto">
-      <source src="Luke Combs - Growin' Up and Gettin' Old.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-    <div class="controls">
-      <button id="previous-btn">Previous</button>
-      <button id="play-pause-btn">Play</button>
-      <button id="next-btn">Next</button>
-    </div>
-    <div class="progress-bar">
-      <div id="progress"></div>
+  <div class="container">
+    <div class="mp3-player-container">
+      <h2 id="audio-title">Songs:</h2>
+      <audio id="audio-player" preload="auto" autoplay>
+        <source src="Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls">
+        <button id="previous-btn">Previous</button>
+        <button id="play-pause-btn">Pause</button>
+        <button id="next-btn">Next</button>
+        <button id="shuffle-btn">Shuffle</button>
+      </div>
+      <div class="progress-bar">
+        <div id="progress"></div>
+      </div>
     </div>
   </div>
-</div>
-  <script>
-    const audioPlayer = document.getElementById('audio-player');
-    const playPauseBtn = document.getElementById('play-pause-btn');
-    const previousBtn = document.getElementById('previous-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const progress = document.getElementById('progress');
+<script>
+  const audioPlayer = document.getElementById('audio-player');
+  const playPauseBtn = document.getElementById('play-pause-btn');
+  const previousBtn = document.getElementById('previous-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const shuffleBtn = document.getElementById('shuffle-btn');
+  const progress = document.getElementById('progress');
+  const audioTitle = document.getElementById('audio-title');
 
-    let isPlaying = false;
+  let isPlaying = true;
+  let currentSongIndex = 0;
+  let shuffledIndexes = [];
 
-    playPauseBtn.addEventListener('click', togglePlayPause);
-    previousBtn.addEventListener('click', playPrevious);
-    nextBtn.addEventListener('click', playNext);
-    audioPlayer.addEventListener('timeupdate', updateProgress);
+  const songs = [
+    { title: "Luke Combs - Where the Wild Things Are", source: "Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" },
+    { title: "Luke Combs - Growin' Up and Gettin' Old", source: "Luke Combs - Growin' Up and Gettin' Old.mp3" },
+    // Add more songs following the same pattern
+  ];
 
-    function togglePlayPause() {
-      if (isPlaying) {
-        audioPlayer.pause();
-        playPauseBtn.textContent = 'Play';
-      } else {
-        audioPlayer.play();
-        playPauseBtn.textContent = 'Pause';
-      }
-      isPlaying = !isPlaying;
-    }
-    const songs = [
-      { title: "Luke Combs - Where the Wild Things Are", source: "Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" },
-      { title: "Luke Combs - Growin' Up and Gettin' Old", source: "Luke Combs - Growin' Up and Gettin' Old.mp3" },
-      // Add more songs following the same pattern
-    ];
+  // Initialize the audio title to the first song
+  audioTitle.textContent = songs[0].title;
 
-    let currentSongIndex = 0; // Initialize the current song index
+  // Generate shuffled indexes
+  for (let i = 0; i < songs.length; i++) {
+    shuffledIndexes.push(i);
+  }
 
-    function playPrevious() {
-      currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-      loadSong(currentSongIndex);
-    }
+  shuffleBtn.addEventListener('click', shuffleSongs);
+  playPauseBtn.addEventListener('click', togglePlayPause);
+  previousBtn.addEventListener('click', playPrevious);
+  nextBtn.addEventListener('click', playNext);
+  audioPlayer.addEventListener('timeupdate', updateProgress);
+  audioPlayer.addEventListener('ended', playNext);
 
-    function playNext() {
-      currentSongIndex = (currentSongIndex + 1) % songs.length;
-      loadSong(currentSongIndex);
-    }
-
-    function loadSong(index) {
-      audioPlayers.forEach(player => player.pause());
-      audioTitle.textContent = songs[index].title;
-      audioPlayers[index].play();
+  function togglePlayPause() {
+    if (isPlaying) {
+      audioPlayer.pause();
+      playPauseBtn.textContent = 'Play';
+    } else {
+      audioPlayer.play();
       playPauseBtn.textContent = 'Pause';
-      isPlaying = true;
     }
-    
-    function updateProgress() {
-      const percentPlayed = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-      progress.style.width = percentPlayed + '%';
+    isPlaying = !isPlaying;
+  }
+
+  function playPrevious() {
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    loadSong(currentSongIndex);
+  }
+
+  function playNext() {
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    loadSong(currentSongIndex);
+  }
+
+  function loadSong(index) {
+    audioPlayer.src = songs[index].source;
+    audioTitle.textContent = songs[index].title;
+    audioPlayer.play();
+    playPauseBtn.textContent = 'Pause';
+    isPlaying = true;
+  }
+
+  function updateProgress() {
+    const percentPlayed = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+    progress.style.width = percentPlayed + '%';
+  }
+
+  function shuffleSongs() {
+    // Shuffle indexes array
+    for (let i = shuffledIndexes.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledIndexes[i], shuffledIndexes[j]] = [shuffledIndexes[j], shuffledIndexes[i]];
     }
-  </script>
+    // Play the first shuffled song
+    currentSongIndex = shuffledIndexes[0];
+    loadSong(currentSongIndex);
+  }
+</script>
 </body>
 <style> 
         button {
