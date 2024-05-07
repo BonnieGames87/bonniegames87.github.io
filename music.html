@@ -7,16 +7,21 @@
   <style>
     body, html {
       height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-image: url('https://i.ibb.co/9VT0fwk/Falloutbackground.jpg');
-      background-size: contain; /* Change to contain */
-      background-position: center;
       margin: 0; /* Remove default margin */
     }
 
+    body {
+      background-image: url('https://i.ibb.co/9VT0fwk/Falloutbackground.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Fix the background image */
+    }
+
     .mp3-player-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 300px;
       padding: 20px;
       background-color: #ccc;
