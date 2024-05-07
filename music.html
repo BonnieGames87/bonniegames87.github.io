@@ -224,7 +224,7 @@
   
     function shuffleSongs() {
       // Shuffle indexes of the next 5 songs
-      const endIndex = Math.min(currentSongIndex + 5, songs.length);
+      const endIndex = Math.min(currentSongIndex + 4, songs.length);
       for (let i = currentSongIndex; i < endIndex; i++) {
         const j = Math.floor(Math.random() * (endIndex - i) + i);
         [shuffledIndexes[i], shuffledIndexes[j]] = [shuffledIndexes[j], shuffledIndexes[i]];
