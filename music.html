@@ -21,15 +21,20 @@
     .container {
       position: absolute;
       top: 38px;
-      left: 50px; /* Changed to move player to the left */
-      width: 1000px; /* Increased width to accommodate the list */
+      left: 300px;
+      width: 750px;
       height: 534px;
       padding: 16px;
       background-color: #44444400;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0);
       display: flex;
-      justify-content: space-between; /* Added to separate player and list */
+      text-align: center;
+      flex-direction: column;
+      justify-content: space-between;
+      background-image: url('https://i.ibb.co/y8n5Xwm/image-10.png');
+      background-size: cover; 
+      background-position: center; 
     }
 
     .mp3-player-container {
@@ -40,8 +45,8 @@
       font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
     }
 
-    .song-list {
-      width: 600px; /* Set width for the song list */
+    .list-container {
+      width: 400px;
       padding: 20px;
       background-color: #cccccc00;
       font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
@@ -133,7 +138,7 @@
         <div id="progress-time">0:00</div>
       </div>
     </div>
-    <div class="song-list">
+    <div class="list-container">
       <h2>Playlist:</h2>
       <ul id="playlist">
         <!-- Add list items dynamically with JavaScript -->
