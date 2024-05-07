@@ -152,45 +152,56 @@
   </script>
 </body>
 <style>
-  .home-container {
-        position: relative;
-        bottom: 182.2px; 
-        right: 274px;
-    }
-   .buttontopright {
-        position: absolute;
-        padding: 10px;
-        border-radius: 50%;
-        top: -9.5px;
-        left: -49.5px;
-        width: 75%; /* set width to 100% to stretch the element */
-        background-color: rgba(255, 0, 0, 0);
-    }
-   .text-color {
-        color: #2c2c2a; /* change the text color to hot pink */
-    }
-</style>
+button {
+  animation: colorPulse 5s infinite ease-in-out;
+  display: inline-block; 
+  padding: 15px;
+  background-color: #1d21fa00;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  max-width: 180%; 
+}
 
+button:hover {
+  background-color: #1517a100;
+}  
+#version {
+  position: fixed;
+  bottom: 171px;
+  right: 580px;
+  padding: 10px;
+  background-color: #44444400;
+  border: 1px solid #44444400;
+  border-radius: 10px 0px 0px 0px;
+}
+
+.home-container {
+position: absolute; /* Change from relative to absolute */
+bottom: 182px; /* Adjust to your desired top position */
+right: 867px; /* Adjust to your desired right position */
+}
+
+.buttontopright {
+   position: absolute;
+   padding: 10px;
+   border-radius: 50%;
+   top: -9.5px;
+   left: -49.5px;
+   width: 75%; /* set width to 100% to stretch the element */
+   background-color: rgba(255, 0, 0, 0);
+}
+
+.text-color {
+   color: #2c2c2a; /* change the text color to hot pink */
+}
+</style>
 <div class="home-container">
-    <span class="text-color">home</span>
-    <button class="buttontopright" onclick="window.location.href='index.html'"></button>
+  <span class="text-color">home</span>
+  <button class="buttontopright" onclick="window.location.href='index.html'"></button>
 </div>
-<head>
-  <style>
-      #version {
-          position: fixed;
-          bottom: 171px;
-          right: 600px;
-          padding: 10px;
-          background-color: #44444400;
-          border: 1px solid #44444400;
-          border-radius: 10px 0px 0px 0px;
-      }
-  </style>
-</head>
-<body>
-  <div id="version">
-      Version: 0.2.7
-  </div>
-</body> 
+<div id="version">
+    Version: 0.2.8
+</div>
 </html>
