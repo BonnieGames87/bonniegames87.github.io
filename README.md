@@ -1,1 +1,143 @@
-<a href="https://ibb.co/4K9YNCc"><img src="" alt="pipboyv4" border="0"></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fallout Mp3 Player</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0; /* Remove default margin */
+    }
+
+    body {
+      background-image: url('https://i.ibb.co/9VT0fwk/Falloutbackground.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Fix the background image */
+    }
+
+    .mp3-player-container {
+      animation: colorPulse 5s infinite ease-in-out;
+      position: absolute;
+      top: 38px;
+      left: 300px;
+      width: 750px;
+      height: 534px;
+      padding: 16px;
+      background-color: #44444400;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+      display: flex;
+      text-align: center;
+      font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
+      flex-direction: column;
+      justify-content: space-between;
+      background-image: url('https://i.ibb.co/y8n5Xwm/image-10.png');
+      background-size: cover; 
+      background-position: center; 
+    }
+
+    .controls button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #202020;
+      cursor: pointer;
+      animation: colorPulse 5s infinite ease-in-out; /* Added colorPulse animation */
+    }
+
+    .progress-bar {
+      animation: colorPulse 5s infinite ease-in-out;
+      background-color: #202020;
+      height: 10px;
+      margin-top: 10px;
+    }
+
+    #progress {
+      animation: colorPulse 5s infinite ease-in-out;
+      height: 100%;
+      background-color: #0c0;
+    }
+
+    #audio-title {
+      animation: colorPulse 5s infinite ease-in-out;
+      margin-bottom: 10px;
+    }
+
+    /* Hide default audio controls */
+    #audio-player {
+      display: none;
+    }
+
+    @keyframes colorPulse {
+      0%, 100% {
+        color:#0c0;
+      }
+      48%, 52% {
+        color:#090;
+      }
+      50% {
+        color:#060;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mp3-player-container">
+    <h2 id="audio-title">Now Playing: Luke Combs - Where the Wild Things Are</h2>
+    <audio id="audio-player" preload="auto">
+      <source src="Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="controls">
+      <button id="previous-btn">Previous</button>
+      <button id="play-pause-btn">Play</button>
+      <button id="next-btn">Next</button>
+    </div>
+    <div class="progress-bar">
+      <div id="progress"></div>
+    </div>
+  </div>
+
+  <script>
+    const audioPlayer = document.getElementById('audio-player');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const previousBtn = document.getElementById('previous-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const progress = document.getElementById('progress');
+
+    let isPlaying = false;
+
+    playPauseBtn.addEventListener('click', togglePlayPause);
+    previousBtn.addEventListener('click', playPrevious);
+    nextBtn.addEventListener('click', playNext);
+    audioPlayer.addEventListener('timeupdate', updateProgress);
+
+    function togglePlayPause() {
+      if (isPlaying) {
+        audioPlayer.pause();
+        playPauseBtn.textContent = 'Play';
+      } else {
+        audioPlayer.play();
+        playPauseBtn.textContent = 'Pause';
+      }
+      isPlaying = !isPlaying;
+    }
+
+    function playPrevious() {
+      // You can implement the logic to play the previous track here
+    }
+
+    function playNext() {
+      // You can implement the logic to play the next track here
+    }
+
+    function updateProgress() {
+      const percentPlayed = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+      progress.style.width = percentPlayed + '%';
+    }
+  </script>
+</body>
+</html>

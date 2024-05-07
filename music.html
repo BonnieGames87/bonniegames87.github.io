@@ -17,8 +17,7 @@
       background-attachment: fixed; /* Fix the background image */
     }
 
-    .mp3-player-container {
-      animation: colorPulse 5s infinite ease-in-out;
+    .container {
       position: absolute;
       top: 38px;
       left: 300px;
@@ -38,31 +37,33 @@
       background-position: center; 
     }
 
+    .mp3-player-container {
+      text-align: center;
+      font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
+    }
+
     .controls button {
       margin: 5px;
       padding: 10px 20px;
       font-size: 16px;
       border: none;
-      background-color: #202020;
+      background-color: #f0f0f0;
       cursor: pointer;
       animation: colorPulse 5s infinite ease-in-out; /* Added colorPulse animation */
     }
 
     .progress-bar {
-      animation: colorPulse 5s infinite ease-in-out;
-      background-color: #202020;
+      background-color: #fff;
       height: 10px;
       margin-top: 10px;
     }
 
     #progress {
-      animation: colorPulse 5s infinite ease-in-out;
       height: 100%;
-      background-color: #0c0;
+      background-color: #007bff;
     }
 
     #audio-title {
-      animation: colorPulse 5s infinite ease-in-out;
       margin-bottom: 10px;
     }
 
@@ -84,6 +85,7 @@
     }
   </style>
 </head>
+<div class="container3">
 <body>
   <div class="mp3-player-container">
     <h2 id="audio-title">Now Playing: Luke Combs - Where the Wild Things Are</h2>
@@ -140,4 +142,5 @@
     }
   </script>
 </body>
+</div>
 </html>
