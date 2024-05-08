@@ -49,13 +49,15 @@
     }
 
     .list-container {
+      animation: colorPulse 5s infinite ease-in-out; /* Added colorPulse animation */
       width: 400px;
       padding: 20px;
-      background-color: #cccccc00;
+      background-color: #fd0000;
       font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
       position: absolute;
       bottom: 1px; /* Adjust as needed */
       right: 1px; /* Adjust as needed */
+      border-radius: 20px; /* Add border-radius for round edges */
     }
 
     .controls button {
@@ -223,9 +225,8 @@
     function loadSong(index) {
       audioPlayer.src = songs[index].source;
       audioTitle.textContent = songs[index].title;
-      audioPlayer.play();
-      playPauseBtn.textContent = 'Pause';
-      isPlaying = true;
+      playPauseBtn.textContent = 'Play';
+      isPlaying = false; // Set isPlaying to false initially
     }
   
     function updateProgress() {
