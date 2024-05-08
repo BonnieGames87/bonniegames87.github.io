@@ -179,21 +179,31 @@ function filterSongsByGenre(genre) {
   return songs.filter(song => song.genre === genre);
 }
 
-// Populate the playlist for each genre
+// Populate the genre buttons
+const genreButtonsContainer = document.getElementById('genre-buttons');
 ['Country', 'Rock', 'Others'].forEach(genre => {
+  const button = document.createElement('button');
+  button.textContent = genre;
+  button.addEventListener('click', () => {
+    displayGenreSongs(genre);
+  });
+  genreButtonsContainer.appendChild(button);
+});
+
+// Function to display songs for a selected genre
+function displayGenreSongs(genre) {
   const genreSongs = filterSongsByGenre(genre);
-  const genreSection = document.createElement('section');
-  genreSection.innerHTML = `<h2>${genre}</h2><ul></ul>`;
+  const genreSongsList = document.getElementById('genre-songs');
+  genreSongsList.innerHTML = ''; // Clear previous songs
   genreSongs.forEach(song => {
     const listItem = document.createElement('li');
     listItem.textContent = song.title;
     listItem.addEventListener('click', () => {
       loadSong(songs.indexOf(song));
     });
-    genreSection.querySelector('ul').appendChild(listItem);
+    genreSongsList.appendChild(listItem);
   });
-  document.getElementById('genre-list').appendChild(genreSection);
-});
+}
 
 
     playPauseBtn.addEventListener('click', togglePlayPause);
