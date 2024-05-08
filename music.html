@@ -131,7 +131,7 @@
   <div class="container">
     <div class="mp3-player-container">
       <h2 id="audio-title">Songs:</h2>
-      <audio id="audio-player" preload="auto">
+      <audio id="audio-player" preload="auto" autoplay>
         <source src="Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
@@ -167,7 +167,7 @@
   
     let isPlaying = true;
     let currentSongIndex = 0;
-    let shuffledIndexes = [];
+    let playedSongs = new Set(); // Store indexes of played songs
   
     const songs = [
       { title: "Luke Combs - Where the Wild Things Are", source: "Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" },
@@ -179,11 +179,6 @@
     // Initialize the audio title to the first song
     audioTitle.textContent = songs[0].title;
   
-    // Generate shuffled indexes
-    for (let i = 0; i < songs.length; i++) {
-      shuffledIndexes.push(i);
-    }
-  
     // Populate the playlist
     songs.forEach((song, index) => {
       const listItem = document.createElement('li');
@@ -194,14 +189,11 @@
       playlist.appendChild(listItem);
     });
   
-    shuffleBtn.addEventListener('click', toggleShuffle);
     playPauseBtn.addEventListener('click', togglePlayPause);
     previousBtn.addEventListener('click', playPrevious);
     nextBtn.addEventListener('click', playNext);
     audioPlayer.addEventListener('timeupdate', updateProgress);
-    audioPlayer.addEventListener('ended', () => {
-  playNext();
-});
+    audioPlayer.addEventListener('ended', playNext);
   
     function togglePlayPause() {
       if (isPlaying) {
@@ -220,8 +212,18 @@
     }
   
     function playNext() {
-      currentSongIndex = (currentSongIndex + 1) % songs.length;
-      loadSong(currentSongIndex);
+      // Find the next unplayed song index
+      let nextIndex = currentSongIndex;
+      do {
+        nextIndex = (nextIndex + 1) % songs.length;
+      } while (playedSongs.has(nextIndex));
+  
+      // If all songs have been played, reset playedSongs set
+      if (playedSongs.size === songs.length) {
+        playedSongs.clear();
+      }
+  
+      loadSong(nextIndex);
     }
   
     function loadSong(index) {
@@ -229,6 +231,8 @@
       audioTitle.textContent = songs[index].title;
       playPauseBtn.textContent = 'Play';
       isPlaying = false; // Set isPlaying to false initially
+      currentSongIndex = index;
+      playedSongs.add(index); // Add index to playedSongs set
     }
   
     function updateProgress() {
@@ -236,31 +240,6 @@
       progress.style.width = percentPlayed + '%';
       const currentTime = formatTime(audioPlayer.currentTime);
       progressTime.textContent = currentTime;
-    }
-  
-    function toggleShuffle() {
-      if (!shuffleBtn.classList.contains('active')) {
-        shuffleBtn.classList.add('active');
-        shuffleSongs();
-      } else {
-        shuffleBtn.classList.remove('active');
-        // Reset to original order
-        shuffledIndexes.sort((a, b) => a - b);
-        // Ensure current song index is correct
-        currentSongIndex = shuffledIndexes.indexOf(currentSongIndex);
-      }
-    }
-  
-    function shuffleSongs() {
-      // Shuffle indexes of the next 5 songs
-      const endIndex = Math.min(currentSongIndex + 4, songs.length);
-      for (let i = currentSongIndex; i < endIndex; i++) {
-        const j = Math.floor(Math.random() * (endIndex - i) + i);
-        [shuffledIndexes[i], shuffledIndexes[j]] = [shuffledIndexes[j], shuffledIndexes[i]];
-      }
-      // Play the first shuffled song
-      currentSongIndex = shuffledIndexes[currentSongIndex];
-      loadSong(currentSongIndex);
     }
   
     function formatTime(time) {

@@ -8,6 +8,7 @@
     body, html {
       height: 100%;
       margin: 0; /* Remove default margin */
+      color: #fff;
     }
 
     body {
@@ -17,8 +18,7 @@
       background-attachment: fixed; /* Fix the background image */
     }
 
-    .mp3-player-container {
-      animation: colorPulse 5s infinite ease-in-out;
+    .container {
       position: absolute;
       top: 38px;
       left: 300px;
@@ -30,7 +30,6 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0);
       display: flex;
       text-align: center;
-      font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
       flex-direction: column;
       justify-content: space-between;
       background-image: url('https://i.ibb.co/y8n5Xwm/image-10.png');
@@ -38,30 +37,74 @@
       background-position: center; 
     }
 
+    .mp3-player-container {
+      width: 300px;
+      padding: 20px;
+      background-color: #cccccc00;
+      text-align: center;
+      font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
+      position: center;
+      top: 50%; /* Adjust as needed */
+      right: 50%; /* Adjust as needed */
+    }
+
+    .list-container {
+      animation: colorPulse 5s infinite ease-in-out; /* Added colorPulse animation */
+      width: 400px;
+      padding: 20px;
+      background-color: #fd0000;
+      font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
+      position: absolute;
+      bottom: 1px; /* Adjust as needed */
+      right: 1px; /* Adjust as needed */
+      border-radius: 20px; /* Add border-radius for round edges */
+    }
+
     .controls button {
+      font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
+      border-radius: 20px; 
       margin: 5px;
       padding: 10px 20px;
       font-size: 16px;
       border: none;
-      background-color: #202020;
+      background-color: #545454;
       cursor: pointer;
       animation: colorPulse 5s infinite ease-in-out; /* Added colorPulse animation */
     }
 
+    .controls button:hover {
+      background-color: #414040;
+    } 
+
     .progress-bar {
-      animation: colorPulse 5s infinite ease-in-out;
-      background-color: #202020;
-      height: 10px;
-      margin-top: 10px;
+      background-color: #545454;
+      height: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
     }
 
     #progress {
-      animation: colorPulse 5s infinite ease-in-out;
-      height: 100%;
       background-color: #0c0;
+      height: 100%;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    #progress-time {
+      position: absolute;
+      top: 51%;
+      transform: translateY(-40%);
+      color: #fff;
+      font-size: 12px;
+      left: 50%;
+      transform: translateX(-40%);
     }
 
     #audio-title {
+      font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
       animation: colorPulse 5s infinite ease-in-out;
       margin-bottom: 10px;
     }
@@ -85,36 +128,73 @@
   </style>
 </head>
 <body>
-  <div class="mp3-player-container">
-    <h2 id="audio-title">Now Playing: Luke Combs - Where the Wild Things Are</h2>
-    <audio id="audio-player" preload="auto">
-      <source src="Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-    <div class="controls">
-      <button id="previous-btn">Previous</button>
-      <button id="play-pause-btn">Play</button>
-      <button id="next-btn">Next</button>
+  <div class="container">
+    <div class="mp3-player-container">
+      <h2 id="audio-title">Songs:</h2>
+      <audio id="audio-player" preload="auto" autoplay>
+        <source src="Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls">
+        <button id="previous-btn">Previous</button>
+        <button id="play-pause-btn">Pause</button>
+        <button id="next-btn">Next</button>
+        <button id="shuffle-btn">Shuffle</button>
+      </div>
+      <div class="progress-bar" id="progress-bar">
+        <div id="progress"></div>
+        <div id="progress-time">0:00</div>
+      </div>
     </div>
-    <div class="progress-bar">
-      <div id="progress"></div>
+    <div class="list-container">
+      <h2>Playlist:</h2>
+      <ul id="playlist">
+        <!-- Add list items dynamically with JavaScript -->
+      </ul>
     </div>
   </div>
-
   <script>
     const audioPlayer = document.getElementById('audio-player');
     const playPauseBtn = document.getElementById('play-pause-btn');
     const previousBtn = document.getElementById('previous-btn');
     const nextBtn = document.getElementById('next-btn');
+    const shuffleBtn = document.getElementById('shuffle-btn');
+    const progressBar = document.getElementById('progress-bar');
     const progress = document.getElementById('progress');
-
-    let isPlaying = false;
-
+    const progressTime = document.getElementById('progress-time');
+    const audioTitle = document.getElementById('audio-title');
+    const playlist = document.getElementById('playlist'); // Reference to playlist element
+  
+    let isPlaying = true;
+    let currentSongIndex = 0;
+    let playedSongs = new Set(); // Store indexes of played songs
+  
+    const songs = [
+      { title: "Luke Combs - Where the Wild Things Are", source: "Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" },
+      { title: "Luke Combs - Growin' Up and Gettin' Old", source: "Luke Combs - Growin' Up and Gettin' Old.mp3" },
+      { title: "Luke Combs - Doin' This", source: "Luke Combs - Doin' This (Lyrics).mp3" },
+      { title: "Luke Combs, Brooks & Dunn - 1, 2 Many", source: "Luke Combs, Brooks & Dunn - 1, 2 Many.mp3" },
+    ];
+  
+    // Initialize the audio title to the first song
+    audioTitle.textContent = songs[0].title;
+  
+    // Populate the playlist
+    songs.forEach((song, index) => {
+      const listItem = document.createElement('li');
+      listItem.textContent = song.title;
+      listItem.addEventListener('click', () => {
+        loadSong(index);
+      });
+      playlist.appendChild(listItem);
+    });
+  
     playPauseBtn.addEventListener('click', togglePlayPause);
     previousBtn.addEventListener('click', playPrevious);
     nextBtn.addEventListener('click', playNext);
     audioPlayer.addEventListener('timeupdate', updateProgress);
-
+    audioPlayer.addEventListener('ended', playNext);
+  
     function togglePlayPause() {
       if (isPlaying) {
         audioPlayer.pause();
@@ -125,19 +205,115 @@
       }
       isPlaying = !isPlaying;
     }
-
+  
     function playPrevious() {
-      // You can implement the logic to play the previous track here
+      currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+      loadSong(currentSongIndex);
     }
-
+  
     function playNext() {
-      // You can implement the logic to play the next track here
+      // Find the next unplayed song index
+      let nextIndex = currentSongIndex;
+      do {
+        nextIndex = (nextIndex + 1) % songs.length;
+      } while (playedSongs.has(nextIndex));
+  
+      // If all songs have been played, reset playedSongs set
+      if (playedSongs.size === songs.length) {
+        playedSongs.clear();
+      }
+  
+      loadSong(nextIndex);
     }
-
+  
+    function loadSong(index) {
+      audioPlayer.src = songs[index].source;
+      audioTitle.textContent = songs[index].title;
+      playPauseBtn.textContent = 'Play';
+      isPlaying = false; // Set isPlaying to false initially
+      currentSongIndex = index;
+      playedSongs.add(index); // Add index to playedSongs set
+    }
+  
     function updateProgress() {
       const percentPlayed = (audioPlayer.currentTime / audioPlayer.duration) * 100;
       progress.style.width = percentPlayed + '%';
+      const currentTime = formatTime(audioPlayer.currentTime);
+      progressTime.textContent = currentTime;
+    }
+  
+    function formatTime(time) {
+      const minutes = Math.floor(time / 60);
+      const seconds = Math.floor(time % 60);
+      return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    }
+  
+    progressBar.addEventListener('click', seek);
+  
+    function seek(e) {
+      const progressBarWidth = progressBar.offsetWidth;
+      const clickX = e.clientX - progressBar.getBoundingClientRect().left;
+      const duration = audioPlayer.duration;
+  
+      audioPlayer.currentTime = (clickX / progressBarWidth) * duration;
     }
   </script>
 </body>
+<style> 
+  button {
+    animation: colorPulse 5s infinite ease-in-out;
+    display: inline-block; 
+    padding: 15px;
+    background-color: #1d21fa00;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    max-width: 180%; 
+  }
+
+  button:hover {
+    background-color: #1517a100;
+  }  
+
+  #version {
+    font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
+    position: fixed;
+    bottom: 171px;
+    right: 580px;
+    padding: 10px;
+    background-color: #44444400;
+    border: 1px solid #44444400;
+    border-radius: 10px 0px 0px 0px;
+  }
+
+  .home-container {
+    font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
+    position: absolute; /* Change from relative to absolute */
+    bottom: 182px; /* Adjust to your desired top position */
+    right: 867px; /* Adjust to your desired right position */
+    }
+  
+  .buttontopright {
+    font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
+    position: absolute;
+    padding: 10px;
+    border-radius: 50%;
+    top: -9.5px;
+    left: -49.5px;
+    width: 75%; /* set width to 100% to stretch the element */
+    background-color: rgba(255, 0, 0, 0);
+  }
+
+  .text-color {
+    color: #2c2c2a; /* change the text color to hot pink */
+  }
+</style>
+<div class="home-container">
+  <span class="text-color">home</span>
+  <button class="buttontopright" onclick="window.location.href='index.html'"></button>
+</div>
+<div id="version">
+  Version: 0.2.8
+</div>
 </html>
