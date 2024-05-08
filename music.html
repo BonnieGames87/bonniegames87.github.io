@@ -49,15 +49,16 @@
     }
 
     .list-container {
-      animation: colorPulse 5s infinite ease-in-out; /* Added colorPulse animation */
       width: 400px;
+      height: 700px; /* Change the height as needed */
       padding: 20px;
-      background-color: #408cee;
+      background-color: #7c7d7e;
       font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
       position: absolute;
       bottom: 300px; /* Adjust as needed */
       right: 820px; /* Adjust as needed */
       border-radius: 20px; /* Add border-radius for round edges */
+      overflow-y: auto; /* Add scrolling when content exceeds container height */
     }
 
     list-container ul li {
