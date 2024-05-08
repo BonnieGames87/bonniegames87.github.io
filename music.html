@@ -55,7 +55,7 @@
       background-color: #7c7d7e;
       font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
       position: absolute;
-      bottom: -50px; /* Adjust as needed */
+      bottom: -20px; /* Adjust as needed */
       right: 820px; /* Adjust as needed */
       border-radius: 20px; /* Add border-radius for round edges */
       overflow-y: auto; /* Add scrolling when content exceeds container height */
@@ -148,6 +148,7 @@
         <button id="previous-btn">Previous</button>
         <button id="play-pause-btn">Pause</button>
         <button id="next-btn">Next</button>
+        <button id="mute-btn">Mute</button> <!-- Mute button added -->
       </div>
       <div class="progress-bar" id="progress-bar">
         <div id="progress"></div>
@@ -263,6 +264,19 @@
       const duration = audioPlayer.duration;
   
       audioPlayer.currentTime = (clickX / progressBarWidth) * duration;
+    }
+
+    const muteBtn = document.getElementById('mute-btn');
+    muteBtn.addEventListener('click', toggleMute);
+
+    function toggleMute() {
+      if (audioPlayer.muted) {
+        audioPlayer.muted = false;
+        muteBtn.textContent = 'Mute';
+      } else {
+        audioPlayer.muted = true;
+        muteBtn.textContent = 'Unmute';
+      }
     }
   </script>
 </body>
