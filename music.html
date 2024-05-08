@@ -60,23 +60,6 @@
       border-radius: 20px; /* Add border-radius for round edges */
     }
 
-    .genre-sections {
-      display: flex;
-    }
-
-    .genre-section {
-      flex: 1;
-      margin-right: 20px;
-    }
-
-    .genre-section:last-child {
-      margin-right: 0;
-    }
-
-    .genre-section h3 {
-      margin-bottom: 10px;
-    }
-
     .controls button {
       font-family: 'Fira Mono', monospace; /* Added Fira Mono font */
       border-radius: 20px; 
@@ -146,44 +129,29 @@
 </head>
 <body>
   <div class="container">
-  <div class="mp3-player-container">
-    <h2 id="audio-title">Songs:</h2>
-    <audio id="audio-player" preload="auto" autoplay>
-      <source src="Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-    <div class="controls">
-      <button id="previous-btn">Previous</button>
-      <button id="play-pause-btn">Pause</button>
-      <button id="next-btn">Next</button>
+    <div class="mp3-player-container">
+      <h2 id="audio-title">Songs:</h2>
+      <audio id="audio-player" preload="auto" autoplay>
+        <source src="Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls">
+        <button id="previous-btn">Previous</button>
+        <button id="play-pause-btn">Pause</button>
+        <button id="next-btn">Next</button>
+      </div>
+      <div class="progress-bar" id="progress-bar">
+        <div id="progress"></div>
+        <div id="progress-time">0:00</div>
+      </div>
     </div>
-    <div class="progress-bar" id="progress-bar">
-      <div id="progress"></div>
-      <div id="progress-time">0:00</div>
-    </div>
-  </div>
-  <div class="list-container">
-    <h2>Playlist:</h2>
-    <div class="genre-sections">
-      <div class="genre-section" id="country-section">
-        <h3>Country</h3>
-        <ul id="country-list"></ul>
-      </div>
-      <div class="genre-section" id="rock-section">
-        <h3>Rock</h3>
-        <ul id="rock-list"></ul>
-      </div>
-      <div class="genre-section" id="rap-section">
-        <h3>Rap</h3>
-        <ul id="rap-list"></ul>
-      </div>
-      <div class="genre-section" id="other-section">
-        <h3>Other</h3>
-        <ul id="other-list"></ul>
-      </div>
+    <div class="list-container">
+      <h2>Playlist:</h2>
+      <ul id="playlist">
+        <!-- Add list items dynamically with JavaScript -->
+      </ul>
     </div>
   </div>
-</div>
   <script>
     const audioPlayer = document.getElementById('audio-player');
     const playPauseBtn = document.getElementById('play-pause-btn');
