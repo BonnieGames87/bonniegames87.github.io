@@ -260,7 +260,7 @@
   </script>
 </body>
 <style> 
-  button {
+ button {
     animation: colorPulse 5s infinite ease-in-out;
     display: inline-block; 
     padding: 15px;
