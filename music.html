@@ -199,7 +199,9 @@
     previousBtn.addEventListener('click', playPrevious);
     nextBtn.addEventListener('click', playNext);
     audioPlayer.addEventListener('timeupdate', updateProgress);
-    audioPlayer.addEventListener('ended', playNext);
+    audioPlayer.addEventListener('ended', () => {
+  playNext();
+});
   
     function togglePlayPause() {
       if (isPlaying) {
