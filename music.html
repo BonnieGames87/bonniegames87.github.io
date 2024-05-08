@@ -146,12 +146,11 @@
       </div>
     </div>
     <div class="list-container">
-      <h2>Playlist:</h2>
-      <ul id="playlist">
+      <h2>Genres:</h2>
+      <ul id="genre-list">
         <!-- Add list items dynamically with JavaScript -->
       </ul>
     </div>
-  </div>
   <script>
     const audioPlayer = document.getElementById('audio-player');
     const playPauseBtn = document.getElementById('play-pause-btn');
@@ -181,7 +180,7 @@ function filterSongsByGenre(genre) {
 }
 
 // Populate the playlist for each genre
-['Country', 'Rock', 'Rap', 'Others'].forEach(genre => {
+['Country', 'Rock', 'Others'].forEach(genre => {
   const genreSongs = filterSongsByGenre(genre);
   const genreSection = document.createElement('section');
   genreSection.innerHTML = `<h2>${genre}</h2><ul></ul>`;
@@ -193,8 +192,9 @@ function filterSongsByGenre(genre) {
     });
     genreSection.querySelector('ul').appendChild(listItem);
   });
-  playlist.appendChild(genreSection);
+  document.getElementById('genre-list').appendChild(genreSection);
 });
+
 
     playPauseBtn.addEventListener('click', togglePlayPause);
     previousBtn.addEventListener('click', playPrevious);
