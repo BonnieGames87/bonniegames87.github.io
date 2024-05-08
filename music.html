@@ -146,16 +146,18 @@
       </div>
     </div>
     <div class="list-container">
-      <h2>Genres:</h2>
-      <ul id="genre-list">
+      <h2>Playlist:</h2>
+      <ul id="playlist">
         <!-- Add list items dynamically with JavaScript -->
       </ul>
     </div>
+  </div>
   <script>
     const audioPlayer = document.getElementById('audio-player');
     const playPauseBtn = document.getElementById('play-pause-btn');
     const previousBtn = document.getElementById('previous-btn');
     const nextBtn = document.getElementById('next-btn');
+
     const progressBar = document.getElementById('progress-bar');
     const progress = document.getElementById('progress');
     const progressTime = document.getElementById('progress-time');
@@ -167,45 +169,25 @@
     let playedSongs = new Set(); // Store indexes of played songs
   
     const songs = [
-  { title: "Luke Combs - Where the Wild Things Are", source: "Luke Combs - Where the Wild Things Are (Official Studio Video).mp3", genre: "Country" },
-  { title: "Luke Combs - Growin' Up and Gettin' Old", source: "Luke Combs - Growin' Up and Gettin' Old.mp3", genre: "Country" },
-  { title: "Luke Combs - Doin' This", source: "Luke Combs - Doin' This (Lyrics).mp3", genre: "Country" },
-  { title: "Luke Combs, Brooks & Dunn - 1, 2 Many", source: "Luke Combs, Brooks & Dunn - 1, 2 Many.mp3", genre: "Country" },
-  // Add more songs with their respective genres
-];
-
-// Function to filter songs based on genre
-function filterSongsByGenre(genre) {
-  return songs.filter(song => song.genre === genre);
-}
-
-// Populate the genre buttons
-const genreButtonsContainer = document.getElementById('genre-buttons');
-['Country', 'Rock', 'Others'].forEach(genre => {
-  const button = document.createElement('button');
-  button.textContent = genre;
-  button.addEventListener('click', () => {
-    displayGenreSongs(genre);
-  });
-  genreButtonsContainer.appendChild(button);
-});
-
-// Function to display songs for a selected genre
-function displayGenreSongs(genre) {
-  const genreSongs = filterSongsByGenre(genre);
-  const genreSongsList = document.getElementById('genre-songs');
-  genreSongsList.innerHTML = ''; // Clear previous songs
-  genreSongs.forEach(song => {
-    const listItem = document.createElement('li');
-    listItem.textContent = song.title;
-    listItem.addEventListener('click', () => {
-      loadSong(songs.indexOf(song));
+      { title: "Luke Combs - Where the Wild Things Are", source: "Luke Combs - Where the Wild Things Are (Official Studio Video).mp3" },
+      { title: "Luke Combs - Growin' Up and Gettin' Old", source: "Luke Combs - Growin' Up and Gettin' Old.mp3" },
+      { title: "Luke Combs - Doin' This", source: "Luke Combs - Doin' This (Lyrics).mp3" },
+      { title: "Luke Combs, Brooks & Dunn - 1, 2 Many", source: "Luke Combs, Brooks & Dunn - 1, 2 Many.mp3" },
+    ];
+  
+    // Initialize the audio title to the first song
+    audioTitle.textContent = songs[0].title;
+  
+    // Populate the playlist
+    songs.forEach((song, index) => {
+      const listItem = document.createElement('li');
+      listItem.textContent = song.title;
+      listItem.addEventListener('click', () => {
+        loadSong(index);
+      });
+      playlist.appendChild(listItem);
     });
-    genreSongsList.appendChild(listItem);
-  });
-}
-
-
+  
     playPauseBtn.addEventListener('click', togglePlayPause);
     previousBtn.addEventListener('click', playPrevious);
     nextBtn.addEventListener('click', playNext);
