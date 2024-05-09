@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grey Container</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 800px;
+        height: 60%;
+        background-color: #808080;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .container .content {
+        overflow-y: auto;
+        padding: 20px;
+        color: white;
+    }
+
+    .header {
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .header button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 0 10px;
+        outline: none;
+    }
+
+    .selected {
+        border-bottom: 2px solid white;
+    }
+
+    .image-bg {
+        width: 100%;
+        height: 100%;
+        background-image: url('https://i.ibb.co/9VT0fwk/Falloutbackground.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <button class="tab selected" data-target="tab1">0.3.0</button>
+        <button class="tab" data-target="tab2">0.2.9</button>
+    </div>
+    <div class="content">
+        <div id="tab1" class="tab-content">
+            <p>This is tab 0.3.0 content. You can add more content here.</p>
+        </div>
+        <div id="tab2" class="tab-content" style="display: none;">
+            <p>This is tab 0.2.9 content. You can add more content here.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
