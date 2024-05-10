@@ -32,7 +32,6 @@
         overflow-y: auto;
         padding: 20px;
         color: white;
-        text-align: center; /* Center the text within the content */
     }
 
     .header {
@@ -62,16 +61,6 @@
         font-size: 36px;
         font-family: 'Fira Mono', monospace;
     }
-
-    ul {
-        list-style-type: none; /* Remove default bullets */
-        padding: 0; /* Remove default padding */
-    }
-
-    li {
-        text-align: left; /* Align list items to the left */
-        margin: 10px 0; /* Add some vertical spacing between list items */
-    }
 </style>
 </head>
 <body>
@@ -84,23 +73,19 @@
     </div>
     <div class="content">
         <div id="tab1" class="tab-content">
-            <ul>
-                <li>Music Player Finished</li>
-                <li>Changed Websites Icon</li>
-                <li>Changed Background</li>
-                <li>Removed Websites</li>
-                <li>Added Logs</li>
-            </ul>
+            <p>
+            Music Player Finished 
+            Changed Websites Icon 
+            Changed Background 
+            Removed Websites
+            Added Logs
+            </p>
         </div>
         <div id="tab2" class="tab-content" style="display: none;">
-            <ul>
-                <li>Forgot to include this because this was included in 0.3.0</li>
-            </ul>
+            <p>Forgot to include this because this was included in 0.3.0</p>
         </div>
         <!-- <div id="tab3" class="tab-content" style="display: none;">
-            <ul>
-                <li>This is content for New Category 1. You can add more content here.</li>
-            </ul>
+            <p>This is content for New Category 1. You can add more content here.</p>
         </div> -->
     </div>
 </div>
