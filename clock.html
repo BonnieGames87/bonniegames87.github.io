@@ -98,7 +98,7 @@
     // Countdown timer logic
     const startHour = 8;
     const startMinute = 30;
-    const endHour = 4; // Changed to 4:00 PM
+    const endHour = 16; // Changed to 4:00 PM
     const endMinute = 0;
 
     const startTime = new Date();
@@ -111,7 +111,7 @@
         // Before start time
         const diff = new Date(startTime - now);
         countdownMessage = `Countdown to ${startHour}:${startMinute} AM: ${formatTime(diff)}`;
-    } else if (now >= startTime && now <= endTime) {
+    } else if (now < endTime) {
         // Between start and end time
         const diff = new Date(endTime - now);
         countdownMessage = `Countdown to ${endHour}:${endMinute} PM: ${formatTime(diff)}`;
