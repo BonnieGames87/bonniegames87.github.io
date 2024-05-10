@@ -62,6 +62,18 @@
         font-size: 36px;
         font-family: 'Fira Mono', monospace;
     }
+
+    .return-button {
+        display: block;
+        margin: 20px auto; /* Center the button */
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 </style>
 </head>
 <body>
@@ -94,6 +106,8 @@
         </div> -->
     </div>
 </div>
+
+<button class="return-button" onclick="window.location.href = 'index.html';">Return</button>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
