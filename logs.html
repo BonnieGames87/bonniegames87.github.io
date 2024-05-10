@@ -14,6 +14,7 @@
         background-image: url('https://i.ibb.co/9VT0fwk/Falloutbackground.jpg');
         background-size: cover;
         background-position: center;
+        background-repeat: no-repeat;
     }
 
     .container {
@@ -70,6 +71,9 @@
     <div class="header">
         <button class="tab selected" data-target="tab1">0.3.0</button>
         <button class="tab" data-target="tab2">0.2.9</button>
+        <!-- Add more buttons for additional categories -->
+        <button class="tab" data-target="tab3">New Category 1</button>
+        <button class="tab" data-target="tab4">New Category 2</button>
     </div>
     <div class="content">
         <div id="tab1" class="tab-content">
@@ -78,7 +82,39 @@
         <div id="tab2" class="tab-content" style="display: none;">
             <p>This is tab 0.2.9 content. You can add more content here.</p>
         </div>
+        <!-- Add more divs for additional categories -->
+        <div id="tab3" class="tab-content" style="display: none;">
+            <p>This is content for New Category 1. You can add more content here.</p>
+        </div>
+        <div id="tab4" class="tab-content" style="display: none;">
+            <p>This is content for New Category 2. You can add more content here.</p>
+        </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const tabs = document.querySelectorAll(".tab");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                const target = tab.dataset.target;
+                tabContents.forEach(tabContent => {
+                    if (tabContent.id === target) {
+                        tabContent.style.display = "block";
+                    } else {
+                        tabContent.style.display = "none";
+                    }
+                });
+                tabs.forEach(t => {
+                    t.classList.remove("selected");
+                });
+                tab.classList.add("selected");
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
