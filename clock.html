@@ -45,7 +45,7 @@
         #clock {
             color: #0c0;
             font-size: 2em;
-            font-family: "Digital-7" monospace;
+            font-family: 'Digital-7' monospace;
             animation: colorPulse 5s infinite ease-in-out;
         }
 
@@ -66,17 +66,20 @@
     <div class="container3">
         <div id="clockContainer">
             <div id="clock"></div>
-            <div id="timeZone"></div>
         </div>
     </div>
     <script>
         function updateClock() {
             const now = new Date();
-            const options = { timeZone: 'local' };
-            const timeString = now.toLocaleString('en-US', options);
-            document.getElementById('clock').textContent = timeString.split(',')[1].trim();
-            document.getElementById('timeZone').textContent = timeString.split(',')[2].trim();
-            document.title = timeString.split(',')[1].trim() + ' - Fallout Clock'; // Update title with current time
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            const timeString = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('clock').textContent = timeString;
+            document.title = timeString + ' - Fallout Clock'; // Update title with current time
         }
 
         setInterval(updateClock, 1000);
