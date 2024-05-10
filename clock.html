@@ -1,258 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="icon" type="image/png" href="https://i.ibb.co/py3HGr7/community-Icon-6xhbc4i3kafa1-modified.png">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <title>Fallout Calendar</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/py3HGr7/community-Icon-6xhbc4i3kafa1-modified.png">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #333;
-            flex-direction: column;
-            text-align: center;
-            color: #fff;
+            font-family: 'Fira Mono', monospace;
             background-image: url('https://i.ibb.co/9VT0fwk/Falloutbackground.jpg');
             background-size: cover;
+            color: #fff;
             background-repeat: no-repeat;
         }
 
-        h1 {
-            background-color: #444;
-            padding: 20px;
+       .container3 {
+            position: absolute;
+            top: 38px;
+            left: 300px;
+            width: 750px;
+            height: 534px;
+            padding: 16px;
+            background-color: #44444400;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0);
-            width: 500px;
-            text-align: center;
-        }
-
-        .button-container {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
             display: flex;
-            gap: 10px;
-            margin-top: 20px;
+            flex-direction: column;
+            justify-content: space-between;
+            background-image: url('https://i.ibb.co/y8n5Xwm/image-10.png');
+            background-size: cover; 
+            background-position: center; 
         }
 
-        button {
-            display: flex;
-            margin-right: 10px; 
-            padding: 15px; 
-            background-color: #1d21fa;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            max-width: 180%; 
-        }
-
-        button:hover {
-            background-color: #1517a1;
-        }
-        
-        homebutton {
-            display: inline-block; 
-            padding: 10px; 
-            background-color: #555555;
-            color: #fff;
-            border: none;
-            border-radius: 2px;
-            cursor: pointer;
-            max-width: 180%; 
-        }
-
-        homebutton:hover {
-            background-color: #4e4e4e;
-        }
-        
-        addbutton {
-            display: inline-block; 
-            padding: 10px; 
-            background-color: #555555;
-            color: #fff;
-            border: none;
-            border-radius: 2px;
-            cursor: pointer;
-            max-width: 180%; 
-        }
-
-        addbutton:hover {
-            background-color: #4e4e4e;
-        }
-
-        img {
-            max-width: 100%;
-            height: 100%;
-        }
-    </style>
-    <title>Fallout Websites/title>
-</head>
-<body>
-    <h1>Fallout Websites</h1>
-<style>
-    .buttontopright {
-        position: absolute;
-        padding: 3px;
-        border-radius: 50%;
-        top: 14px;
-        right: 10px;
-    }
-</style>
-
-<homebutton class="buttontopright" onclick="window.location.href='index.html'">
-    <img src='https://cdn.icon-icons.com/icons2/1458/PNG/512/homebutton_99695.png' alt='Home' width='50' height='50'/>
-</homebutton>
-<style>
-    .addbutton {
-        position: absolute;
-        padding: 3px;
-        border-radius: 50%;
-        top: 14px;
-        right: 80px;
-    }
-</style>
-<addbutton class="addbutton"onclick="window.open('https://forms.gle/SzynGRWJkDacgg1K9', '_blank')">
-    <img src='https://i.ibb.co/XVMVF9B/plusbutton.png' alt='Add' width='50px' height='50px'/>
-</addbutton>
-<head>
-    <style>
-    .button-container {
-        display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    }
-
-    .button {
-      display: inline-block;
-      flex-direction: column;
-      align-items: center;
-      width: 150px;
-      height: 150px;
-      background-color: #1d21fa; 
-      border: none;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-    }
-
-    .button:hover {
-        color: #1517a1;
-    }
-    
-    .button img {
-      width: 100px;
-      height: 100px;
-    }
-    
-    .button span {
-      margin-top: 10px;
-    }
-    </style>
-</head>
-<body>   
-    <div class="button-container">
-        <button class="button" onclick="window.location.href='drive-mad.html'">
-          <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/f8a2160e52333ee0d44ec19e8ca65139.png" alt="Drive Mad">
-          <span>Drive Mad</span>
-        </button>
-        <button class="button" onclick="window.location.href='stickman-hook.html'">
-            <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/99e090d154caf30f3625df7e456d5984.png" alt="Stickman Hook">
-            <span>Stickman Hook</span>
-        </button>
-        <button class="button" onclick="window.location.href='tunnel-rush.html'">
-            <img src="https://images.hellokids.com/_uploads/_tiny_galerie/20180415/vign-tunnel-rush-hk-w8v_u89.jpg" alt="Tunnel Rush">
-            <span>Tunnel Rush</span>
-        </button>
-        <button class="button" onclick="window.location.href='slope.html'">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREW4cFszuaSJGFK7DnZK-zbedcVkH0eDfk36RLq96jjQ&s" alt="Slope">
-            <span>Slope</span>
-        </button>
-        <button class="button" onclick="window.location.href='monster-tracks.html'">
-            <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/41c7ae4db13e7d7596bb0528f40a4012.png" alt="Monster Tracks">
-            <span>Monster Tracks</span>
-        </button>
-        <button class="button" onclick="window.location.href='vex-5.html'">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuUW9V6WS9nc3CjyzXkZFNlmuGti2wz4DH9wWLSHHGFw&s" alt="Vex 5">
-            <span>Vex 5</span>
-        </button>
-        <button class="button" onclick="window.location.href='snow-rider-3d.html'">
-            <img src="https://img.gamedistribution.com/3b79a8537ebc414fb4f9672a9b8c68c8-512x512.jpeg" alt="Snow Rider 3D">
-            <span>Snow Rider 3D</span>
-        </button>
-        <button class="button" onclick="window.location.href='n-gon.html'">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuXvpHjoDOOxy81DUPE-8soU1zbg9ziJIbFvMyb6gUew&s" alt="N Gon">
-            <span>N-Gon</span>
-        </button>
-        <button class="button" onclick="window.location.href='highway-traffic.html'">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKGpHTLADGyn7EZAPucdFB-gjucAfibJYxQD8S2KTv2g&s" alt="Highway Traffic">
-            <span>Highway Traffic</span>
-        </button>
-        <button class="button" onclick="window.location.href='10-minutes-till-dawn.html'">
-            <img src="https://gamegator.net/_next/image?url=https%3A%2F%2Fimages.gamegator.net%2FRnGcqHtYyfKYkpyGzrn-DQ%2Fco4sj3%2Ffit%3Dcover%252Cw%253D560&w=640&q=10" alt="10 Minutes Till Dawn">
-            <span>10 M.T.D</span>
-        </button>
-        <button class="button" onclick="window.location.href='terminal-tetris.html'">
-            <img src="https://i.ibb.co/vmXSXdw/Tetris-logo.png" alt="Terminal Tetris">
-            <span>Terminal Tetris</span>
-        </button>
-        <button class="button" onclick="window.location.href='tiny-fishing.html'">
-            <img src="https://store-images.s-microsoft.com/image/apps.14718.13513728900482390.83b7c835-0670-49fd-a10a-2e5a6d19c873.9910f04c-0bac-4b54-9316-5f4d6b0aa819?mode=scale&q=90&h=200&w=200&background=%230078D7" alt="Tiny Fishing">
-            <span>Tiny Fishing</span>
-        </button>
-        <button class="button" onclick="window.location.href='the-impossible-quiz.html'">
-            <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/3cd96c99-46c1-4ff0-b04a-82381ea07349.png" alt="The Impossilbe Quiz">
-            <span>The Imp Quiz</span>
-        </button>
-    </div>
-</body>
-<head>
-    <style>
-        #version {
-            position: fixed;
-            bottom: 0;
-            right: 0;
+        #clockContainer {
+            position: absolute;
+            top: 30px;
+            right: 30px;
             padding: 10px;
-            background-color: #444;
-            border: 1px solid #444;
-            border-radius: 10px 0px 0px 0px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            animation: colorPulse 5s infinite ease-in-out;
         }
+
+        #clock {
+            color: #0c0;
+            font-size: 2em;
+            font-family: Digital;
+            animation: colorPulse 5s infinite ease-in-out;
+        }
+
+        @keyframes colorPulse {
+            0%, 100% {
+              color: #0c0;
+            }
+            48%, 52% {
+              color: #090;
+            }
+            50% {
+              color: #060;
+            }
+          }
     </style>
 </head>
 <body>
-    <div id="version">
-        Version: 0.3.0
+    <div class="container3">
+        <div id="clockContainer">
+            <div id="clock"></div>
+        </div>
     </div>
-</body> 
-<head>
-<style>
-    #github-link {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        padding: 10px;
-        background-color: #444;
-        border: 1px solid #444;
-        border-radius: 0px 10px 0px 0px;
-    }
-    #github-link a {
-        color: #1d21fa;
-        text-decoration: none;
-    }
-    #github-link a:hover {
-        color: #1517a1;
-    }
-</style>
-</head>
-<body>
-<div id="github-link">
-    <a href="https://github.com/BonnieGames87" target="_blank">Visit my GitHub</a>
-</div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            document.getElementById('clock').textContent = hours + ':' + minutes + ':' + seconds;
+        }
+
+        setInterval(updateClock, 1000);
+    </script>
 </body>
 </html>
