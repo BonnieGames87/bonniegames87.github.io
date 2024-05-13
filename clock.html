@@ -95,7 +95,7 @@
     document.getElementById('clock').textContent = timeString;
     document.title = timeString + ' - Fallout Clock'; // Update title with current time
 
-    const startHour = 8;
+const startHour = 8;
 const startMinute = 30;
 const endHour = 16; // Changed to 4:00 PM
 const endMinute = 0;
@@ -110,7 +110,7 @@ if (now < startTime) {
     // Before start time
     const diff = new Date(startTime - now);
     countdownMessage = `Countdown to ${startHour}:${startMinute} AM: ${formatTime(diff)}`;
-} else if (now < endTime) {
+} else if (now < endTime0) {
     // Between start and end time
     const diff = new Date(endTime - now);
     const remainingHours = endHour % 12 || 12; // Convert remaining hours to 12-hour format
