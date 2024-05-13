@@ -110,12 +110,12 @@
     if (now < startTime) {
         // Before start time
         const diff = new Date(startTime - now);
-        countdownMessage = `How Long untill ${startHour}:${startMinute} AM: ${formatTime(diff)}`;
+        countdownMessage = `To the begining ${startHour}:${startMinute} AM: ${formatTime(diff)}`;
     } else if (now < endTime) {
         // Between start and end time
         const diff = new Date(endTime - now);
         const remainingHours = endHour % 12 || 12; // Convert remaining hours to 12-hour format
-        countdownMessage = `Countdown to ${remainingHours}:${endMinute} PM: ${formatTime(diff)}`;
+        countdownMessage = 'To the end ${remainingHours}:${endMinute} PM: ${formatTime(diff)}`;
     } else {
         // After end time, countdown to next day's start time
         const nextDayStartTime = new Date(startTime);
