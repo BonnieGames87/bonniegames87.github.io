@@ -95,32 +95,42 @@
     document.getElementById('clock').textContent = timeString;
     document.title = timeString + ' - Fallout Clock'; // Update title with current time
 
-const startHour = 8;
-const startMinute = 30;
-const endHour = 16; // Changed to 4:00 PM
-const endMinute = 0;
+    // Countdown timer logic
+    const startHour = 8;
+    const startMinute = 30;
+    const endHour = 16; // Changed to 4:00 PM
+    const endMinute = 00;
 
-const startTime = new Date();
-startTime.setHours(startHour, startMinute, 0, 0);
-const endTime = new Date();
-endTime.setHours(endHour, endMinute, 0, 0);
+    const startTime = new Date();
+    startTime.setHours(startHour, startMinute, 0, 0);
+    const endTime = new Date();
+    endTime.setHours(endHour, endMinute, 0, 0);
 
-let countdownMessage = '';
-if (now < startTime) {
-    // Before start time
-    const diff = new Date(startTime - now);
-    countdownMessage = `Countdown to ${startHour}:${startMinute} AM: ${formatTime(diff)}`;
-} else if (now < endTime0) {
-    // Between start and end time
-    const diff = new Date(endTime - now);
-    const remainingHours = endHour % 12 || 12; // Convert remaining hours to 12-hour format
-    countdownMessage = `Countdown to ${remainingHours}:00 PM: ${formatTime(diff)}`;
-} else {
-    // After end time, countdown to next day's start time
-    const nextDayStartTime = new Date(startTime);
-    nextDayStartTime.setDate(nextDayStartTime.getDate() + 1);
-    const diff = new Date(nextDayStartTime - now);
-    countdownMessage = `Countdown to ${startHour}:${startMinute} AM: ${formatTime(diff)}`;
+    let countdownMessage = '';
+    if (now < startTime) {
+        // Before start time
+        const diff = new Date(startTime - now);
+        countdownMessage = `Countdown to ${startHour}:${startMinute} AM: ${formatTime(diff)}`;
+    } else if (now < endTime) {
+        // Between start and end time
+        const diff = new Date(endTime - now);
+        const remainingHours = endHour % 12 || 12; // Convert remaining hours to 12-hour format
+        countdownMessage = `Countdown to ${remainingHours}:${endMinute} PM: ${formatTime(diff)}`;
+    } else {
+        // After end time, countdown to next day's start time
+        const nextDayStartTime = new Date(startTime);
+        nextDayStartTime.setDate(nextDayStartTime.getDate() + 1);
+        const diff = new Date(nextDayStartTime - now);
+        countdownMessage = `Countdown to ${startHour}:${startMinute} AM: ${formatTime(diff)}`;
+    }
+    document.getElementById('countdown').textContent = countdownMessage;
+}
+
+function formatTime(time) {
+    const hours = String(time.getUTCHours()).padStart(2, '0');
+    const minutes = String(time.getUTCMinutes()).padStart(2, '0');
+    const seconds = String(time.getUTCSeconds()).padStart(2, '0');
+    return `${hours}:${minutes}:${seconds}`;
 }
 
 setInterval(updateClock, 1000);
