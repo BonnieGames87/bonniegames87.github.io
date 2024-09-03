@@ -9,64 +9,58 @@
         body {
             font-family: Arial, sans-serif;
             color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222; /* Dark background to match text color */
         }
 
-       .container3 {
-            position: absolute;
-            top: 38px;
-            left: 300px;
-            width: 750px;
-            height: 534px;
+        .container3 {
+            width: 90vw; /* Adjust width to be responsive */
+            height: 90vh; /* Adjust height to be responsive */
             padding: 16px;
             background-color: #44444400;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Added shadow for better visibility */
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            
-            }
+            align-items: center; /* Center content horizontally */
+            justify-content: center; /* Center content vertically */
+        }
 
         #calendar {
-            width: 80%; 
-            color: black;
+            width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            font-size: 0.8em; 
-            position: absolute; /* or position: relative; */
-            top: 124px; /* initial top position */
-            right: 392px; /* initial right position */
         }
 
         #monthYear {
-          text-align: center;
-          font-size: 1.5em; 
-          margin-bottom: 5px; 
-          color: #000000;
-          position: absolute; /* or position: relative; */
-          bottom: 1px; /* initial top position */
-          left: 416px; /* initial right position */
+            text-align: center;
+            font-size: 2em; /* Increased font size for better visibility */
+            margin-bottom: 10px; /* Increased margin for spacing */
+            color: #000000;
         }
 
         table {
-          width: 500px; /* Change width here */
-          height: 500px; /* Change height here */
-          border-collapse: collapse;
-          position: absolute; /* or position: relative; */
-          top: 0px; /* initial top position */
-          right: 0px; /* initial right position */
+            width: 100%;
+            height: auto;
+            border-collapse: collapse;
         }
 
         th, td {
-          border: 1px solid #333333;
-          padding: 3px; 
-          text-align: center;
-          font-size: 1.5em; 
+            border: 1px solid #333333;
+            padding: 10px; /* Increased padding for better readability */
+            text-align: center;
+            font-size: 1.2em; /* Adjusted font size for better fit */
         }
 
-       .today {
-          background-color: #ADD8E6;
+        .today {
+            background-color: #ADD8E6;
         }
     </style>
 </head>
