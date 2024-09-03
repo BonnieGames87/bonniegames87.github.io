@@ -7,11 +7,8 @@
     <link rel="icon" type="image/png" href="https://i.ibb.co/py3HGr7/community-Icon-6xhbc4i3kafa1-modified.png">
     <style>
         body {
-            font-family: 'Fira Mono', monospace;
-            background-image: url('https://i.ibb.co/9VT0fwk/Falloutbackground.jpg');
-            background-size: cover;
+            font-family: Arial, sans-serif;
             color: #fff;
-            background-repeat: no-repeat;
         }
 
        .container3 {
@@ -27,15 +24,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background-image: url('https://i.ibb.co/y8n5Xwm/image-10.png');
-            background-size: cover; 
-            background-position: center; 
-        }
+            
+            }
 
         #calendar {
-            animation: colorPulse 5s infinite ease-in-out;
             width: 80%; 
-            color: lime;
+            color: black;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -46,21 +40,18 @@
         }
 
         #monthYear {
-          animation: colorPulse 5s infinite ease-in-out;
-          content:"_";
           text-align: center;
           font-size: 1.5em; 
           margin-bottom: 5px; 
-          color: #0c0;
+          color: #000000;
           position: absolute; /* or position: relative; */
           bottom: 1px; /* initial top position */
-          left: 450px; /* initial right position */
+          left: 416px; /* initial right position */
         }
 
         table {
-          animation: colorPulse 5s infinite ease-in-out;
           width: 270px; /* Change width here */
-          height: 230px; /* Change height here */
+          height: 270px; /* Change height here */
           border-collapse: collapse;
           position: absolute; /* or position: relative; */
           top: 0px; /* initial top position */
@@ -68,97 +59,15 @@
         }
 
         th, td {
-          animation: colorPulse 5s infinite ease-in-out;
-          border: 1px solid #0c0;
+          border: 1px solid #333333;
           padding: 3px; 
           text-align: center;
           font-size: 1.5em; 
         }
 
        .today {
-          animation: colorPulse 5s infinite ease-in-out;
-          background-color: #0c0;
+          background-color: #ADD8E6;
         }
-    
-        @keyframes colorPulse {
-            0%, 100% {
-              color:#0c0;
-            }
-            48%, 52% {
-              color:#090;
-            }
-            50% {
-              color:#060;
-            }
-          }
-          
-          @keyframes wave {
-            0% {
-              box-shadow:0 -10vh 20vh #0c0;
-              top:-100vh;
-            }
-            48%, 52% {
-              box-shadow:0 -10vh 20vh #090;
-            }
-            50% {
-              box-shadow:0 -10vh 20vh #060;
-            }
-            100% {
-              box-shadow:0 -10vh 20vh #0c0;
-              top:200vh;
-            }
-          }
-          
-          @keyframes blink {
-            50% {
-              opacity:0;
-            }
-          }
-        
-        button {
-            animation: colorPulse 5s infinite ease-in-out;
-            display: inline-block; 
-            padding: 15px;
-            background-color: #1d21fa00;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            max-width: 180%; 
-        }
-
-        button:hover {
-            background-color: #1517a100;
-        }  
-        #version {
-            position: fixed;
-            bottom: 171px;
-            right: 580px;
-            padding: 10px;
-            background-color: #44444400;
-            border: 1px solid #44444400;
-            border-radius: 10px 0px 0px 0px;
-        }
-
-        .home-container {
-          position: absolute; /* Change from relative to absolute */
-          bottom: 182px; /* Adjust to your desired top position */
-          right: 867px; /* Adjust to your desired right position */
-        }
-
-        .buttontopright {
-             position: absolute;
-             padding: 10px;
-             border-radius: 50%;
-             top: -9.5px;
-             left: -49.5px;
-             width: 75%; /* set width to 100% to stretch the element */
-             background-color: rgba(255, 0, 0, 0);
-         }
-
-        .text-color {
-             color: #2c2c2a; /* change the text color to hot pink */
-         }
     </style>
 </head>
 <body>
@@ -182,13 +91,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    <div class="home-container">
-      <span class="text-color">home</span>
-      <button class="buttontopright" onclick="window.location.href='index.html'"></button>
-  </div>
-    <div id="version">
-        Version: 0.3.1
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
