@@ -29,28 +29,7 @@
             flex-direction: column;
             align-items: center; /* Center content horizontally */
             justify-content: center; /* Center content vertically */
-            position: relative; /* Allows for absolute positioning of the button */
         }
-        
-        .back-button {
-            position: absolute;
-            top: 16px; /* Adjust top position as needed */
-            right: 16px; /* Adjust right position as needed */
-            background-color: #0000FF; /* Blue color */
-            color: #FFFFFF; /* White text */
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            text-decoration: none; /* Remove underline from the link */
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        
-        .back-button:hover {
-            background-color: #0000CC; /* Darker blue on hover */
-        }
-
 
         #calendar {
             width: 100%;
@@ -84,6 +63,24 @@
         .today {
             background-color: #1b14dd;
         }
+        
+        .back-to-index-button {
+            position: fixed; /* Fixed positioning */
+            top: 10px; /* Adjust the top offset */
+            right: 10px; /* Adjust the right offset */
+            padding: 10px 20px; /* Adjust padding */
+            background-color: #007bff; /* Button background color */
+            color: #fff; /* Button text color */
+            text-decoration: none; /* Remove underline from link */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for a 3D effect */
+        }
+
+        .back-to-index-button:hover {
+            background-color: #0056b3; /* Darker background on hover */
+        }
+
     </style>
 </head>
 <body>
@@ -108,6 +105,7 @@
             </table>
         </div>
     </div>
+    <a href="index.html" class="back-to-index-button">Home</a>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const monthYear = document.getElementById('monthYear');
