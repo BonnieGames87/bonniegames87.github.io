@@ -16,6 +16,7 @@
             align-items: center;
             height: 100vh;
             background-color: #ff0000; /* Dark background to match text color */
+            position: relative; /* Add relative positioning for button positioning */
         }
 
         .container3 {
@@ -65,7 +66,10 @@
         }
         
         .back-to-index-button {
-            position: absolute; /* Fixed positioning */
+            position: absolute; /* Absolute positioning */
+            bottom: 20px; /* Distance from the bottom */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Offset by half of its width to truly center */
             padding: 10px 20px; /* Adjust padding */
             background-color: #007bff; /* Button background color */
             color: #fff; /* Button text color */
