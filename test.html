@@ -1,1 +1,33 @@
-Next is music 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Testing</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fade-bar {
+            position: absolute;
+            bottom: -25%; /* Initial position */
+            left: 30%; /* Position 30% from the left */
+            width: 15px; /* Width of the bar */
+            height: 200%; /* Length of the bar (200% of viewport height) */
+            background-color: black; /* Solid black */
+            box-shadow: 0 0 30px 15px rgba(255, 255, 255, 0), /* Fade into white */
+                        0 0 26px 15px black; /* Keep edges black */
+            transform: rotate(40deg); /* Rotate the bar */
+            transition: left 0.3s ease; /* Smooth transition */
+        }
+    </style>
+</head>
+<body>
+    <div class="fade-bar"></div>
+</body>
+</html>
