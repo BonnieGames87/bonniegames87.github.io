@@ -19,9 +19,20 @@
             left: 25%; /* Position 25% from the left */
             width: 15px; /* Width of the bar */
             height: 200%; /* Length of the bar (200% of viewport height) */
-            background: linear-gradient(to right, rgb(0, 7, 81), rgba(0, 7, 81, 0)); /* Fade effect */
+            background-color: rgb(0, 7, 81); /* Solid blue */
             box-shadow: 0 0 30px 15px rgba(7, 48, 254, 0), /* Fade into white */
                         0 0 26px 20px rgba(7, 48, 254); /* Keep edges black */
+            transform: rotate(32deg); /* Rotate the bar */
+            transition: left 0.3s ease; /* Smooth transition */
+        }
+
+        .fade-bar-fade {
+            position: absolute;
+            bottom: -25%; /* Initial position */
+            left: calc(25% + 15px); /* Position 15px to the right of the first bar */
+            width: 15px; /* Width of the bar */
+            height: 200%; /* Length of the bar (200% of viewport height) */
+            background: linear-gradient(to right, rgb(0, 7, 81), rgba(0, 7, 81, 0) 100px); /* Solid blue fading to transparent */
             transform: rotate(32deg); /* Rotate the bar */
             transition: left 0.3s ease; /* Smooth transition */
         }
@@ -29,5 +40,6 @@
 </head>
 <body>
     <div class="fade-bar"></div>
+    <div class="fade-bar-fade"></div>
 </body>
 </html>
