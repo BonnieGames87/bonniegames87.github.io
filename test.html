@@ -10,7 +10,7 @@
             height: 100vh;
             background-color: rgb(0, 0, 0);
             display: flex;
-            justify-content: center;
+            justify-content: flex-end; /* Change from center to flex-end */
             align-items: center;
             flex-direction: column;
         }
@@ -19,7 +19,7 @@
             display: grid;
             grid-template-columns: repeat(5, 50px);
             gap: 150px;
-            margin: 10px 0; /* Space between grids */
+            margin: 150px 0; /* Space between grids */
         }
 
         .grid:nth-child(1) { margin-right: -60px; } /* 1st grid */
