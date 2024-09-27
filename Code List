@@ -1,11 +1,102 @@
-Keeping calendar.html but redesign
-Keeping logs.html [not started]
-Keeping music.html [redesign, not started]
-Keeping Index.html [duhhh]
-Keeping clock.html [redesign, not started]
-Removing socials.html (fully removing it since I dont use it)
-Removing statictest.html (not being in use anymore since redesign)
-Removing classtimer.md (never worked, reworking it)
-Removing test.html (Reworking and Redesign all htmls so no needed)
-* Going to remove all style from all (keeping) htmls and putting them all in styles.css * 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
+    <title>Grid Example</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden; /* Prevents scrolling */
+            position: relative;
+        }
 
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 50px);
+            gap: 100px;
+            margin: 20px 0;
+        }
+
+        .grid:nth-child(1) { margin-right: -400px; }
+        .grid:nth-child(2) { margin-right: -250px; }
+        .grid:nth-child(3) { margin-right: -100px; }
+
+        .box {
+            width: 120px;
+            height: 120px;
+            background-color: rgb(30, 0, 255);
+            text-align: center;
+            line-height: 120px;
+            text-decoration: none;
+            color: black;
+            transition: background-color 0.3s ease;
+        }
+
+        .box:hover {
+            background-color: rgb(12, 0, 117);
+        }
+
+        .fade-bar {
+            position: absolute;
+            bottom: -400px;
+            left: 22%; 
+            width: 30px;  
+            height: 1760px; 
+            background-color: rgb(0, 7, 81); /* og color - 0, 7, 81*/
+            box-shadow: 0 0 30px 15px rgba(7, 48, 254, 0), /*gonna be transparent*/
+                        0 0 26px 20px rgba(7, 48, 254); /*gonna be transparent*/
+            transform: rotate(32deg); 
+            transition: left 0.3s ease; 
+            pointer-events: none; 
+            z-index: -1; 
+        }
+
+        .index-box {
+            background-color: transparent;
+            color: rgb(255, 255, 255); 
+            font-weight: bold;  
+            font-size: 120px; 
+            font-family: 'Graduate', sans-serif; 
+            position: absolute; 
+            bottom: 348px; 
+            left: -2%;
+            transform: rotate(-58deg);
+            z-index: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="index-box">index</div> <!-- Added INDEX text box -->
+    <div class="grid">
+        <a href="index.html" class="box">Box 1</a>
+        <a href="index.html" class="box">Box 2</a>
+        <a href="index.html" class="box">Box 3</a>
+        <a href="index.html" class="box">Box 4</a>
+        <a href="index.html" class="box">Box 5</a>
+    </div>
+    <div class="grid">
+        <a href="index.html" class="box">Box 6</a>
+        <a href="index.html" class="box">Box 7</a>
+        <a href="index.html" class="box">Box 8</a>
+        <a href="index.html" class="box">Box 9</a>
+        <a href="index.html" class="box">Box 10</a>
+    </div>
+    <div class="grid">
+        <a href="index.html" class="box">Box 11</a>
+        <a href="index.html" class="box">Box 12</a>
+        <a href="index.html" class="box">Box 13</a>
+        <a href="index.html" class="box">Box 14</a>
+        <a href="index.html" class="box">Box 15</a>
+    </div>
+    <div class="fade-bar"></div>
+</body>
+</html>
