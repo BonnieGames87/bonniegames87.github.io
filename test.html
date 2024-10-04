@@ -11,43 +11,40 @@
             height: 100vh;
             background-color: rgb(0, 0, 0);
             display: flex;
-            justify-content: flex-end; /* Aligns content to the right */
+            justify-content: center; /* Center content horizontally */
             align-items: center;
             flex-direction: column;
             overflow: hidden; /* Prevents scrolling */
             position: relative;
-            padding-right: 20px; /* Adds padding to avoid touching the edge */
         }
 
         .grid {
             display: grid;
             margin: 10px 0; /* Space between grid layers */
+            justify-items: center; /* Center items in each grid */
+            max-width: 240px; /* Limit width for centering */
+            width: 100%; /* Ensure it takes full width available */
         }
 
         /* Adjust grid positions here */
         .grid.social {
-            grid-template-columns: repeat(1, 240px); /* 1 column for Socials */
             margin-right: 0; /* Adjust as needed for positioning */
         }
 
         .grid.clock {
-            grid-template-columns: repeat(1, 240px); /* 1 column for Clock */
-            margin-right: 50px; /* Adjust as needed */
+            margin-right: 20px; /* Adjust as needed */
         }
 
         .grid.calendar {
-            grid-template-columns: repeat(1, 240px); /* 1 column for Calendar */
-            margin-right: 100px; /* Adjust as needed */
+            margin-right: 40px; /* Adjust as needed */
         }
 
         .grid.music {
-            grid-template-columns: repeat(1, 240px); /* 1 column for Music */
-            margin-right: 150px; /* Adjust as needed */
+            margin-right: 60px; /* Adjust as needed */
         }
 
         .grid.test {
-            grid-template-columns: repeat(1, 240px); /* 1 column for Testing */
-            margin-right: 200px; /* Adjust as needed */
+            margin-right: 80px; /* Adjust as needed */
         }
 
         .box {
