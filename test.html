@@ -21,20 +21,33 @@
 
         .grid {
             display: grid;
-            gap: 20px; /* Space between boxes */
             margin: 10px 0; /* Space between grid layers */
         }
 
-        .grid.layer1 {
-            grid-template-columns: repeat(2, 120px); /* 2 columns for layer 1 */
+        /* Adjust grid positions here */
+        .grid.social {
+            grid-template-columns: repeat(1, 240px); /* 1 column for Socials */
+            margin-right: 0; /* Adjust as needed for positioning */
         }
 
-        .grid.layer2 {
-            grid-template-columns: repeat(3, 100px); /* 3 columns for layer 2 */
+        .grid.clock {
+            grid-template-columns: repeat(1, 240px); /* 1 column for Clock */
+            margin-right: 50px; /* Adjust as needed */
         }
 
-        .grid.layer3 {
-            grid-template-columns: repeat(4, 80px); /* 4 columns for layer 3 */
+        .grid.calendar {
+            grid-template-columns: repeat(1, 240px); /* 1 column for Calendar */
+            margin-right: 100px; /* Adjust as needed */
+        }
+
+        .grid.music {
+            grid-template-columns: repeat(1, 240px); /* 1 column for Music */
+            margin-right: 150px; /* Adjust as needed */
+        }
+
+        .grid.test {
+            grid-template-columns: repeat(1, 240px); /* 1 column for Testing */
+            margin-right: 200px; /* Adjust as needed */
         }
 
         .box {
@@ -86,22 +99,24 @@
 <body>
     <div class="index-box">index</div>
 
-    <div class="grid layer1">
+    <div class="grid social">
         <a href="socials.html" class="box">Socials</a>
+    </div>
+
+    <div class="grid clock">
         <a href="clock.html" class="box">Clock</a>
     </div>
 
-    <div class="grid layer2">
-        <a href="calendar.html" class="box">Cal</a>
-        <a href="music.html" class="box">Music</a>
-        <a href="test.html" class="box">Testing</a>
+    <div class="grid calendar">
+        <a href="calendar.html" class="box">Calendar</a>
     </div>
 
-    <div class="grid layer3">
-        <a href="link1.html" class="box">Link 1</a>
-        <a href="link2.html" class="box">Link 2</a>
-        <a href="link3.html" class="box">Link 3</a>
-        <a href="link4.html" class="box">Link 4</a>
+    <div class="grid music">
+        <a href="music.html" class="box">Music</a>
+    </div>
+
+    <div class="grid test">
+        <a href="test.html" class="box">Testing</a>
     </div>
 
     <div class="fade-bar"></div>
