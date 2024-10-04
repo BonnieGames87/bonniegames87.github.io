@@ -13,17 +13,26 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            overflow: hidden; /* Prevents scrolling */
             position: relative;
         }
 
         .grid {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start; /* Align items to the left */
-            gap: 20px; /* Space between boxes */
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            gap: 100px;
+            margin: 20px 0;
         }
 
-        .box {
+        .grid:nth-child(1), .grid:nth-child(3) {
+            background-color: transparent; /* Make first and third grid transparent */
+            pointer-events: none; /* Prevent interaction with the boxes */
+        }
+
+        .grid:nth-child(2) { margin-right: -250px; }
+ 
+       .box {
             width: 160px;
             height: 160px;
             background-color: rgb(30, 0, 255);
@@ -34,8 +43,6 @@
             text-decoration: none;
             color: rgb(248, 248, 248);
             transition: background-color 0.3s ease;
-            transform: rotate(-45deg); /* Rotate each box */
-            margin-left: 40px; /* Adjust left margin for diagonal effect */
         }
 
         .box:hover {
