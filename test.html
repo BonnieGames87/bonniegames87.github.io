@@ -11,32 +11,22 @@
             height: 100vh;
             background-color: rgb(0, 0, 0);
             display: flex;
-            justify-content: center;
+            justify-content: flex-end; /* Aligns content to the right */
             align-items: center;
             flex-direction: column;
             overflow: hidden; /* Prevents scrolling */
             position: relative;
+            padding-right: 20px; /* Adds padding to avoid touching the edge */
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(5, 100px);
-            gap: 100px;
-            margin: 20px 0;
+            grid-template-columns: repeat(1, 240px); /* Single column for each box */
+            gap: 20px; /* Adjust gap as needed */
+            margin: 0; /* Reset margin */
         }
 
-        /*.grid:nth-child(1), .grid:nth-child(3) {
-            background-color: transparent; Make first and third grid transparent 
-            pointer-events: none; /* Prevent interaction with the boxes 
-        } */
-        
-        .grid:nth-child(1) { margin-right: 10px; }
-        .grid:nth-child(2) { margin-right: -250px; }
-        .grid:nth-child(3) { margin-right: -250px; }
-        .grid:nth-child(4) { margin-right: -250px; }
-        .grid:nth-child(5) { margin-right: -250px; }
- 
-       .box {
+        .box {
             width: 240px;
             height: 120px;
             background-color: rgb(30, 0, 255);
@@ -76,7 +66,7 @@
             font-family: 'Graduate', sans-serif; 
             position: absolute; 
             bottom: 348px; 
-            left: -2%;
+            left: 20px; /* Adjust position as needed */
             transform: rotate(-58deg);
             z-index: 1;
         }
@@ -86,19 +76,10 @@
     <div class="index-box">index</div>
     <div class="grid">
         <a href="socials.html" class="box">Socials</a>
-    </div class="grid">    
-    <div class="grid">
         <a href="clock.html" class="box">Clock</a>
-    </div class="grid">
-    <div class="grid">
         <a href="calendar.html" class="box">Cal</a>
-    </div class="grid">   
-    <div class="grid">    
         <a href="music.html" class="box">Music</a>
-    </div class="grid">   
-    <div class="grid">
         <a href="test.html" class="box">Testing</a>
-    </div class="grid">   
     </div>
     <div class="fade-bar"></div>
 </body>
