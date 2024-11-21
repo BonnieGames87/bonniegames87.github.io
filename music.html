@@ -157,15 +157,17 @@
     }
 
     function playNext() {
-      let nextIndex = currentSongIndex;
-      do {
-        nextIndex = (nextIndex + 1) % songs.length;
-      } while (playedSongs.has(nextIndex));
-
+      let nextIndex = (currentSongIndex + 1) % songs.length;
       if (playedSongs.size === songs.length) {
-        playedSongs.clear();
+        playedSongs.clear(); // Reset the playedSongs set when all songs have been played
       }
-
+      
+      // Ensure the next song hasn't been played already
+      while (playedSongs.has(nextIndex)) {
+        nextIndex = (nextIndex + 1) % songs.length;
+      }
+      
+      playedSongs.add(nextIndex);
       loadSong(nextIndex);
     }
 
@@ -173,15 +175,17 @@
       if (index >= 0 && index < songs.length) {
         audioPlayer.src = songs[index].source;
         audioTitle.textContent = songs[index].title;
-        // If the song is played directly, set the play button to play.
+
+        // Set the play/pause button appropriately based on the state
         if (!isPlaying) {
-          playPauseBtn.querySelector('img').src = 'https://w7.pngwing.com/pngs/261/757/png-transparent-computer-icons-google-play-music-button-play-angle-rectangle-triangle.png'; // Show the play icon initially
+          playPauseBtn.querySelector('img').src = 'https://w7.pngwing.com/pngs/261/757/png-transparent-computer-icons-google-play-music-button-play-angle-rectangle-triangle.png'; // Play icon
         } else {
-          playPauseBtn.querySelector('img').src = 'https://w7.pngwing.com/pngs/879/589/png-transparent-pause-logo-computer-icons-button-media-player-pause-button-rectangle-black-internet.png'; // If playing, show pause icon
+          playPauseBtn.querySelector('img').src = 'https://w7.pngwing.com/pngs/879/589/png-transparent-pause-logo-computer-icons-button-media-player-pause-button-rectangle-black-internet.png'; // Pause icon
         }
-        isPlaying = false; // Start with the song paused until user hits play
+
+        isPlaying = false; // Song starts paused until play is clicked
         currentSongIndex = index;
-        playedSongs.add(index);
+        audioPlayer.load(); // Load the song into the player
       } else {
         audioTitle.textContent = "N/A Playing"; // Show "N/A Playing" when no song is loaded
       }
