@@ -12,12 +12,16 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            height: 100vh; /* Ensure body takes full viewport height */
+            display: flex;
+            overflow: hidden; /* Prevent the body from scrolling */
         }
 
         /* Layout container */
         .container {
             display: flex;
             height: 100vh;
+            width: 100%;
         }
 
         /* Playlist section (left 60%) */
@@ -30,6 +34,9 @@
             grid-template-columns: repeat(5, 1fr);
             grid-gap: 20px;
             grid-template-rows: repeat(4, 1fr);
+            overflow-y: scroll; /* Make the playlist scrollable */
+            max-height: 100vh; /* Ensure it doesn't overflow the screen height */
+            position: relative;
         }
 
         .playlist h2 {
@@ -46,8 +53,8 @@
             text-align: center;
             transition: background-color 0.3s;
             cursor: pointer;
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -78,6 +85,7 @@
             width: 40%;
             padding: 20px;
             background-color: #1f1f1f;
+            overflow: hidden; /* Prevent scrolling in the player section */
         }
 
         .player h1 {
