@@ -26,11 +26,44 @@
             padding: 20px;
             background-color: #1f1f1f;
             border-right: 1px solid #333;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 20px;
+            grid-template-rows: repeat(4, 1fr);
         }
 
         .playlist h2 {
             text-align: center;
             margin-bottom: 20px;
+            grid-column: span 5; /* Make the heading span all columns */
+        }
+
+        /* Playlist items (each song) */
+        .playlist-item {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .playlist-item:hover {
+            background-color: #444;
+        }
+
+        /* Image inside the playlist item */
+        .playlist-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Name below the image */
+        .playlist-item p {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
         }
 
         /* Music Player section (right 40%) */
@@ -44,23 +77,16 @@
             text-align: center;
         }
 
-        /* Style the playlist items */
+        /* Style the playlist container */
         #playlist-list {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 20px;
+            grid-template-rows: repeat(4, 1fr);
+            padding: 0;
             list-style: none;
-            padding-left: 0;
         }
 
-        #playlist-list li {
-            background-color: #333;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        #playlist-list li:hover {
-            background-color: #444;
-        }
     </style>
 </head>
 <body>
@@ -68,7 +94,7 @@
         <!-- Left: Playlist Section -->
         <div class="playlist" id="playlist">
             <h2>Playlist</h2>
-            <ul id="playlist-list"></ul>
+            <div id="playlist-list"></div>
         </div>
 
         <!-- Right: Music Player Container -->
@@ -82,7 +108,23 @@
 
     <script>
         // Sample playlist items
-        const playlist = ['Song 1', 'Song 2', 'Song 3', 'Song 4', 'Song 5'];
+        const playlist = [
+            { name: 'Song 1', img: 'https://via.placeholder.com/150x150?text=1' },
+            { name: 'Song 2', img: 'https://via.placeholder.com/150x150?text=2' },
+            { name: 'Song 3', img: 'https://via.placeholder.com/150x150?text=3' },
+            { name: 'Song 4', img: 'https://via.placeholder.com/150x150?text=4' },
+            { name: 'Song 5', img: 'https://via.placeholder.com/150x150?text=5' },
+            { name: 'Song 6', img: 'https://via.placeholder.com/150x150?text=6' },
+            { name: 'Song 7', img: 'https://via.placeholder.com/150x150?text=7' },
+            { name: 'Song 8', img: 'https://via.placeholder.com/150x150?text=8' },
+            { name: 'Song 9', img: 'https://via.placeholder.com/150x150?text=9' },
+            { name: 'Song 10', img: 'https://via.placeholder.com/150x150?text=10' },
+            { name: 'Song 11', img: 'https://via.placeholder.com/150x150?text=11' },
+            { name: 'Song 12', img: 'https://via.placeholder.com/150x150?text=12' },
+            { name: 'Song 13', img: 'https://via.placeholder.com/150x150?text=13' },
+            { name: 'Song 14', img: 'https://via.placeholder.com/150x150?text=14' },
+            { name: 'Song 15', img: 'https://via.placeholder.com/150x150?text=15' }
+        ];
 
         // Function to shuffle the playlist
         function shufflePlaylist(array) {
@@ -98,10 +140,24 @@
         const playlistList = document.getElementById('playlist-list');
         const shuffledPlaylist = shufflePlaylist(playlist);
 
-        // Create list items for the playlist
+        // Create playlist items with images and names
         shuffledPlaylist.forEach(song => {
-            const listItem = document.createElement('li');
-            listItem.textContent = song;
+            const listItem = document.createElement('div');
+            listItem.classList.add('playlist-item');
+
+            // Add image
+            const image = document.createElement('img');
+            image.src = song.img;
+
+            // Add song name
+            const name = document.createElement('p');
+            name.textContent = song.name;
+
+            // Append image and name to the item
+            listItem.appendChild(image);
+            listItem.appendChild(name);
+
+            // Append the item to the playlist list
             playlistList.appendChild(listItem);
         });
     </script>
