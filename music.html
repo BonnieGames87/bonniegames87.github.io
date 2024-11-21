@@ -46,6 +46,12 @@
             text-align: center;
             transition: background-color 0.3s;
             cursor: pointer;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .playlist-item:hover {
@@ -54,15 +60,16 @@
 
         /* Image inside the playlist item */
         .playlist-item img {
-            width: 100%;
-            height: auto;
+            width: 60px;  /* Ensure the image is centered and fits */
+            height: 60px;
+            object-fit: cover; /* Make sure the image covers the square without distortion */
             border-radius: 5px;
         }
 
         /* Name below the image */
         .playlist-item p {
-            margin-top: 10px;
-            font-size: 14px;
+            margin-top: 5px;
+            font-size: 12px;
             font-weight: bold;
         }
 
