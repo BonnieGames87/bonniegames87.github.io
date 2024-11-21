@@ -186,6 +186,9 @@
         isPlaying = false; // Song starts paused until play is clicked
         currentSongIndex = index;
         audioPlayer.load(); // Load the song into the player
+
+        // Start playing the song immediately if it was already loaded
+        audioPlayer.play();
       } else {
         audioTitle.textContent = "N/A Playing"; // Show "N/A Playing" when no song is loaded
       }
