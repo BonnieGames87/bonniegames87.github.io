@@ -3,128 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows 7 Startup</title>
+    <title>Interactive Page</title>
     <style>
-        /* General Reset */
+        /* Basic Reset */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
             font-family: Arial, sans-serif;
         }
+        
+        /* Centered content for video and name */
+        .video-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-        /* Background */
-        .background {
+        /* The video or gif */
+        .video-container video {
+            width: 80%;
+            max-width: 600px;
+        }
+
+        /* Company name at the bottom */
+        .company-name {
+            position: absolute;
+            bottom: -120%;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* After video ends, new content */
+        .after-video {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: #2e87c3; /* Windows 7 default color */
+            background-image: url('your-image.jpg'); /* Placeholder for background image */
+            background-size: cover;
+            background-position: center;
         }
 
-        /* Startup Animation */
-        .startup-animation {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 50px;
-            font-weight: bold;
+        /* Please Wait screen */
+        .please-wait {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
             color: white;
-            opacity: 0;
-            animation: fadeIn 3s forwards, logoZoom 3s forwards;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes logoZoom {
-            0% { transform: translate(-50%, -50%) scale(0.1); }
-            100% { transform: translate(-50%, -50%) scale(1); }
-        }
-
-        /* Login Screen */
-        .login-screen {
-            display: none;
             position: absolute;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            border: 1px solid #ccc;
-            padding: 20px;
-            text-align: center;
-            width: 300px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            transform: translateY(-50%);
         }
 
-        .login-screen img {
-            width: 80px;
+        /* Loading circle animation */
+        .loading-circle {
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-top: 8px solid white;
             border-radius: 50%;
-        }
-
-        .login-screen input {
-            margin-top: 20px;
-            padding: 10px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .login-screen button {
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
             margin-top: 10px;
-            padding: 10px;
-            background: #2e87c3;
-            color: white;
-            border: none;
-            cursor: pointer;
         }
 
-        /* Transition to Login Screen */
-        .login-visible {
-            display: block;
+        /* Keyframe for loading circle spinning */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Form section with image, text box, and password box */
+        .form-section {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .form-section img {
+            width: 200px;
+            height: auto;
+        }
+
+        .input-box {
+            margin: 10px 0;
+        }
+
+        .input-box input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+        }
+
+        .circle-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .circle-btn img {
+            width: 20px;
+            height: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="background"></div>
 
-    <!-- Windows 7 Logo and Startup Animation -->
-    <div class="startup-animation">
-        <span>Windows 7</span>
-        <br>
-        <span>Starting...</span>
+    <!-- Video section -->
+    <div class="video-container">
+        <video id="video" autoplay>
+            <source src="BonnieGames87/bonniegames87.github.io/ytmp3-converter.com_480p-windows-7-startup.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="company-name">© Bonnie Corparation</div>
     </div>
 
-    <!-- Login Screen -->
-    <div class="login-screen">
-        <img src="https://via.placeholder.com/80" alt="User Avatar">
-        <h2>Welcome</h2>
-        <input type="password" placeholder="Password" id="passwordInput">
-        <button onclick="login()">Log In</button>
+    <!-- After video, shows the "Please Wait" and loading -->
+    <div class="after-video">
+        <div class="please-wait">
+            <div>Please Wait</div>
+            <div class="loading-circle"></div>
+        </div>
     </div>
 
-    <!-- Sound (Replace with your sound link) -->
-    <audio id="startupSound" autoplay>
-        <source src="your-sound-file-link-here.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
+    <!-- Form section with image, text box, password box, and circle button -->
+    <div class="form-section">
+        <img src="your-image.jpg" alt="Center Image">
+        <div class="input-box">
+            <input type="text" placeholder="User">
+        </div>
+        <div class="input-box">
+            <input type="password" placeholder="Enter password here">
+        </div>
+        <div class="circle-btn">
+            <img src="your-button-image.png" alt="Button Image">
+        </div>
+    </div>
 
     <script>
-        // Wait for the startup animation to end, then show login screen
-        setTimeout(() => {
-            document.querySelector('.startup-animation').style.display = 'none';
-            document.querySelector('.login-screen').classList.add('login-visible');
-        }, 3000); // Change this to match your animation duration
+        const video = document.getElementById('video');
+        const afterVideo = document.querySelector('.after-video');
+        const pleaseWait = document.querySelector('.please-wait');
+        const formSection = document.querySelector('.form-section');
+        
+        // When video ends, show "Please Wait" screen
+        video.addEventListener('ended', function() {
+            // Hide video and company name
+            document.querySelector('.video-container').style.display = 'none';
 
-        // Handle login button click (fake login functionality)
-        function login() {
-            window.location.href = 'home.index'; // Redirect to home.index
-        }
+            // Show "Please Wait" screen
+            afterVideo.style.display = 'flex';
+
+            // After 3 seconds, change to the form section
+            setTimeout(() => {
+                pleaseWait.style.display = 'none';
+                formSection.style.display = 'flex';
+            }, 3000);
+        });
     </script>
+
 </body>
 </html>
