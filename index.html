@@ -4,148 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="https://ibb.co/FxkDjnP">
-    <link rel="stylesheet" href="styles.css">
     <title>BonnieGames87's Website</title>
-    <style>
-        body {
-          background-color:#000;
-          margin:0;
-          overflow:hidden;
-          padding:0;
-        }
-        
-       .screen {
-            animation:colorPulse 5s infinite ease-in-out;
-            background-image:radial-gradient(#444, #111);
-            box-shadow:0 0 5vmin 1vmin #000 inset;
-            box-sizing:border-box;
-            font-family:'Fira Mono', monospace;
-            font-size:20px;
-            height:100vh;
-            overflow:hidden;
-            padding:10vmin;
-            width:100vw;
-          }
-          
-       .screen:before {
-            animation:wave 10s infinite ease-in-out;
-            content:"";
-            height:20vh;
-            left:0;
-            opacity:.5;
-            position:absolute;
-            right:0;
-            z-index:1;
-          }
-          
-       .screen:after {
-            background-image:linear-gradient(transparent, transparent 3px, #222);
-            background-size:4px 4px;
-            bottom:0;
-            content:"";
-            left:0;
-            pointer-events:none;
-            position:absolute;
-            right:0;
-            top:0;
-            z-index:2;
-          }
-          
-          p:last-child:after {
-            animation:blink 1s infinite;
-            content:"_";
-          }
-          
-          @keyframes colorPulse {
-            0%, 100% {
-              color:#0c0;
-            }
-            48%, 52% {
-              color:#090;
-            }
-            50% {
-              color:#060;
-            }
-          }
-          
-          @keyframes wave {
-            0% {
-              box-shadow:0 -10vh 20vh #0c0;
-              top:-100vh;
-            }
-            48%, 52% {
-              box-shadow:0 -10vh 20vh #090;
-            }
-            50% {
-              box-shadow:0 -10vh 20vh #060;
-            }
-            100% {
-              box-shadow:0 -10vh 20vh #0c0;
-              top:200vh;
-            }
-          }
-          
-          @keyframes blink {
-            50% {
-              opacity:0;
-            }
-          }
-        
-       .screen a {
-            color: lime;
-            animation:colorPulse 5s infinite ease-in-out;
-          }
-          
-          /* added to move the welcome message to the top center */
-        .screen h1 {
-            position: absolute;
-            font-size: 60px;
-            bottom: 455px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-          }
-          
-          /* added to style the links */
-         .links {
-            position: absolute;
-            left: 40px;
-            top: 110px;
-          }
-          
-         .links a {
-            display: block;
-            margin-bottom: 45px;
-            font-size: 40px;
-            text-align: left;
-          }
-        </style>
-    </head>
-    <body>
-        <div class="screen">
-            <h1>BonnieGames87's Fallout</h1>
-            <div class="links">
-                <a href="socials.html">
-                    <span>Socials</span>
-                </a>
-                <a href="clock.html">
-                    <span>Clock</span>
-                </a>
-                <a href="calendar.html">
-                    <span>Calendar</span>
-                </a>
-                <a href="music.html">
-                  <span>Music</span>
-              </a>
-                <a href="test.html">
-                    <span>Testing</span>
-                </a>
-                <a href="gametest.html">
-                  <span>Game Testing</span>
-              </a>
-            </div>
-          </div>
-<head>
     <style>
         body {
             margin: 0;
@@ -153,64 +12,110 @@
             overflow: hidden;
         }
         
+        .screen {
+            background-color: #fff;
+            height: 100vh;
+            width: 100vw;
+            padding: 10vmin;
+            font-family: 'Fira Mono', monospace;
+            font-size: 20px;
+            box-sizing: border-box;
+        }
+        
+        .screen h1 {
+            position: absolute;
+            font-size: 60px;
+            bottom: 455px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .links {
+            position: absolute;
+            left: 40px;
+            top: 110px;
+        }
+
+        .links a {
+            display: block;
+            margin-bottom: 45px;
+            font-size: 40px;
+            text-align: left;
+        }
+
         .pipboyscreen {
             background-image: url('https://i.ibb.co/KjLLHmy/pipboyoverlayv1.png');
             background-size: cover;
             background-position: top right;
+            height: 100vh;
+            width: 100vw;
         }
-    </style>
-</head>
-    <body>
-        <div class="pipboyscreen"></div>
-    </body>
-<head>
-    <style>
+
         #version {
-            color: lime;
-            animation:colorPulse 5s infinite ease-in-out;
             font-size: 20px;
             position: fixed;
             bottom: 10px;
             right: 20px;
             padding: 10px;
-            background-color: #44444400;
-            border: 1px solid #44444400;
-            border-radius: 10px 0px 0px 0px;
+            background-color: transparent;
+            border: none;
+        }
+
+        .button {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            font-family: 'Fira Mono', monospace;
+            font-size: 20px;
+            padding: 8px 12px;
+            background-color: transparent;
+            color: black;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
-<div id="version">
-    Version: 0.3.1
-</div>
-<head>
-  <style>
-    .button {
-      position: fixed;
-      animation:colorPulse 5s infinite ease-in-out;
-      top: 10px; /* Adjust as needed */
-      right: 20px; /* Adjust as needed */
-      font-family: 'Fira Mono', monospace;
-      font-size: 20px;
-      padding: 8px 12px;
-      background-color: transparent;
-      color: lime;
-      border: none;
-      border-radius: 0px;
-      cursor: pointer;
-    }
-  </style>
-  </head>
-  <body>
-    <a href="logs.html" class="button">Update Logs</a>
-  </body>
 <body>
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-46Y2F0ST2P"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
+    <div class="screen">
+        <h1>BonnieGames87's Fallout</h1>
+        <div class="links">
+            <a href="socials.html">
+                <span>Socials</span>
+            </a>
+            <a href="clock.html">
+                <span>Clock</span>
+            </a>
+            <a href="calendar.html">
+                <span>Calendar</span>
+            </a>
+            <a href="music.html">
+                <span>Music</span>
+            </a>
+            <a href="test.html">
+                <span>Testing</span>
+            </a>
+            <a href="gametest.html">
+                <span>Game Testing</span>
+            </a>
+        </div>
+    </div>
 
-       gtag('config', 'G-46Y2F0ST2P');
-     </script>
+    <div class="pipboyscreen"></div>
+
+    <div id="version">
+        Version: 0.3.1
+    </div>
+
+    <a href="logs.html" class="button">Update Logs</a>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-46Y2F0ST2P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-46Y2F0ST2P');
+    </script>
 </body>
 </html>
