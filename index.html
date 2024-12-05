@@ -131,9 +131,30 @@
             margin-bottom: 10px; /* Space between label and password input */
         }
 
+        /* Password container: Flexbox to center input and button together */
         .password-container {
             display: flex;
+            justify-content: center;
             align-items: center;
+            margin-top: 20px; /* Space between the image and the password box */
+        }
+
+        .password-container input,
+        .password-container button {
+            margin: 5px; /* Space between password input and button */
+        }
+
+        .password-container input {
+            padding: 10px;
+            width: 250px; /* Make it slightly wider */
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .password-container button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -164,8 +185,8 @@
 
         <!-- Password and Button container -->
         <div class="password-container">
-            <input type="password" id="password" placeholder="Enter Password">
-            <button id="submit-btn" onclick="window.location.href='home.html'">
+            <input type="password" id="password" placeholder="Enter Password" onkeydown="checkEnter(event)">
+            <button id="submit-btn" onclick="submitPassword()">
                 <img src="Windows7arrow2.png" alt="Submit">
             </button>
         </div>
@@ -187,6 +208,18 @@
                 document.getElementById('wait-screen').style.display = 'none';
                 document.getElementById('login-section').style.display = 'flex';
             }, randomWaitTime);
+        }
+
+        function submitPassword() {
+            // Redirect to the next page (home.html) when the button is clicked
+            window.location.href = 'home.html';
+        }
+
+        function checkEnter(event) {
+            // If Enter key (key code 13) is pressed, trigger the same action as the submit button
+            if (event.key === "Enter") {
+                submitPassword();
+            }
         }
     </script>
 </body>
