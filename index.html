@@ -34,6 +34,7 @@
             color: rgb(80, 80, 80);
         }
 
+        /* Video Section */
         #video-container {
             width: 80%; /* Adjust this to control how wide the video should be */
             max-width: 1000px; /* Prevent it from getting too wide */
@@ -41,12 +42,12 @@
             justify-content: center;
             align-items: center;
             top: 10%; 
-            overflow: hidden; /* Disables both horizontal and vertical scrolling */
+            overflow: hidden;
         }
 
         video {
             width: 100%;
-            height: auto; /* This keeps the aspect ratio intact */
+            height: auto;
         }
 
         .black-bar {
@@ -92,8 +93,8 @@
         /* Login Section */
         #login-section {
             display: flex;
-            flex-direction: column; /* Stack elements vertically */
-            align-items: center; /* Center elements horizontally */
+            flex-direction: column;
+            align-items: center;
             text-align: center;
             display: none;
         }
@@ -103,12 +104,11 @@
             border: none;
             background: none;
             cursor: pointer;
-            margin-left: 10px; /* Space between password and arrow button */
         }
 
         #submit-btn img {
-            width: 30px;
-            height: 30px;
+            width: 50px; /* Increased size of arrow */
+            height: 50px; /* Increased size of arrow */
         }
 
         /* User input section */
@@ -118,44 +118,45 @@
             border-radius: 5px;
             border: 1px solid #ccc;
             height: 35px;
-            width: 350px; /* Adjusted width */
+            width: 350px; /* Default width */
         }
 
         #user-image {
-            width: 150px; /* Increased the size of the image */
-            height: 150px; /* Increased the size of the image */
-            margin-bottom: 10px; /* Space between image and label */
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
         }
 
         #user-label {
             font-size: 24px;
-            margin-bottom: 10px; /* Space between label and password input */
+            margin-bottom: 10px;
         }
 
-        /* Password container: Flexbox to center input and button together */
+        /* Password container */
         .password-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 8px; /* Space between the image and the password box */
+            position: relative;
+            margin-top: 8px;
         }
 
         .password-container input,
         .password-container button {
-            margin: 5px; /* Space between password input and button */
+            margin: 5px;
         }
 
         .password-container input {
             padding: 10px;
-            width: 350px; /* Make it slightly wider */
+            width: 350px; /* Default width */
             border-radius: 5px;
             border: 1px solid #ccc;
         }
 
+        /* Make the button move with the input */
         .password-container button {
-            border: none;
-            background-color: transparent;
-            cursor: pointer;
+            position: absolute;
+            right: 0;
         }
     </style>
 </head>
@@ -186,7 +187,7 @@
 
         <!-- Password and Button container -->
         <div class="password-container">
-            <input type="password" id="password" placeholder="Enter Password" onkeydown="checkEnter(event)">
+            <input type="password" id="password" placeholder="Password" onkeydown="checkEnter(event)">
             <button id="submit-btn" onclick="submitPassword()">
                 <img src="Windows7arrow2.png" alt="Submit">
             </button>
@@ -197,7 +198,7 @@
         function changeBackground() {
             // After video ends, change the background to an image and show the 'Please Wait' screen
             document.body.style.backgroundImage = "url('windows7loginbackground.jpg')";
-            document.body.style.backgroundSize = "100% 100%";  // Stretch the image to cover the entire screen
+            document.body.style.backgroundSize = "100% 100%";
             document.getElementById('video-container').style.display = 'none';
             document.getElementById('corp-name').style.display = 'none';
             document.querySelector('.black-bar').style.display = 'none'; // Hide the black bar
