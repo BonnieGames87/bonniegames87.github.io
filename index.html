@@ -153,10 +153,20 @@
 
         /* Button style */
         .password-container button {
-            margin-left: 10px; /* Space between the password input and button */
-            top: 1%; /* delte for no workie*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            height: 35px;  /* Match input height */
+            width: 45px;   /* Width of the arrow */
+            top: 0; /* Reset any vertical offset */
         }
 
+        /* Button image */
+        #submit-btn img {
+            width: 100%;  /* Make the arrow scale to fit the button */
+            height: auto;
+        }
     </style>
 </head>
 <body>
