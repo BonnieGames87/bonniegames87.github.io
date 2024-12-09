@@ -98,7 +98,7 @@
             width: 50px;
             height: 50px;
             background-color: rgba(0, 0, 0, 0.8); /* Dark background */
-            display: none; /* Initially hidden */
+            display: block; /* Initially shown */
             cursor: pointer;
             z-index: 10;
         }
@@ -186,7 +186,7 @@
     <!-- Corp Name at the bottom -->
     <div id="corp-name">© Bonnie Corporation</div>
 
-    <!-- Hidden Skip Button -->
+    <!-- Skip Button -->
     <div id="skip-btn" onclick="skipVideo()">
         <!-- Empty, but clickable square button -->
     </div>
@@ -215,15 +215,10 @@
         function showSkipButton() {
             // Show the skip button when the video starts playing
             document.getElementById('skip-btn').style.display = 'block';
-
-            // Set a timeout to hide the skip button after 21 seconds
-            setTimeout(() => {
-                document.getElementById('skip-btn').style.display = 'none';
-            }, 21000); // 21 seconds
         }
 
         function skipVideo() {
-            // Skip the video and show the "Please Wait" screen immediately
+            // Skip the video and immediately show the "Please Wait" screen
             changeBackground();
         }
 
