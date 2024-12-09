@@ -36,8 +36,8 @@
 
         /* Video Section */
         #video-container {
-            width: 80%; /* Adjust this to control how wide the video should be */
-            max-width: 1000px; /* Prevent it from getting too wide */
+            width: 80%;
+            max-width: 1000px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -84,21 +84,20 @@
             margin-right: 10px;
         }
 
-        /* Animation for Loading Circle */
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
 
-        /* Hidden Skip Button (Square, bottom-right) */
+        /* Skip Button */
         #skip-btn {
             position: fixed;
             bottom: 20px;
             right: 20px;
             width: 50px;
             height: 50px;
-            background-color: rgba(0, 0, 0, 0.8); /* Dark background */
-            display: block; /* Initially shown */
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none; /* Initially hidden */
             cursor: pointer;
             z-index: 10;
         }
@@ -110,10 +109,9 @@
             align-items: center;
             text-align: center;
             display: none;
-            transform: scale(0.8); /* Scale down the login section to 80% */
+            transform: scale(0.8);
         }
 
-        /* Submit Button */
         button {
             border: none;
             background: none;
@@ -121,61 +119,41 @@
         }
 
         #submit-btn img {
-            width: 45px; /* Increased size of arrow */
-            height: 45px; /* Increased size of arrow */
+            width: 45px;
+            height: 45px;
         }
 
-        /* User input section */
-        #password {
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 350px; /* Default width */
-        }
-
-        #user-image {
-            width: 150px;
-            height: 150px;
-            margin-bottom: 4px;
-        }
-
-        #user-label {
-            font-size: 24px;
-            margin-bottom: 6px;
-        }
-
-        /* Password container */
         .password-container {
             display: flex;
             justify-content: center;
-            align-items: center;  /* Center the password input and button vertically */
+            align-items: center;
             margin-top: 8px;
             position: relative;
-            right: -2%; /* Position the password input and button 40% from the left */
+            right: -2%;
         }
 
-        /* Input field style */
         .password-container input {
             padding: 10px;
-            height: -35px;  /* Set a fixed height if needed */
-            width: 340px; /* Default width */
+            height: -35px;
+            width: 340px;
             border-radius: 5px;
             border: 1px solid #ccc;
         }
 
-        /* Button style */
         .password-container button {
-            margin-left: 10px; /* Space between the password input and button */
-            display: flex;  /* Make the button a flex container */
-            align-items: center; /* Center the button content vertically */
-            justify-content: center; /* Center the button content horizontally */
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
+        #video-container.fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
     </style>
 </head>
 <body>
-    <!-- Video Section -->
     <div id="video-container">
         <video id="intro-video" autoplay muted onplay="showSkipButton()" onended="changeBackground()">
             <source src="windows7bootup.mp4" type="video/mp4">
@@ -184,27 +162,18 @@
     </div>
 
     <div class="black-bar"></div>
-
-    <!-- Corp Name at the bottom -->
     <div id="corp-name">© Bonnie Corporation</div>
 
-    <!-- Skip Button -->
-    <div id="skip-btn" onclick="skipVideo()">
-        <!-- Empty, but clickable square button -->
-    </div>
+    <div id="skip-btn" onclick="skipVideo()"></div>
 
-    <!-- "Please Wait" Screen (initially hidden) -->
     <div id="wait-screen" style="display:none;">
         <div id="loading-circle"></div>
         <span>Please Wait</span>
     </div>
 
-    <!-- Login Section (initially hidden) -->
     <div id="login-section" style="display:none;">
         <img src="download (12) (1).png" alt="Image" id="user-image">
         <div id="user-label">User</div>
-
-        <!-- Password and Button container -->
         <div class="password-container">
             <input type="password" id="password" placeholder="Password" onkeydown="checkEnter(event)">
             <button id="submit-btn" onclick="submitPassword()">
@@ -215,28 +184,24 @@
 
     <script>
         function showSkipButton() {
-            // Show the skip button when the video starts playing
-            document.getElementById('skip-btn').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('skip-btn').style.display = 'block';
+            }, 100);
         }
 
         function skipVideo() {
-            // Hide the skip button
             document.getElementById('skip-btn').style.display = 'none';
-
-            // Skip the video and immediately show the "Please Wait" screen
-            changeBackground();
+            document.getElementById('video-container').classList.add('fade-out');
+            setTimeout(changeBackground, 500);
         }
 
         function changeBackground() {
-            // After video ends (or skipped), change the background to an image and show the 'Please Wait' screen
             document.body.style.backgroundImage = "url('windows7loginbackground.jpg')";
             document.body.style.backgroundSize = "100% 100%";
             document.getElementById('video-container').style.display = 'none';
             document.getElementById('corp-name').style.display = 'none';
-            document.querySelector('.black-bar').style.display = 'none'; // Hide the black bar
+            document.querySelector('.black-bar').style.display = 'none';
             document.getElementById('wait-screen').style.display = 'flex';
-
-            // Wait for a random time between 5-10 seconds before showing login section
             const randomWaitTime = Math.random() * (10000 - 1000) + 1000;
             setTimeout(() => {
                 document.getElementById('wait-screen').style.display = 'none';
@@ -245,12 +210,10 @@
         }
 
         function submitPassword() {
-            // Redirect to the next page (home.html) when the button is clicked
             window.location.href = 'home.html';
         }
 
         function checkEnter(event) {
-            // If Enter key (key code 13) is pressed, trigger the same action as the submit button
             if (event.key === "Enter") {
                 submitPassword();
             }
