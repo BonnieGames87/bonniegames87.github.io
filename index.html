@@ -90,6 +90,23 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Hidden Skip Button (Square, bottom-right) */
+        #skip-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 20px;
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+
         /* Login Section */
         #login-section {
             display: flex;
@@ -162,7 +179,7 @@
 <body>
     <!-- Video Section -->
     <div id="video-container">
-        <video id="intro-video" autoplay muted onended="changeBackground()">
+        <video id="intro-video" autoplay muted onplay="showSkipButton()" onended="changeBackground()">
             <source src="windows7bootup.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -172,6 +189,11 @@
 
     <!-- Corp Name at the bottom -->
     <div id="corp-name">© Bonnie Corporation</div>
+
+    <!-- Hidden Skip Button -->
+    <div id="skip-btn" onclick="skipVideo()">
+        Skip
+    </div>
 
     <!-- "Please Wait" Screen (initially hidden) -->
     <div id="wait-screen" style="display:none;">
@@ -194,8 +216,18 @@
     </div>
 
     <script>
+        function showSkipButton() {
+            // Show the skip button when the video starts
+            document.getElementById('skip-btn').style.display = 'block';
+        }
+
+        function skipVideo() {
+            // Skip the video and show the "Please Wait" screen immediately
+            changeBackground();
+        }
+
         function changeBackground() {
-            // After video ends, change the background to an image and show the 'Please Wait' screen
+            // After video ends (or skipped), change the background to an image and show the 'Please Wait' screen
             document.body.style.backgroundImage = "url('windows7loginbackground.jpg')";
             document.body.style.backgroundSize = "100% 100%";
             document.getElementById('video-container').style.display = 'none';
