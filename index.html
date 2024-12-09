@@ -123,6 +123,7 @@
         #submit-btn img {
             width: 45px; /* Increased size of arrow */
             height: 45px; /* Increased size of arrow */
+            position: relative;
         }
 
         /* User input section */
@@ -167,7 +168,35 @@
         /* Button style */
         .password-container button {
             margin-left: 10px; /* Space between the password input and button */
-            top: 1%; /* delte for no workie*/
+            top: 1%; /* For positioning adjustments */
+            position: relative;
+        }
+
+        /* Add a vertical line in the middle of the password bar */
+        .password-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            height: 30px;
+            width: 2px;
+            background-color: green; /* Vertical line color */
+            transform: translateX(-50%);
+        }
+
+        /* Arrow button (with horizontal red line) */
+        #submit-btn img {
+            position: relative;
+        }
+
+        #submit-btn img::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: red; /* Horizontal line color */
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
         }
 
     </style>
