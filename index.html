@@ -215,6 +215,11 @@
         function showSkipButton() {
             // Show the skip button when the video starts playing
             document.getElementById('skip-btn').style.display = 'block';
+
+            // Set a timeout to hide the skip button after 21 seconds
+            setTimeout(() => {
+                document.getElementById('skip-btn').style.display = 'none';
+            }, 21000); // 21 seconds
         }
 
         function skipVideo() {
