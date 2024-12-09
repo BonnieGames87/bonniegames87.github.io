@@ -218,6 +218,9 @@
         }
 
         function skipVideo() {
+            // Hide the skip button
+            document.getElementById('skip-btn').style.display = 'none';
+
             // Skip the video and immediately show the "Please Wait" screen
             changeBackground();
         }
