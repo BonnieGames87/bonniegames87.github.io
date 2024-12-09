@@ -123,7 +123,6 @@
         #submit-btn img {
             width: 45px; /* Increased size of arrow */
             height: 45px; /* Increased size of arrow */
-            position: relative;
         }
 
         /* User input section */
@@ -168,35 +167,7 @@
         /* Button style */
         .password-container button {
             margin-left: 10px; /* Space between the password input and button */
-            top: 1%; /* For positioning adjustments */
-            position: relative;
-        }
-
-        /* Add a vertical line in the middle of the password bar */
-        .password-container::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            height: 100%;
-            width: 5px; /* Line thickness */
-            background-color: green; /* Vertical line color */
-            transform: translateX(-50%);
-        }
-
-        /* Arrow button (with horizontal red line) */
-        #submit-btn img {
-            position: relative;
-        }
-
-        #submit-btn img::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 5px; /* Line thickness */
-            background-color: red; /* Horizontal line color */
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
+            top: 1%; /* delte for no workie*/
         }
 
     </style>
@@ -264,7 +235,7 @@
             document.getElementById('wait-screen').style.display = 'flex';
 
             // Wait for a random time between 5-10 seconds before showing login section
-            const randomWaitTime = Math.random() * (10000 - 5000) + 5000;
+            const randomWaitTime = Math.random() * (5000 - 1000) + 1000;
             setTimeout(() => {
                 document.getElementById('wait-screen').style.display = 'none';
                 document.getElementById('login-section').style.display = 'flex';
