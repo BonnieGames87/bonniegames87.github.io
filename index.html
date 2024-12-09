@@ -97,12 +97,8 @@
             right: 20px;
             width: 50px;
             height: 50px;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            font-size: 20px;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark background */
             display: none; /* Initially hidden */
-            justify-content: center;
-            align-items: center;
             cursor: pointer;
             z-index: 10;
         }
@@ -192,7 +188,7 @@
 
     <!-- Hidden Skip Button -->
     <div id="skip-btn" onclick="skipVideo()">
-        Skip
+        <!-- Empty, but clickable square button -->
     </div>
 
     <!-- "Please Wait" Screen (initially hidden) -->
@@ -217,7 +213,7 @@
 
     <script>
         function showSkipButton() {
-            // Show the skip button when the video starts
+            // Show the skip button when the video starts playing
             document.getElementById('skip-btn').style.display = 'block';
         }
 
