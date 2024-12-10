@@ -191,6 +191,11 @@
             setTimeout(() => {
                 document.getElementById('skip-btn').style.display = 'block';
             }, 100);
+
+            // Make the skip button disappear after 21 seconds
+            setTimeout(() => {
+                document.getElementById('skip-btn').style.display = 'none';
+            }, 21000);
         }
 
         function skipVideo() {
