@@ -1,216 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIOS Interface Mockup</title>
-    <style>
-        /* Basic reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+<script>
+    // Get current date and time
+    function updateTimeAndDate() {
+        const now = new Date();
+        const time = now.toTimeString().split(' ')[0]; // Military time format
+        const date = now.toISOString().split('T')[0]; // Date in YYYY-MM-DD format
+
+        document.getElementById('sys-time').innerText = time;
+        document.getElementById('sys-date').innerText = date;
+    }
+
+    // Initial call to update time/date
+    updateTimeAndDate();
+    setInterval(updateTimeAndDate, 1000); // Update every second
+
+    // Menu navigation logic
+    let currentIndex = 0;
+    const menuItems = document.querySelectorAll('.bios-menu li');
+
+    function updateMenuSelection() {
+        menuItems.forEach((item, index) => {
+            if (index === currentIndex) {
+                item.classList.add('selected');
+            } else {
+                item.classList.remove('selected');
+            }
+        });
+    }
+
+    // Handle keyboard input for navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') {
+            if (currentIndex < menuItems.length - 1) {
+                currentIndex++;
+                updateMenuSelection();
+            }
+        } else if (e.key === 'ArrowUp') {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateMenuSelection();
+            }
+        } else if (e.key === 'Enter') {
+            const selectedMenu = menuItems[currentIndex].innerText;
+            handleMenuSelection(selectedMenu);
+        }
+    });
+
+    function handleMenuSelection(selectedMenu) {
+        if (selectedMenu === 'Exit') {
+            alert('Exiting BIOS...');
+            return;
         }
 
-        /* Background color */
-        body {
-            background-color: black;
-            font-family: 'Courier New', monospace;
-            color: white;
-            padding: 20px;
+        // Navigate to testing.html when "Tests" is selected
+        if (selectedMenu === 'Tests') {
+            window.location.href = 'testing.html'; // Redirect to testing.html
+            return;
         }
 
-        /* Centering the BIOS window */
-        .bios-container {
-            max-width: 800px;
-            margin: 50px auto;
-            border: 2px solid #666;
-            padding: 20px;
-            background-color: #111;
-            border-radius: 10px;
-        }
-
-        /* Title Bar */
-        .bios-header {
-            text-align: center;
-            color: #00FF00;
-            font-size: 20px;
-            border-bottom: 1px solid #666;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        /* Main BIOS menu */
-        .bios-menu {
-            font-size: 18px;
-        }
-
-        .bios-menu ul {
-            list-style-type: none;
-        }
-
-        .bios-menu li {
-            padding: 10px 0;
-            cursor: pointer;
-        }
-
-        /* Highlighting the selected menu item */
-        .bios-menu li.selected {
-            background-color: #333;
-            color: #00FF00;
-        }
-
-        /* Sub-menu for information or options */
-        .bios-sub-menu {
-            margin-top: 20px;
-            padding-left: 20px;
-            font-size: 16px;
-        }
-
-        .bios-sub-menu li {
-            padding: 5px 0;
-        }
-
-        /* Footer with instructions */
-        .bios-footer {
-            margin-top: 30px;
-            font-size: 14px;
-            text-align: center;
-            color: #666;
-        }
-
-        .bios-footer a {
-            color: #00FF00;
-            text-decoration: none;
-        }
-
-        /* Styling for the system information and settings */
-        .bios-info {
-            margin-top: 20px;
-            font-size: 16px;
-        }
-
-        .bios-info span {
-            color: #00FF00;
-        }
-    </style>
-</head>
-<body>
-    <div class="bios-container">
-        <div class="bios-header">
-            Phoenix SecureCore™ BIOS
-        </div>
-
-        <div class="bios-menu">
-            <ul id="menu">
-                <li class="selected">Main</li>
-                <li>Logs</li>
-                <li>Advanced</li>
-                <li>Tests</li>
-                <li>Security</li>
-                <li>Exit</li>
-            </ul>
-        </div>
-
-        <div class="bios-sub-menu">
-            <h3>Main Menu</h3>
-            <ul id="main-info">
+        // Update the sub-menu based on the selected menu item
+        const mainInfo = document.getElementById('main-info');
+        if (selectedMenu === 'Main') {
+            mainInfo.innerHTML = `
                 <li><strong>Processor:</strong> Intel(R) Celeron(TM) N4020</li>
                 <li><strong>Memory:</strong> 4GB LPDDR4</li>
                 <li><strong>Storage:</strong> 32GB eMMC</li>
-                <li><strong>BIOS Version:</strong> 0.0.1.0</li>
-            </ul>
-        </div>
-
-        <div class="bios-info">
-            <h3>System Information</h3>
-            <ul>
-                <li><strong>System Time:</strong> <span id="sys-time"></span></li>
-                <li><strong>System Date:</strong> <span id="sys-date"></span></li>
-            </ul>
-        </div>
-
-        <div class="bios-footer">
-            <p>Press <strong>Enter</strong> to select | Press <strong>Esc</strong> to Exit</p>
-            <p>© 2024 Phoenix Technologies</p>
-        </div>
-    </div>
-
-    <script>
-        // Get current date and time
-        function updateTimeAndDate() {
-            const now = new Date();
-            const time = now.toTimeString().split(' ')[0]; // Military time format
-            const date = now.toISOString().split('T')[0]; // Date in YYYY-MM-DD format
-
-            document.getElementById('sys-time').innerText = time;
-            document.getElementById('sys-date').innerText = date;
+                <li><strong>BIOS Version:</strong> 0.0.1.1</li>
+            `;
+        } else if (selectedMenu === 'Logs') {
+            mainInfo.innerHTML = '<li>Added BIOS Menu</li><li>Added Home page with time</li>';
+        } else if (selectedMenu === 'Coming Soon') {
+            mainInfo.innerHTML = '<li>Coming Soon: A new Game, Music Player, Calendar, Group Chat</li>';
+        } else if (selectedMenu === 'Security') {
+            mainInfo.innerHTML = '<li>No Security Installed</li>';
         }
+    }
 
-        // Initial call to update time/date
-        updateTimeAndDate();
-        setInterval(updateTimeAndDate, 1000); // Update every second
-
-        // Menu navigation logic
-        let currentIndex = 0;
-        const menuItems = document.querySelectorAll('.bios-menu li');
-
-        function updateMenuSelection() {
-            menuItems.forEach((item, index) => {
-                if (index === currentIndex) {
-                    item.classList.add('selected');
-                } else {
-                    item.classList.remove('selected');
-                }
-            });
-        }
-
-        // Handle keyboard input for navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowDown') {
-                if (currentIndex < menuItems.length - 1) {
-                    currentIndex++;
-                    updateMenuSelection();
-                }
-            } else if (e.key === 'ArrowUp') {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateMenuSelection();
-                }
-            } else if (e.key === 'Enter') {
-                const selectedMenu = menuItems[currentIndex].innerText;
-                handleMenuSelection(selectedMenu);
-            }
-        });
-
-        function handleMenuSelection(selectedMenu) {
-            if (selectedMenu === 'Exit') {
-                alert('Exiting BIOS...');
-                return;
-            }
-
-            // Update the sub-menu based on the selected menu item
-            const mainInfo = document.getElementById('main-info');
-            if (selectedMenu === 'Main') {
-                mainInfo.innerHTML = `
-                    <li><strong>Processor:</strong> Intel(R) Celeron(TM) N4020</li>
-                    <li><strong>Memory:</strong> 4GB LPDDR4</li>
-                    <li><strong>Storage:</strong> 32GB eMMC</li>
-                    <li><strong>BIOS Version:</strong> 0.0.1.1</li>
-                `;
-            } else if (selectedMenu === 'Logs') {
-                mainInfo.innerHTML = '<li>Added BIOS Menu</li><li>Added Home page with time</li>';
-            } else if (selectedMenu === 'Advanced') {
-                mainInfo.innerHTML = '<li>Coming Soon: A new Game, Music Player, Calendar, Group Chat</li>';
-            } else if (selectedMenu === 'Tests') {
-                mainInfo.innerHTML = '<li>TRANSER TO DIFF HTML</li>';
-            } else if (selectedMenu === 'Security') {
-                mainInfo.innerHTML = '<li>No Security Installed</li>';
-            }
-        }
-
-        // Initialize menu selection
-        updateMenuSelection();
-    </script>
-</body>
-</html>
+    // Initialize menu selection
+    updateMenuSelection();
+</script>
