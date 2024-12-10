@@ -117,7 +117,6 @@
             margin-bottom: 6px;
         }
 
-
         button {
             border: none;
             background: none;
@@ -157,6 +156,17 @@
             opacity: 0;
             transition: opacity 0.5s ease-out;
         }
+
+        /* Red Line in the Center */
+        #center-line {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            background-color: red;
+            transform: translateX(-50%);
+        }
     </style>
 </head>
 <body>
@@ -187,6 +197,9 @@
             </button>
         </div>
     </div>
+
+    <!-- Red Center Line -->
+    <div id="center-line"></div>
 
     <script>
         function showSkipButton() {
