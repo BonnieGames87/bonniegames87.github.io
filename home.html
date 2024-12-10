@@ -24,18 +24,27 @@
             height: 45px;
             background-color: rgba(24, 23, 23, 0.3); /* Gray with some transparency */
             display: flex;
-            justify-content: flex-end; /* Align content to the left */
-            padding-left: 20px; /* Add some space from the left edge */
-            align-items: center;
             color: white;
             font-size: 14px;
             font-weight: bold;
+        }
+
+        /* Style for the clock */
+        #clock {
+            position: absolute; /* Take it out of the flexbox layout */
+            right: 2%; /* Position the clock 20px from the left */
+            font-size: 18px; /* Customize clock size */
+            font-weight: bold; /* Bold the clock text */
+            color: white; /* Clock color */
         }
     </style>
 </head>
 <body>
     <!-- Bottom gray transparent bar -->
-    <div class="bottom-bar" id="clock"></div>
+    <div class="bottom-bar">
+        <!-- Clock element -->
+        <div id="clock"></div>
+    </div>
 
     <script>
         function updateClock() {
@@ -52,7 +61,7 @@
             const date = new Date();
             const formattedTime = date.toLocaleTimeString('en-US', options);
 
-            // Display the formatted time in the bottom bar
+            // Display the formatted time in the clock div
             document.getElementById('clock').textContent = formattedTime;
         }
 
