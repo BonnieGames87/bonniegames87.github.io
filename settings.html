@@ -180,12 +180,16 @@
             } else if (e.key === 'Enter') {
                 const selectedMenu = menuItems[currentIndex].innerText;
                 handleMenuSelection(selectedMenu);
+            } else if (e.key === 'Escape') {
+                // If Escape is pressed, go back to index.html
+                window.location.href = 'index.html'; // Redirect to index.html
             }
         });
 
         function handleMenuSelection(selectedMenu) {
+            // Redirect to index.html if "Exit" is selected
             if (selectedMenu === 'Exit') {
-                alert('Exiting BIOS...');
+                window.location.href = 'index.html'; // Redirect to index.html
                 return;
             }
 
@@ -206,8 +210,8 @@
                 `;
             } else if (selectedMenu === 'Logs') {
                 mainInfo.innerHTML = '<li>Added BIOS Menu</li><li>Added Home page with time</li>';
-            } else if (selectedMenu === 'Advanced') {
-                mainInfo.innerHTML = '<li>Coming Soon: A new Game, Music Player, Calendar, Group Chat</li>';
+            } else if (selectedMenu === 'Coming Soon') {
+                mainInfo.innerHTML = '<li>A FNAF Game</li><li>Music Player</li><li>Calendar</li><li>Custom Group Chat</li>';
             } else if (selectedMenu === 'Security') {
                 mainInfo.innerHTML = '<li>No Security Installed</li>';
             }
