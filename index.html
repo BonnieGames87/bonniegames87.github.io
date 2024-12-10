@@ -208,20 +208,26 @@
                 document.getElementById('skip-btn').style.display = 'block';
             }, 100);
 
+            // Show the F1 boot settings text
+            document.getElementById('keybind-text').style.display = 'block';
+
+            // Hide the F1 boot settings text after 6 seconds if not skipped
+            keybindTimeout = setTimeout(() => {
+                document.getElementById('keybind-text').style.display = 'none';
+            }, 6000); // Disappear after 6 seconds if not clicked
+
             // Make the skip button disappear after 21 seconds
             setTimeout(() => {
                 document.getElementById('skip-btn').style.display = 'none';
             }, 21000);
-
-            // Display the keybind text for 10 seconds (changed from 5 to 10)
-            document.getElementById('keybind-text').style.display = 'block';
-            keybindTimeout = setTimeout(() => {
-                document.getElementById('keybind-text').style.display = 'none';
-            }, 10000); // Disappear after 10 seconds
         }
 
         function skipVideo() {
+            // Hide both the skip button and the F1 boot settings text
             document.getElementById('skip-btn').style.display = 'none';
+            document.getElementById('keybind-text').style.display = 'none';
+
+            // Fade out the video container and change the background
             document.getElementById('video-container').classList.add('fade-out');
             setTimeout(changeBackground, 500);
         }
