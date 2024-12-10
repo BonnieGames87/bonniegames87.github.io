@@ -161,9 +161,9 @@
         #keybind-text {
             position: absolute;
             top: 20px;
-            right: 20px;
+            left: 20px;
             font-size: 20px;
-            color: white;
+            color: rgb(46, 46, 46);
             display: none; /* Initially hidden */
         }
     </style>
@@ -198,7 +198,7 @@
     </div>
 
     <!-- Keybind Text -->
-    <div id="keybind-text">F[1] for boot settings</div>
+    <div id="keybind-text">F1 for boot settings</div>
 
     <script>
         let keybindTimeout;
@@ -252,7 +252,7 @@
 
         // Add event listener for keypress
         document.addEventListener('keydown', function(event) {
-            if (event.key === "F1") {
+            if (event.key === "1") {
                 window.location.href = 'settings.html'; // Redirect to settings.html
             }
         });
