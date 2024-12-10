@@ -213,11 +213,11 @@
                 document.getElementById('skip-btn').style.display = 'none';
             }, 21000);
 
-            // Display the keybind text for 10 seconds
+            // Display the keybind text for 10 seconds (changed from 5 to 10)
             document.getElementById('keybind-text').style.display = 'block';
             keybindTimeout = setTimeout(() => {
                 document.getElementById('keybind-text').style.display = 'none';
-            }, 5000);
+            }, 10000); // Disappear after 10 seconds
         }
 
         function skipVideo() {
