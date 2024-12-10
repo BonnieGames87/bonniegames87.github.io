@@ -156,6 +156,16 @@
             opacity: 0;
             transition: opacity 0.5s ease-out;
         }
+
+        /* Keybind Text */
+        #keybind-text {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 20px;
+            color: white;
+            display: none; /* Initially hidden */
+        }
     </style>
 </head>
 <body>
@@ -186,7 +196,13 @@
             </button>
         </div>
     </div>
+
+    <!-- Keybind Text -->
+    <div id="keybind-text">F[1] for boot settings</div>
+
     <script>
+        let keybindTimeout;
+
         function showSkipButton() {
             setTimeout(() => {
                 document.getElementById('skip-btn').style.display = 'block';
@@ -196,6 +212,12 @@
             setTimeout(() => {
                 document.getElementById('skip-btn').style.display = 'none';
             }, 21000);
+
+            // Display the keybind text for 10 seconds
+            document.getElementById('keybind-text').style.display = 'block';
+            keybindTimeout = setTimeout(() => {
+                document.getElementById('keybind-text').style.display = 'none';
+            }, 10000);
         }
 
         function skipVideo() {
@@ -227,6 +249,13 @@
                 submitPassword();
             }
         }
+
+        // Add event listener for keypress
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "1") {
+                window.location.href = 'settings.html'; // Redirect to settings.html
+            }
+        });
     </script>
 </body>
 </html>
