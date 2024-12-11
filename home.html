@@ -23,19 +23,27 @@
             width: 100%;
             height: 45px;
             background-color: rgba(24, 23, 23, 0.3); /* Gray with some transparency */
+        }
+
+        /* Container for the clock and date */
+        .time-date-container {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100%;
             display: flex;
             flex-direction: column; /* Stack clock and date vertically */
-            align-items: right; /* Center horizontally */
-            justify-content: flex-start; /* Align content to the right */
+            align-items: flex-end; /* Align elements to the right */
+            justify-content: flex-start; /* Align content to the top */
             color: white;
             font-size: 16px;
             font-weight: bold;
-            padding: 0 10px;
+            padding: 5px 10px;
         }
 
         /* Style for the clock */
         #clock {
-            font-size: 12px; /* Customize clock size */
+            font-size: 14px; /* Customize clock size */
             font-weight: bold; /* Bold the clock text */
             color: white; /* Clock color */
         }
@@ -49,8 +57,11 @@
     </style>
 </head>
 <body>
-    <!-- Bottom gray transparent bar -->
-    <div class="bottom-bar">
+    <!-- Gray transparent bar (background only) -->
+    <div class="bottom-bar"></div>
+
+    <!-- Clock and date container -->
+    <div class="time-date-container">
         <!-- Clock element -->
         <div id="clock"></div>
         <!-- Date element -->
