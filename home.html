@@ -32,9 +32,9 @@
             right: 0;
             width: 100%;
             display: flex;
-            flex-direction: column; /* Stack clock and date vertically */
-            align-items: flex-end; /* Align elements to the right */
-            justify-content: flex-start; /* Align content to the top */
+            flex-direction: row; /* Align clock and date side by side */
+            justify-content: flex-end; /* Align both to the right */
+            align-items: center; /* Vertically center both items */
             color: white;
             font-size: 16px;
             font-weight: bold;
@@ -53,6 +53,8 @@
             font-size: 14px; /* Customize date size */
             font-weight: bold; /* Bold the date text */
             color: white; /* Date color */
+            position: relative;
+            left: -2%; /* Move the date 2% to the left of the clock */
         }
     </style>
 </head>
