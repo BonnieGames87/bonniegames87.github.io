@@ -27,16 +27,22 @@
             color: white;
             font-size: 14px;
             font-weight: bold;
+            justify-content: space-between;
+            padding: 0 10px;
         }
 
         /* Style for the clock */
         #clock {
-            position: absolute; /* Take it out of the flexbox layout */
-            right: 0.8%; /* Position the clock 2% from the right */
-            top: 29.4%; /* Move the clock up by 5% of the container height */
             font-size: 9px; /* Customize clock size */
             font-weight: bold; /* Bold the clock text */
             color: white; /* Clock color */
+        }
+
+        /* Style for the date */
+        #date {
+            font-size: 9px; /* Customize date size */
+            font-weight: bold; /* Bold the date text */
+            color: white; /* Date color */
         }
     </style>
 </head>
@@ -45,10 +51,13 @@
     <div class="bottom-bar">
         <!-- Clock element -->
         <div id="clock"></div>
+        <!-- Date element -->
+        <div id="date"></div>
     </div>
 
     <script>
-        function updateClock() {
+        // Function to update the clock and date
+        function updateClockAndDate() {
             // Get the current time in Central Time, adjusting for Daylight Saving Time
             const options = {
                 timeZone: 'America/Chicago', // Central Time Zone
@@ -58,19 +67,28 @@
                 hour12: true
             };
 
-            // Create a new Date object and format it with the given options
-            const date = new Date();
-            const formattedTime = date.toLocaleTimeString('en-US', options);
+            // Create a new Date object for time and date
+            const now = new Date();
 
-            // Display the formatted time in the clock div
+            // Format time
+            const formattedTime = now.toLocaleTimeString('en-US', options);
             document.getElementById('clock').textContent = formattedTime;
+
+            // Format date as DD-MM-YY
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+            const year = String(now.getFullYear()).slice(2); // Get last two digits of year
+            const formattedDate = `${day}-${month}-${year}`;
+
+            // Display the formatted date
+            document.getElementById('date').textContent = formattedDate;
         }
 
-        // Update the clock every second
-        setInterval(updateClock, 1000);
+        // Update the clock and date every second
+        setInterval(updateClockAndDate, 1000);
 
-        // Initialize the clock when the page loads
-        updateClock();
+        // Initialize the clock and date when the page loads
+        updateClockAndDate();
     </script>
 </body>
 </html>
