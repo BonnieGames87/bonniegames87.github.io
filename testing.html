@@ -18,13 +18,14 @@
             background-image: url('windowswall.png'); /* Use a high-res image */
             background-size: 100%; /* Adjust this if the image is blurry */
             background-position: center;
-            flex-direction: column;
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
             overflow: hidden; /* Prevent scrolling */
             font-family: Arial, sans-serif; /* Font for the clock */
         }
 
-         /* Container for the clock and date */
-         .time-date-container {
+        /* Container for the clock and date */
+        .time-date-container {
             position: fixed;
             bottom: 1%;
             right: 0;
@@ -66,13 +67,19 @@
         /* Grid container */
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr; /* Only one column */
-            grid-template-rows: repeat(25, 1fr); /* 25 rows vertically */
+            grid-template-columns: repeat(auto-fill, 32px); /* Fill columns with 32px wide items */
+            grid-template-rows: repeat(auto-fill, 32px); /* Items will be arranged in rows */
             gap: 10px;
+            padding: 10px; /* Add some padding */
             width: 100vw; /* Full width */
             height: calc(100vh - 50px); /* Full height minus the bottom bar */
-            padding-bottom: 50px; /* Prevent content from being hidden under the bottom bar */
             overflow: hidden; /* No scrolling */
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
         }
 
         /* Grid items */
@@ -81,13 +88,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 32px; /* Set width to 32px */
+            height: 32px; /* Set height to 32px */
             font-size: 16px; /* Medium size text */
             font-weight: bold;
             border-radius: 5px;
-            height: 100%;
             transition: all 0.2s ease;
         }
-
     </style>
 </head>
 <body>
@@ -113,11 +120,6 @@
         <div class="grid-item">Item 18</div>
         <div class="grid-item">Item 19</div>
         <div class="grid-item">Item 20</div>
-        <div class="grid-item">Item 21</div>
-        <div class="grid-item">Item 22</div>
-        <div class="grid-item">Item 23</div>
-        <div class="grid-item">Item 24</div>
-        <div class="grid-item">Item 25</div>
     </div>
 
     <!-- Bottom Bar -->
