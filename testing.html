@@ -69,14 +69,14 @@
             position: fixed;
             top: 0;
             left: 0;
-            display: flex;
-            flex-direction: column; /* Items are stacked vertically */
-            align-items: flex-start; /* Align items to the left */
-            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(2, 128px); /* Two columns of equal width */
+            grid-template-rows: repeat(5, 128px); /* Five rows */
             gap: 10px;
+            padding: 10px;
             height: calc(100vh - 50px); /* Full height minus the bottom bar */
+            width: 100%; /* Full width */
             overflow: hidden; /* Prevent scrolling */
-            width: 32px; /* Each icon will be 32px wide */
         }
 
         /* Grid items */
@@ -85,11 +85,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 128px; /* Set width to 32px */
-            height: 128px; /* Set height to 32px */
-            font-size: 16px; /* Medium size text */
+            width: 128px; /* Set width to 128px */
+            height: 128px; /* Set height to 128px */
+            font-size: 32px; /* Larger text size to match the larger icon size */
             font-weight: bold;
-            border-radius: 128px;
+            border-radius: 5px;
             transition: all 0.2s ease;
         }
     </style>
@@ -98,25 +98,15 @@
 
     <div class="grid-container">
         <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
         <div class="grid-item">6</div>
+        <div class="grid-item">2</div>
         <div class="grid-item">7</div>
+        <div class="grid-item">3</div>
         <div class="grid-item">8</div>
+        <div class="grid-item">4</div>
         <div class="grid-item">9</div>
+        <div class="grid-item">5</div>
         <div class="grid-item">10</div>
-        <div class="grid-item">11</div>
-        <div class="grid-item">12</div>
-        <div class="grid-item">13</div>
-        <div class="grid-item">14</div>
-        <div class="grid-item">15</div>
-        <div class="grid-item">16</div>
-        <div class="grid-item">17</div>
-        <div class="grid-item">18</div>
-        <div class="grid-item">19</div>
-        <div class="grid-item">20</div>
     </div>
 
     <!-- Bottom Bar -->
