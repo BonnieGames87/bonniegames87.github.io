@@ -66,11 +66,11 @@
         /* Grid container */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(35, 1fr); /* 35 equal columns */
-            grid-template-rows: repeat(25, 1fr); /* 25 equal rows */
+            grid-template-columns: 1fr; /* Only one column */
+            grid-template-rows: repeat(25, 1fr); /* 25 rows vertically */
             gap: 10px;
             width: 100vw; /* Full width */
-            height: calc(100vh - 50px); /* Full height minus the height of the bottom bar */
+            height: calc(100vh - 50px); /* Full height minus the bottom bar */
             padding-bottom: 50px; /* Prevent content from being hidden under the bottom bar */
             overflow: hidden; /* No scrolling */
         }
@@ -81,17 +81,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px; /* Medium size text */
+            font-size: 16px; /* Medium size text */
             font-weight: bold;
             border-radius: 5px;
             height: 100%;
             transition: all 0.2s ease;
         }
+
     </style>
 </head>
 <body>
 
-    <!-- Grid Container -->
     <div class="grid-container">
         <div class="grid-item">Item 1</div>
         <div class="grid-item">Item 2</div>
@@ -118,81 +118,6 @@
         <div class="grid-item">Item 23</div>
         <div class="grid-item">Item 24</div>
         <div class="grid-item">Item 25</div>
-        <div class="grid-item">Item 26</div>
-        <div class="grid-item">Item 27</div>
-        <div class="grid-item">Item 28</div>
-        <div class="grid-item">Item 29</div>
-        <div class="grid-item">Item 30</div>
-        <div class="grid-item">Item 31</div>
-        <div class="grid-item">Item 32</div>
-        <div class="grid-item">Item 33</div>
-        <div class="grid-item">Item 34</div>
-        <div class="grid-item">Item 35</div>
-        <div class="grid-item">Item 36</div>
-        <div class="grid-item">Item 37</div>
-        <div class="grid-item">Item 38</div>
-        <div class="grid-item">Item 39</div>
-        <div class="grid-item">Item 40</div>
-        <div class="grid-item">Item 41</div>
-        <div class="grid-item">Item 42</div>
-        <div class="grid-item">Item 43</div>
-        <div class="grid-item">Item 44</div>
-        <div class="grid-item">Item 45</div>
-        <div class="grid-item">Item 46</div>
-        <div class="grid-item">Item 47</div>
-        <div class="grid-item">Item 48</div>
-        <div class="grid-item">Item 49</div>
-        <div class="grid-item">Item 50</div>
-        <div class="grid-item">Item 51</div>
-        <div class="grid-item">Item 52</div>
-        <div class="grid-item">Item 53</div>
-        <div class="grid-item">Item 54</div>
-        <div class="grid-item">Item 55</div>
-        <div class="grid-item">Item 56</div>
-        <div class="grid-item">Item 57</div>
-        <div class="grid-item">Item 58</div>
-        <div class="grid-item">Item 59</div>
-        <div class="grid-item">Item 60</div>
-        <div class="grid-item">Item 61</div>
-        <div class="grid-item">Item 62</div>
-        <div class="grid-item">Item 63</div>
-        <div class="grid-item">Item 64</div>
-        <div class="grid-item">Item 65</div>
-        <div class="grid-item">Item 66</div>
-        <div class="grid-item">Item 67</div>
-        <div class="grid-item">Item 68</div>
-        <div class="grid-item">Item 69</div>
-        <div class="grid-item">Item 70</div>
-        <div class="grid-item">Item 71</div>
-        <div class="grid-item">Item 72</div>
-        <div class="grid-item">Item 73</div>
-        <div class="grid-item">Item 74</div>
-        <div class="grid-item">Item 75</div>
-        <div class="grid-item">Item 76</div>
-        <div class="grid-item">Item 77</div>
-        <div class="grid-item">Item 78</div>
-        <div class="grid-item">Item 79</div>
-        <div class="grid-item">Item 80</div>
-        <div class="grid-item">Item 81</div>
-        <div class="grid-item">Item 82</div>
-        <div class="grid-item">Item 83</div>
-        <div class="grid-item">Item 84</div>
-        <div class="grid-item">Item 85</div>
-        <div class="grid-item">Item 86</div>
-        <div class="grid-item">Item 87</div>
-        <div class="grid-item">Item 88</div>
-        <div class="grid-item">Item 89</div>
-        <div class="grid-item">Item 90</div>
-        <div class="grid-item">Item 91</div>
-        <div class="grid-item">Item 92</div>
-        <div class="grid-item">Item 93</div>
-        <div class="grid-item">Item 94</div>
-        <div class="grid-item">Item 95</div>
-        <div class="grid-item">Item 96</div>
-        <div class="grid-item">Item 97</div>
-        <div class="grid-item">Item 98</div>
-        <div class="grid-item">Item 99</div>
-        <div class="grid-item">Item 100</div>
     </div>
 
     <!-- Bottom Bar -->
