@@ -1,7 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="icon" href="image (89).png" type="image/png">
 <head>
-    Nothing To see Here
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid with Bottom Bar</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url('windowswall.png'); /* Use a high-res image */
+            background-size: 100%; /* Adjust this if the image is blurry */
+            background-position: center;
+            flex-direction: column;
+            overflow: hidden; /* Prevent scrolling */
+            font-family: Arial, sans-serif; /* Font for the clock */
+        }
+
+         /* Container for the clock and date */
+         .time-date-container {
+            position: fixed;
+            bottom: 1%;
+            right: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column; /* Stack clock and date vertically */
+            align-items: flex-end; /* Align elements to the right */
+            justify-content: flex-start; /* Align content to the top */
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+
+        /* Style for the clock */
+        #clock {
+            font-size: 14px; /* Customize clock size */
+            font-weight: bold; /* Bold the clock text */
+            color: white; /* Clock color */
+        }
+
+        /* Style for the date */
+        #date {
+            font-size: 14px; /* Customize date size */
+            font-weight: bold; /* Bold the date text */
+            color: white; /* Date color */
+        }
+
+        /* Bottom bar styling */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: rgba(24, 23, 23, 0.3); /* Gray with some transparency */
+        }
+
+        /* Grid container */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(35, 1fr); /* 35 equal columns */
+            grid-template-rows: repeat(25, 1fr); /* 25 equal rows */
+            gap: 10px;
+            width: 100vw; /* Full width */
+            height: calc(100vh - 50px); /* Full height minus the height of the bottom bar */
+            padding-bottom: 50px; /* Prevent content from being hidden under the bottom bar */
+            overflow: hidden; /* No scrolling */
+        }
+
+        /* Grid items */
+        .grid-item {
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px; /* Medium size text */
+            font-weight: bold;
+            border-radius: 5px;
+            height: 100%;
+            transition: all 0.2s ease;
+        }
+    </style>
 </head>
+<body>
+
+    <!-- Grid Container -->
+    <div class="grid-container">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item">Item 6</div>
+        <div class="grid-item">Item 7</div>
+        <div class="grid-item">Item 8</div>
+        <div class="grid-item">Item 9</div>
+        <div class="grid-item">Item 10</div>
+        <div class="grid-item">Item 11</div>
+        <div class="grid-item">Item 12</div>
+        <div class="grid-item">Item 13</div>
+        <div class="grid-item">Item 14</div>
+        <div class="grid-item">Item 15</div>
+        <div class="grid-item">Item 16</div>
+        <div class="grid-item">Item 17</div>
+        <div class="grid-item">Item 18</div>
+        <div class="grid-item">Item 19</div>
+        <div class="grid-item">Item 20</div>
+        <div class="grid-item">Item 21</div>
+        <div class="grid-item">Item 22</div>
+        <div class="grid-item">Item 23</div>
+        <div class="grid-item">Item 24</div>
+        <div class="grid-item">Item 25</div>
+        <div class="grid-item">Item 26</div>
+        <div class="grid-item">Item 27</div>
+        <div class="grid-item">Item 28</div>
+        <div class="grid-item">Item 29</div>
+        <div class="grid-item">Item 30</div>
+        <div class="grid-item">Item 31</div>
+        <div class="grid-item">Item 32</div>
+        <div class="grid-item">Item 33</div>
+        <div class="grid-item">Item 34</div>
+        <div class="grid-item">Item 35</div>
+        <div class="grid-item">Item 36</div>
+        <div class="grid-item">Item 37</div>
+        <div class="grid-item">Item 38</div>
+        <div class="grid-item">Item 39</div>
+        <div class="grid-item">Item 40</div>
+        <div class="grid-item">Item 41</div>
+        <div class="grid-item">Item 42</div>
+        <div class="grid-item">Item 43</div>
+        <div class="grid-item">Item 44</div>
+        <div class="grid-item">Item 45</div>
+        <div class="grid-item">Item 46</div>
+        <div class="grid-item">Item 47</div>
+        <div class="grid-item">Item 48</div>
+        <div class="grid-item">Item 49</div>
+        <div class="grid-item">Item 50</div>
+        <div class="grid-item">Item 51</div>
+        <div class="grid-item">Item 52</div>
+        <div class="grid-item">Item 53</div>
+        <div class="grid-item">Item 54</div>
+        <div class="grid-item">Item 55</div>
+        <div class="grid-item">Item 56</div>
+        <div class="grid-item">Item 57</div>
+        <div class="grid-item">Item 58</div>
+        <div class="grid-item">Item 59</div>
+        <div class="grid-item">Item 60</div>
+        <div class="grid-item">Item 61</div>
+        <div class="grid-item">Item 62</div>
+        <div class="grid-item">Item 63</div>
+        <div class="grid-item">Item 64</div>
+        <div class="grid-item">Item 65</div>
+        <div class="grid-item">Item 66</div>
+        <div class="grid-item">Item 67</div>
+        <div class="grid-item">Item 68</div>
+        <div class="grid-item">Item 69</div>
+        <div class="grid-item">Item 70</div>
+        <div class="grid-item">Item 71</div>
+        <div class="grid-item">Item 72</div>
+        <div class="grid-item">Item 73</div>
+        <div class="grid-item">Item 74</div>
+        <div class="grid-item">Item 75</div>
+        <div class="grid-item">Item 76</div>
+        <div class="grid-item">Item 77</div>
+        <div class="grid-item">Item 78</div>
+        <div class="grid-item">Item 79</div>
+        <div class="grid-item">Item 80</div>
+        <div class="grid-item">Item 81</div>
+        <div class="grid-item">Item 82</div>
+        <div class="grid-item">Item 83</div>
+        <div class="grid-item">Item 84</div>
+        <div class="grid-item">Item 85</div>
+        <div class="grid-item">Item 86</div>
+        <div class="grid-item">Item 87</div>
+        <div class="grid-item">Item 88</div>
+        <div class="grid-item">Item 89</div>
+        <div class="grid-item">Item 90</div>
+        <div class="grid-item">Item 91</div>
+        <div class="grid-item">Item 92</div>
+        <div class="grid-item">Item 93</div>
+        <div class="grid-item">Item 94</div>
+        <div class="grid-item">Item 95</div>
+        <div class="grid-item">Item 96</div>
+        <div class="grid-item">Item 97</div>
+        <div class="grid-item">Item 98</div>
+        <div class="grid-item">Item 99</div>
+        <div class="grid-item">Item 100</div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="bottom-bar"></div>
+
+    <!-- Clock and date container -->
+    <div class="time-date-container">
+        <!-- Clock element -->
+        <div id="clock"></div>
+        <!-- Date element -->
+        <div id="date"></div>
+    </div>
+
+    <script>
+        // Function to update the clock and date
+        function updateClockAndDate() {
+            // Get the current time in Central Time, adjusting for Daylight Saving Time
+            const options = {
+                timeZone: 'America/Chicago', // Central Time Zone
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+
+            // Create a new Date object for time and date
+            const now = new Date();
+
+            // Format time
+            const formattedTime = now.toLocaleTimeString('en-US', options);
+            document.getElementById('clock').textContent = formattedTime;
+
+            // Format date as DD-MM-YY
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+            const year = String(now.getFullYear()).slice(2); // Get last two digits of year
+            const formattedDate = `${day}-${month}-${year}`;
+
+            // Display the formatted date after the time
+            document.getElementById('date').textContent = formattedDate;
+        }
+
+        // Update the clock and date every second
+        setInterval(updateClockAndDate, 1000);
+
+        // Initialize the clock and date when the page loads
+        updateClockAndDate();
+    </script>
+</body>
 </html>
