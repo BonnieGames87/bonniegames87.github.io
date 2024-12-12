@@ -70,9 +70,9 @@
             top: 0;
             left: 0;
             display: grid;
-            grid-template-columns: repeat(2, 128px); /* Two columns of equal width */
-            grid-template-rows: repeat(5, 128px); /* Five rows */
-            gap: 10px;
+            grid-template-columns: repeat(3, 100px); /* Three columns of equal width */
+            grid-template-rows: repeat(5, 100px); /* Five rows of equal height */
+            gap: 0px;
             padding: 10px;
             height: calc(100vh - 50px); /* Full height minus the bottom bar */
             width: 100%; /* Full width */
@@ -85,8 +85,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 128px; /* Set width to 128px */
-            height: 128px; /* Set height to 128px */
+            width: 64px; /* Set width to 128px */
+            height: 64px; /* Set height to 128px */
             font-size: 32px; /* Larger text size to match the larger icon size */
             font-weight: bold;
             border-radius: 5px;
@@ -97,16 +97,24 @@
 <body>
 
     <div class="grid-container">
+        <!-- First column -->
         <div class="grid-item">1</div>
-        <div class="grid-item">6</div>
         <div class="grid-item">2</div>
-        <div class="grid-item">7</div>
         <div class="grid-item">3</div>
-        <div class="grid-item">8</div>
         <div class="grid-item">4</div>
-        <div class="grid-item">9</div>
         <div class="grid-item">5</div>
+        <!-- Second column -->
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
         <div class="grid-item">10</div>
+        <!-- Third column -->
+        <div class="grid-item">11</div>
+        <div class="grid-item">12</div>
+        <div class="grid-item">13</div>
+        <div class="grid-item">14</div>
+        <div class="grid-item">15</div>
     </div>
 
     <!-- Bottom Bar -->
